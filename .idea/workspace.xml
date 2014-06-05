@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f1e50eb4-8d33-4174-983a-091fbaf79c77" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Waggr.iml" afterPath="$PROJECT_DIR$/Waggr.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="untitled.iws" />
@@ -35,47 +34,169 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.08374384" vertical-offset="629" max-vertical-offset="2006">
-              <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="1717">
+              <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#843#867#0" expanded="false" />
-                <element signature="class#Weather#0" expanded="false" />
-                <element signature="class#WeatherParserYandex#0" expanded="false" />
-                <element signature="method#GetWeekPredict#0;class#WeatherParserYandex#0" expanded="false" />
-                <element signature="method#GetCurrent#0;class#WeatherParserYandex#0" expanded="false" />
-                <element signature="class#CitiesParserYandex#0" expanded="false" />
-                <element signature="method#ParseXMLCities#0;class#CitiesParserYandex#0" expanded="false" />
-                <element signature="class#ForecastContainerYa#0" expanded="false" />
-                <element signature="method#ForecastContainerYa#0;class#ForecastContainerYa#0" expanded="false" />
-                <element signature="class#ForecastParserWUA#0" expanded="false" />
-                <element signature="class#ForecastContainerWUA#0" expanded="false" />
-                <element signature="class#CountryCityParserWUA#0" expanded="false" />
-                <element signature="class#CityIdParserWUA#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="String.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://C:/glassfish4/jdk7/jre/lib/rt.jar!/java/lang/String.class">
+      <file leaf-file-name="ForecastParserYa.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Parsers/ForecastParserYa.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3672" max-vertical-offset="3774">
-              <caret line="216" column="0" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="314" max-vertical-offset="731">
+              <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#605#614#0" expanded="true" />
+                <element signature="method#GetWeekPredict#0;class#ForecastParserYa#0" expanded="false" />
+                <element signature="e#800#809#0" expanded="true" />
+                <element signature="method#GetCurrent#0;class#ForecastParserYa#0" expanded="false" />
+                <element signature="e#7061#7070#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ParentNode.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://C:/glassfish4/jdk7/jre/lib/rt.jar!/com/sun/org/apache/xerces/internal/dom/ParentNode.class">
+      <file leaf-file-name="ForecastParserWUA.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Parsers/ForecastParserWUA.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="1581">
-              <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
-              <folding />
+            <state vertical-scroll-proportion="-0.5810056" vertical-offset="599" max-vertical-offset="986">
+              <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#645#654#0" expanded="true" />
+                <element signature="method#ForecastParserWUA#0;class#ForecastParserWUA#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ForecastContainerWUA.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Parsers/ForecastContainerWUA.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="284" max-vertical-offset="1037">
+              <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CountryIdParserWUA.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Parsers/CountryIdParserWUA.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1087" max-vertical-offset="1445">
+              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CountryCityParserWUA.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Parsers/CountryCityParserWUA.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="624" max-vertical-offset="969">
+              <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+              <folding>
+                <element signature="e#451#452#0" expanded="true" />
+                <element signature="e#479#480#0" expanded="true" />
+                <element signature="e#1030#1031#0" expanded="true" />
+                <element signature="e#1065#1066#0" expanded="true" />
+                <element signature="e#1141#1142#0" expanded="true" />
+                <element signature="e#1178#1179#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ForecastContainerYa.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Parsers/ForecastContainerYa.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#ForecastContainerYa#0;class#ForecastContainerYa#0" expanded="false" />
+                <element signature="e#903#912#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CityIdParserWUA.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Parsers/CityIdParserWUA.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
+              <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1555#1556#0" expanded="true" />
+                <element signature="e#1588#1589#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Weather.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Parsers/Weather.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1564">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#500#501#0" expanded="true" />
+                <element signature="e#540#541#0" expanded="true" />
+                <element signature="e#583#584#0" expanded="true" />
+                <element signature="e#618#619#0" expanded="true" />
+                <element signature="e#654#655#0" expanded="true" />
+                <element signature="e#686#687#0" expanded="true" />
+                <element signature="e#735#736#0" expanded="true" />
+                <element signature="e#782#783#0" expanded="true" />
+                <element signature="e#825#826#0" expanded="true" />
+                <element signature="e#866#867#0" expanded="true" />
+                <element signature="e#914#915#0" expanded="true" />
+                <element signature="e#959#960#0" expanded="true" />
+                <element signature="e#1016#1017#0" expanded="true" />
+                <element signature="e#1069#1070#0" expanded="true" />
+                <element signature="e#1101#1102#0" expanded="true" />
+                <element signature="e#1132#1133#0" expanded="true" />
+                <element signature="e#1168#1169#0" expanded="true" />
+                <element signature="e#1200#1201#0" expanded="true" />
+                <element signature="e#1227#1228#0" expanded="true" />
+                <element signature="e#1254#1255#0" expanded="true" />
+                <element signature="e#1287#1288#0" expanded="true" />
+                <element signature="e#1321#1322#0" expanded="true" />
+                <element signature="e#1351#1352#0" expanded="true" />
+                <element signature="e#1382#1383#0" expanded="true" />
+                <element signature="e#1421#1422#0" expanded="true" />
+                <element signature="e#1458#1459#0" expanded="true" />
+                <element signature="e#1491#1492#0" expanded="true" />
+                <element signature="e#1524#1525#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CountryCityParserYa.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Parsers/CountryCityParserYa.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1394">
+              <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#CountryCityParserYa#0;class#CountryCityParserYa#0" expanded="false" />
+                <element signature="e#938#939#0" expanded="true" />
+                <element signature="e#975#976#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,15 +219,26 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/src/parsers/CitiesParserYandex.java" />
+        <option value="$PROJECT_DIR$/src/Weather.java" />
+        <option value="$PROJECT_DIR$/src/parsers/ForecastContainerYa.java" />
+        <option value="$PROJECT_DIR$/src/parsers/CityIdParserWUA.java" />
+        <option value="$PROJECT_DIR$/src/parsers/CountryCityParserWUA.java" />
+        <option value="$PROJECT_DIR$/src/parsers/CountryIdParserWUA.java" />
+        <option value="$PROJECT_DIR$/src/parsers/ForecastContainerWUA.java" />
+        <option value="$PROJECT_DIR$/src/parsers/ForecastParserWUA.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/parsers/WeatherParserYandex.java" />
+        <option value="$PROJECT_DIR$/src/parsers/ForecastParserYa.java" />
+        <option value="$PROJECT_DIR$/src/parsers/CountryCityParserYa.java" />
+        <option value="$PROJECT_DIR$/src/Parsers/CityIdParserWUA.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="1" />
+    <option name="width" value="1364" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -165,6 +297,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="waggr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="waggr" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Parsers" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -459,41 +609,46 @@
       <workItem from="1401922406982" duration="23000" />
       <workItem from="1401922431020" duration="6212000" />
       <workItem from="1401955998963" duration="690000" />
-      <workItem from="1401956969474" duration="317000" />
+      <workItem from="1401956969474" duration="2944000" />
     </task>
+    <task id="LOCAL-00001" summary="new parsers structures">
+      <created>1401957550408</created>
+      <updated>1401957550408</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147036000" />
+    <option name="totallyTimeSpent" value="149663000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <frame x="1" y="0" width="1364" height="728" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40232313" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32946146" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3457189" sideWeight="0.29599407" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32946146" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14862682" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19791667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34635693" sideWeight="0.70416665" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28189912" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3457189" sideWeight="0.70400596" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -514,11 +669,13 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="&#10;" />
+    <MESSAGE value="new parsers structures" />
+    <option name="LAST_COMMIT_MESSAGE" value="new parsers structures" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="45" />
+      <option name="time" value="47" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -536,140 +693,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3581" max-vertical-offset="8245">
-          <caret line="434" column="36" selection-start-line="434" selection-start-column="36" selection-end-line="434" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#843#867#0" expanded="false" />
-            <element signature="class#Weather#0" expanded="false" />
-            <element signature="class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetWeekPredict#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetCurrent#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="class#CitiesParserYandex#0" expanded="false" />
-            <element signature="method#ParseXMLCities#0;class#CitiesParserYandex#0" expanded="false" />
-            <element signature="class#ForecastContainerYa#0" expanded="false" />
-            <element signature="method#ForecastContainerYa#0;class#ForecastContainerYa#0" expanded="false" />
-            <element signature="class#ForecastParserWUA#0" expanded="false" />
-            <element signature="class#ForecastContainerWUA#0" expanded="false" />
-            <element signature="class#CountryCityParserWUA#0" expanded="false" />
-            <element signature="class#CityIdParserWUA#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/glassfish4/jdk7/jre/lib/rt.jar!/java/lang/String.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3672" max-vertical-offset="3774">
-          <caret line="216" column="0" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/glassfish4/jdk7/jre/lib/rt.jar!/com/sun/org/apache/xerces/internal/dom/ParentNode.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="1581">
-          <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3615" max-vertical-offset="8517">
-          <caret line="434" column="36" selection-start-line="434" selection-start-column="36" selection-end-line="434" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#843#867#0" expanded="false" />
-            <element signature="class#Weather#0" expanded="false" />
-            <element signature="class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetWeekPredict#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetCurrent#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="class#CitiesParserYandex#0" expanded="false" />
-            <element signature="method#ParseXMLCities#0;class#CitiesParserYandex#0" expanded="false" />
-            <element signature="class#ForecastContainerYa#0" expanded="false" />
-            <element signature="method#ForecastContainerYa#0;class#ForecastContainerYa#0" expanded="false" />
-            <element signature="class#ForecastParserWUA#0" expanded="false" />
-            <element signature="class#ForecastContainerWUA#0" expanded="false" />
-            <element signature="class#CountryCityParserWUA#0" expanded="false" />
-            <element signature="class#CityIdParserWUA#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/glassfish4/jdk7/jre/lib/rt.jar!/java/lang/String.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3774">
-          <caret line="216" column="0" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/glassfish4/jdk7/jre/lib/rt.jar!/com/sun/org/apache/xerces/internal/dom/ParentNode.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="1581">
-          <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="931" max-vertical-offset="5865">
-          <caret line="61" column="68" selection-start-line="61" selection-start-column="68" selection-end-line="61" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#843#867#0" expanded="false" />
-            <element signature="class#Weather#0" expanded="false" />
-            <element signature="class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetWeekPredict#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetCurrent#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="class#CitiesParserYandex#0" expanded="false" />
-            <element signature="method#ParseXMLCities#0;class#CitiesParserYandex#0" expanded="false" />
-            <element signature="class#ForecastContainerYa#0" expanded="false" />
-            <element signature="method#ForecastContainerYa#0;class#ForecastContainerYa#0" expanded="false" />
-            <element signature="class#ForecastParserWUA#0" expanded="false" />
-            <element signature="class#ForecastContainerWUA#0" expanded="false" />
-            <element signature="class#CountryCityParserWUA#0" expanded="false" />
-            <element signature="class#CityIdParserWUA#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/glassfish4/jdk7/jre/lib/rt.jar!/java/lang/String.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3672" max-vertical-offset="3774">
-          <caret line="216" column="0" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/glassfish4/jdk7/jre/lib/rt.jar!/com/sun/org/apache/xerces/internal/dom/ParentNode.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="1581">
-          <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="5695" max-vertical-offset="7514">
           <caret line="545" column="0" selection-start-line="545" selection-start-column="0" selection-end-line="545" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#843#867#0" expanded="false" />
-            <element signature="class#Weather#0" expanded="false" />
-            <element signature="class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetWeekPredict#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetCurrent#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="class#CitiesParserYandex#0" expanded="false" />
-            <element signature="method#ParseXMLCities#0;class#CitiesParserYandex#0" expanded="false" />
-            <element signature="class#ForecastContainerYa#0" expanded="false" />
-            <element signature="method#ForecastContainerYa#0;class#ForecastContainerYa#0" expanded="false" />
-            <element signature="class#ForecastParserWUA#0" expanded="false" />
-            <element signature="class#ForecastContainerWUA#0" expanded="false" />
-            <element signature="class#CountryCityParserWUA#0" expanded="false" />
-            <element signature="class#CityIdParserWUA#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -696,19 +723,6 @@
           <caret line="428" column="45" selection-start-line="428" selection-start-column="45" selection-end-line="428" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#843#867#0" expanded="false" />
-            <element signature="class#Weather#0" expanded="false" />
-            <element signature="class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetWeekPredict#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetCurrent#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="class#CitiesParserYandex#0" expanded="false" />
-            <element signature="method#ParseXMLCities#0;class#CitiesParserYandex#0" expanded="false" />
-            <element signature="class#ForecastContainerYa#0" expanded="false" />
-            <element signature="method#ForecastContainerYa#0;class#ForecastContainerYa#0" expanded="false" />
-            <element signature="class#ForecastParserWUA#0" expanded="false" />
-            <element signature="class#ForecastContainerWUA#0" expanded="false" />
-            <element signature="class#CountryCityParserWUA#0" expanded="false" />
-            <element signature="class#CityIdParserWUA#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -735,19 +749,6 @@
           <caret line="363" column="22" selection-start-line="363" selection-start-column="22" selection-end-line="363" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#843#867#0" expanded="false" />
-            <element signature="class#Weather#0" expanded="false" />
-            <element signature="class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetWeekPredict#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetCurrent#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="class#CitiesParserYandex#0" expanded="false" />
-            <element signature="method#ParseXMLCities#0;class#CitiesParserYandex#0" expanded="false" />
-            <element signature="class#ForecastContainerYa#0" expanded="false" />
-            <element signature="method#ForecastContainerYa#0;class#ForecastContainerYa#0" expanded="false" />
-            <element signature="class#ForecastParserWUA#0" expanded="false" />
-            <element signature="class#ForecastContainerWUA#0" expanded="false" />
-            <element signature="class#CountryCityParserWUA#0" expanded="false" />
-            <element signature="class#CityIdParserWUA#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -781,19 +782,6 @@
           <caret line="348" column="1" selection-start-line="348" selection-start-column="1" selection-end-line="348" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#843#867#0" expanded="false" />
-            <element signature="class#Weather#0" expanded="false" />
-            <element signature="class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetWeekPredict#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetCurrent#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="class#CitiesParserYandex#0" expanded="false" />
-            <element signature="method#ParseXMLCities#0;class#CitiesParserYandex#0" expanded="false" />
-            <element signature="class#ForecastContainerYa#0" expanded="false" />
-            <element signature="method#ForecastContainerYa#0;class#ForecastContainerYa#0" expanded="false" />
-            <element signature="class#ForecastParserWUA#0" expanded="false" />
-            <element signature="class#ForecastContainerWUA#0" expanded="false" />
-            <element signature="class#CountryCityParserWUA#0" expanded="false" />
-            <element signature="class#CityIdParserWUA#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -827,19 +815,6 @@
           <caret line="30" column="72" selection-start-line="30" selection-start-column="72" selection-end-line="30" selection-end-column="72" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#843#867#0" expanded="false" />
-            <element signature="class#Weather#0" expanded="false" />
-            <element signature="class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetWeekPredict#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetCurrent#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="class#CitiesParserYandex#0" expanded="false" />
-            <element signature="method#ParseXMLCities#0;class#CitiesParserYandex#0" expanded="false" />
-            <element signature="class#ForecastContainerYa#0" expanded="false" />
-            <element signature="method#ForecastContainerYa#0;class#ForecastContainerYa#0" expanded="false" />
-            <element signature="class#ForecastParserWUA#0" expanded="false" />
-            <element signature="class#ForecastContainerWUA#0" expanded="false" />
-            <element signature="class#CountryCityParserWUA#0" expanded="false" />
-            <element signature="class#CityIdParserWUA#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -873,19 +848,6 @@
           <caret line="30" column="72" selection-start-line="30" selection-start-column="72" selection-end-line="30" selection-end-column="72" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#843#867#0" expanded="false" />
-            <element signature="class#Weather#0" expanded="false" />
-            <element signature="class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetWeekPredict#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetCurrent#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="class#CitiesParserYandex#0" expanded="false" />
-            <element signature="method#ParseXMLCities#0;class#CitiesParserYandex#0" expanded="false" />
-            <element signature="class#ForecastContainerYa#0" expanded="false" />
-            <element signature="method#ForecastContainerYa#0;class#ForecastContainerYa#0" expanded="false" />
-            <element signature="class#ForecastParserWUA#0" expanded="false" />
-            <element signature="class#ForecastContainerWUA#0" expanded="false" />
-            <element signature="class#CountryCityParserWUA#0" expanded="false" />
-            <element signature="class#CityIdParserWUA#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -919,19 +881,6 @@
           <caret line="67" column="26" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#843#867#0" expanded="false" />
-            <element signature="class#Weather#0" expanded="false" />
-            <element signature="class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetWeekPredict#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetCurrent#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="class#CitiesParserYandex#0" expanded="false" />
-            <element signature="method#ParseXMLCities#0;class#CitiesParserYandex#0" expanded="false" />
-            <element signature="class#ForecastContainerYa#0" expanded="false" />
-            <element signature="method#ForecastContainerYa#0;class#ForecastContainerYa#0" expanded="false" />
-            <element signature="class#ForecastParserWUA#0" expanded="false" />
-            <element signature="class#ForecastContainerWUA#0" expanded="false" />
-            <element signature="class#CountryCityParserWUA#0" expanded="false" />
-            <element signature="class#CityIdParserWUA#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -958,19 +907,6 @@
           <caret line="83" column="18" selection-start-line="83" selection-start-column="18" selection-end-line="83" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#843#867#0" expanded="false" />
-            <element signature="class#Weather#0" expanded="false" />
-            <element signature="class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetWeekPredict#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetCurrent#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="class#CitiesParserYandex#0" expanded="false" />
-            <element signature="method#ParseXMLCities#0;class#CitiesParserYandex#0" expanded="false" />
-            <element signature="class#ForecastContainerYa#0" expanded="false" />
-            <element signature="method#ForecastContainerYa#0;class#ForecastContainerYa#0" expanded="false" />
-            <element signature="class#ForecastParserWUA#0" expanded="false" />
-            <element signature="class#ForecastContainerWUA#0" expanded="false" />
-            <element signature="class#CountryCityParserWUA#0" expanded="false" />
-            <element signature="class#CityIdParserWUA#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -997,19 +933,6 @@
           <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#843#867#0" expanded="false" />
-            <element signature="class#Weather#0" expanded="false" />
-            <element signature="class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetWeekPredict#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetCurrent#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="class#CitiesParserYandex#0" expanded="false" />
-            <element signature="method#ParseXMLCities#0;class#CitiesParserYandex#0" expanded="false" />
-            <element signature="class#ForecastContainerYa#0" expanded="false" />
-            <element signature="method#ForecastContainerYa#0;class#ForecastContainerYa#0" expanded="false" />
-            <element signature="class#ForecastParserWUA#0" expanded="false" />
-            <element signature="class#ForecastContainerWUA#0" expanded="false" />
-            <element signature="class#CountryCityParserWUA#0" expanded="false" />
-            <element signature="class#CityIdParserWUA#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1028,19 +951,6 @@
           <caret line="29" column="60" selection-start-line="29" selection-start-column="60" selection-end-line="29" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#843#867#0" expanded="false" />
-            <element signature="class#Weather#0" expanded="false" />
-            <element signature="class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetWeekPredict#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetCurrent#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="class#CitiesParserYandex#0" expanded="false" />
-            <element signature="method#ParseXMLCities#0;class#CitiesParserYandex#0" expanded="false" />
-            <element signature="class#ForecastContainerYa#0" expanded="false" />
-            <element signature="method#ForecastContainerYa#0;class#ForecastContainerYa#0" expanded="false" />
-            <element signature="class#ForecastParserWUA#0" expanded="false" />
-            <element signature="class#ForecastContainerWUA#0" expanded="false" />
-            <element signature="class#CountryCityParserWUA#0" expanded="false" />
-            <element signature="class#CityIdParserWUA#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1059,19 +969,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#843#867#0" expanded="false" />
-            <element signature="class#Weather#0" expanded="false" />
-            <element signature="class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetWeekPredict#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetCurrent#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="class#CitiesParserYandex#0" expanded="false" />
-            <element signature="method#ParseXMLCities#0;class#CitiesParserYandex#0" expanded="false" />
-            <element signature="class#ForecastContainerYa#0" expanded="false" />
-            <element signature="method#ForecastContainerYa#0;class#ForecastContainerYa#0" expanded="false" />
-            <element signature="class#ForecastParserWUA#0" expanded="false" />
-            <element signature="class#ForecastContainerWUA#0" expanded="false" />
-            <element signature="class#CountryCityParserWUA#0" expanded="false" />
-            <element signature="class#CityIdParserWUA#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1082,19 +979,6 @@
           <caret line="102" column="64" selection-start-line="102" selection-start-column="64" selection-end-line="102" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#843#867#0" expanded="false" />
-            <element signature="class#Weather#0" expanded="false" />
-            <element signature="class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetWeekPredict#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetCurrent#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="class#CitiesParserYandex#0" expanded="false" />
-            <element signature="method#ParseXMLCities#0;class#CitiesParserYandex#0" expanded="false" />
-            <element signature="class#ForecastContainerYa#0" expanded="false" />
-            <element signature="method#ForecastContainerYa#0;class#ForecastContainerYa#0" expanded="false" />
-            <element signature="class#ForecastParserWUA#0" expanded="false" />
-            <element signature="class#ForecastContainerWUA#0" expanded="false" />
-            <element signature="class#CountryCityParserWUA#0" expanded="false" />
-            <element signature="class#CityIdParserWUA#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1143,25 +1027,149 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/Parsers/ForecastContainerYa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.08374384" vertical-offset="629" max-vertical-offset="2006">
-          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="244" max-vertical-offset="612">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#843#867#0" expanded="false" />
-            <element signature="class#Weather#0" expanded="false" />
-            <element signature="class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetWeekPredict#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="method#GetCurrent#0;class#WeatherParserYandex#0" expanded="false" />
-            <element signature="class#CitiesParserYandex#0" expanded="false" />
-            <element signature="method#ParseXMLCities#0;class#CitiesParserYandex#0" expanded="false" />
-            <element signature="class#ForecastContainerYa#0" expanded="false" />
             <element signature="method#ForecastContainerYa#0;class#ForecastContainerYa#0" expanded="false" />
-            <element signature="class#ForecastParserWUA#0" expanded="false" />
-            <element signature="class#ForecastContainerWUA#0" expanded="false" />
-            <element signature="class#CountryCityParserWUA#0" expanded="false" />
-            <element signature="class#CityIdParserWUA#0" expanded="false" />
+            <element signature="e#903#912#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Parsers/ForecastParserYa.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="731">
+          <caret line="20" column="7" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#605#614#0" expanded="true" />
+            <element signature="method#GetWeekPredict#0;class#ForecastParserYa#0" expanded="false" />
+            <element signature="e#800#809#0" expanded="true" />
+            <element signature="method#GetCurrent#0;class#ForecastParserYa#0" expanded="false" />
+            <element signature="e#7061#7070#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Parsers/Weather.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1564">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#500#501#0" expanded="true" />
+            <element signature="e#540#541#0" expanded="true" />
+            <element signature="e#583#584#0" expanded="true" />
+            <element signature="e#618#619#0" expanded="true" />
+            <element signature="e#654#655#0" expanded="true" />
+            <element signature="e#686#687#0" expanded="true" />
+            <element signature="e#735#736#0" expanded="true" />
+            <element signature="e#782#783#0" expanded="true" />
+            <element signature="e#825#826#0" expanded="true" />
+            <element signature="e#866#867#0" expanded="true" />
+            <element signature="e#914#915#0" expanded="true" />
+            <element signature="e#959#960#0" expanded="true" />
+            <element signature="e#1016#1017#0" expanded="true" />
+            <element signature="e#1069#1070#0" expanded="true" />
+            <element signature="e#1101#1102#0" expanded="true" />
+            <element signature="e#1132#1133#0" expanded="true" />
+            <element signature="e#1168#1169#0" expanded="true" />
+            <element signature="e#1200#1201#0" expanded="true" />
+            <element signature="e#1227#1228#0" expanded="true" />
+            <element signature="e#1254#1255#0" expanded="true" />
+            <element signature="e#1287#1288#0" expanded="true" />
+            <element signature="e#1321#1322#0" expanded="true" />
+            <element signature="e#1351#1352#0" expanded="true" />
+            <element signature="e#1382#1383#0" expanded="true" />
+            <element signature="e#1421#1422#0" expanded="true" />
+            <element signature="e#1458#1459#0" expanded="true" />
+            <element signature="e#1491#1492#0" expanded="true" />
+            <element signature="e#1524#1525#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Parsers/CountryCityParserYa.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1394">
+          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#CountryCityParserYa#0;class#CountryCityParserYa#0" expanded="false" />
+            <element signature="e#938#939#0" expanded="true" />
+            <element signature="e#975#976#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Parsers/CityIdParserWUA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935">
+          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1555#1556#0" expanded="true" />
+            <element signature="e#1588#1589#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="1717">
+          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Parsers/CountryCityParserWUA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
+          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+          <folding>
+            <element signature="e#451#452#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+            <element signature="e#1030#1031#0" expanded="true" />
+            <element signature="e#1065#1066#0" expanded="true" />
+            <element signature="e#1141#1142#0" expanded="true" />
+            <element signature="e#1178#1179#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Parsers/CountryIdParserWUA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1445">
+          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Parsers/ForecastContainerWUA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1037">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Parsers/ForecastParserWUA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.5810056" vertical-offset="599" max-vertical-offset="986">
+          <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#645#654#0" expanded="true" />
+            <element signature="method#ForecastParserWUA#0;class#ForecastParserWUA#0" expanded="false" />
           </folding>
         </state>
       </provider>
