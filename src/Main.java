@@ -8,6 +8,7 @@ import java.util.*;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ListMultimap;
 import com.sun.org.apache.xerces.internal.parsers.DOMParser;
+import javafx.util.Pair;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.Element;
@@ -21,6 +22,11 @@ public class Main {
     private static List<String> foundCountryCities;
 
     public static void main(String[] args) throws ParseException {
+
+        ForecastContainerYa FCY = new ForecastContainerYa();
+        FCY.GetCityWeatherList();
+        System.out.println(FCY.GetCityWeatherList().toString());
+
 //        while (true) {
 //            CitiesParserYandex CParserY = new CitiesParserYandex("http://weather.yandex.ru/static/cities.xml");
 //            ListMultimap<String, String> CountryCityMap = CParserY.GetCountryCityMap();
@@ -62,45 +68,35 @@ public class Main {
 //                System.out.println(printLst.get(i).GetToString());
 //            }
 //        }
+
+
+
+
         //CountryCityParserWUA c = new CountryCityParserWUA();
        // c.GetCitiesMap();
 
-        ForecastContainerWUA FCW = new ForecastContainerWUA("Ирландия,Австралия");
-        HashMap<String,List<Weather>> CWL= FCW.GetCityWeatherList();
-        HashMap<String,String> CIN = FCW.GetCountryIdMap();
-        HashMap<String,HashMap<String,String>> CCN = FCW.GetCountyCitiesMap();
-        for(String CountryId : CIN.keySet()){
-            System.out.println("Страна: " + CIN.get(CountryId));
-            HashMap<String,String> tempCitiesNames = CCN.get(CountryId);
-            for(String tempCityId : tempCitiesNames.keySet()){
-                List<Weather> tempWeatherList = CWL.get(tempCityId);
-                System.out.println("Город: "+ tempCitiesNames.get(tempCityId));
-                for(int i = 0; i < tempWeatherList.size(); i++){
-                    System.out.println(tempWeatherList.get(i).GetToString());
-                }
-            }
-        }
+//        ForecastContainerWUA FCW = new ForecastContainerWUA("Ирландия,Австралия");
+//        HashMap<String,List<Weather>> CWL= FCW.GetCityWeatherList();
+//        HashMap<String,String> CIN = FCW.GetCountryIdMap();
+//        HashMap<String,HashMap<String,String>> CCN = FCW.GetCountyCitiesMap();
+//        for(String CountryId : CIN.keySet()){
+//            System.out.println("Страна: " + CIN.get(CountryId));
+//            HashMap<String,String> tempCitiesNames = CCN.get(CountryId);
+//            for(String tempCityId : tempCitiesNames.keySet()){
+//                List<Weather> tempWeatherList = CWL.get(tempCityId);
+//                System.out.println("Город: "+ tempCitiesNames.get(tempCityId));
+//                for(int i = 0; i < tempWeatherList.size(); i++){
+//                    System.out.println(tempWeatherList.get(i).GetToString());
+//                }
+//            }
+//        }
 
 
     }
 
-
-
-    private static HashMap<String,String> CountryCityDivide(List<String> foundCountryCities){
-        String s1,s2;
-        HashMap <String,String> CityIdMap = new HashMap<>();
-        for (int i=0; i<foundCountryCities.size();i++){
-            String s = foundCountryCities.get(i);
-            s1 = s.substring(0,s.indexOf('_'));
-            s2 = s.substring(s.indexOf('_')+1);
-            CityIdMap.put(s1,s2);
-
-        }
-
-        return  CityIdMap;
-    }
 
 }
+
 class Weather{
     private Date date = new Date();
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
@@ -181,7 +177,10 @@ class Weather{
 }
 
 class WeatherParserYandex {
-    public List<Weather> GetWeekPredict(String url) {
+    private Weather WC = new Weather();
+    private List<Weather> WeatherList = new ArrayList<Weather>();
+
+    private List<Weather> GetWeekPredict(String url) {
         //String url = "http://export.yandex.ru/weather-ng/forecasts/26063.xml";
         List<Weather> resList = new ArrayList<Weather>();
         try {
@@ -252,10 +251,8 @@ class WeatherParserYandex {
         }
         return resList;
     }
-
-    public List<Weather> GetCurrent(String url) {
-        List<Weather> resList = new ArrayList<Weather>();
-        try {
+    private void GetCurrent(String url) {
+         try {
             URL UrlToParse = new URL(url);
             DOMParser p = new DOMParser();
             p.parse(new InputSource(UrlToParse.openStream()));
@@ -295,7 +292,7 @@ class WeatherParserYandex {
                     }
                 }
                 weatherTmp.SetIsPredict(false);
-                resList.add(weatherTmp);
+                WC = weatherTmp;
                 weatherTmp = null;
                 node1 = null;
                 node1list = null;
@@ -311,17 +308,32 @@ class WeatherParserYandex {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        return resList;
+
     }
+    public  WeatherParserYandex(String url){
+        GetCurrent(url);
+        WeatherList.add(WC);
+        Collection<Weather> collection = new ArrayList<Weather>(GetWeekPredict(url));
+        WeatherList.addAll(collection);
+        collection = null;
+
+    }
+    public List<Weather> GetWeatherList(){
+        return WeatherList;
+    }
+
 }
 
 
 class CitiesParserYandex {
 
     private ListMultimap<String, String> CountryCityMap = ArrayListMultimap.create();
-
+    private HashMap<String,String> CountryIdMap = new HashMap<>();
+    private int counter = 0;
     public CitiesParserYandex(String url) {
         ParseXMLCities(url);
+
+        System.out.println("Количество городов: " + counter);
     }
 
     public ListMultimap<String, String> GetCountryCityMap() {
@@ -338,24 +350,31 @@ class CitiesParserYandex {
             NodeList nodeLst = doc.getElementsByTagName("country");
             for (int i = 0; i < nodeLst.getLength(); i++) {
                 Node nNode = nodeLst.item(i);
-                Element eElement = (Element) nNode;
-                NodeList CitiesLst = eElement.getElementsByTagName("city");
-                for (int x = 0; x < CitiesLst.getLength(); x++) {
-                    Element CElement = (Element) CitiesLst.item(x);
+                if (nNode.getNodeType()==Node.ELEMENT_NODE) {
+                    Element eElement = (Element) nNode;
+                    NodeList CitiesLst = eElement.getElementsByTagName("city");
+                    for (int x = 0; x < CitiesLst.getLength(); x++) {
+                        Element CElement = (Element) CitiesLst.item(x);
 
-                    switch (eElement.getAttribute("name").toString()) {
-                        case "США":
-                            if (CitiesLst.item(x).getTextContent().indexOf(",") == -1)
+                        switch (eElement.getAttribute("name").toString()) {
+                            case "США":
+                                if (CitiesLst.item(x).getTextContent().indexOf(",") == -1) {
+                                    CountryCityMap.put(eElement.getAttribute("name"), CitiesLst.item(x).getTextContent() + "_" + CElement.getAttribute("id"));
+                                    counter++;
+                                }
+                                else {
+                                    CountryCityMap.put(eElement.getAttribute("name"), CitiesLst.item(x).getTextContent().substring(0, CitiesLst.item(x).getTextContent().indexOf(",")) + "_" + CElement.getAttribute("id"));
+                                    counter++;
+                                }
+                                break;
+
+                            default:
                                 CountryCityMap.put(eElement.getAttribute("name"), CitiesLst.item(x).getTextContent() + "_" + CElement.getAttribute("id"));
-                            else
-                                CountryCityMap.put(eElement.getAttribute("name"), CitiesLst.item(x).getTextContent().substring(0, CitiesLst.item(x).getTextContent().indexOf(",")) + "_" + CElement.getAttribute("id"));
-                            break;
+                                counter++;
 
-                        default:
-                            CountryCityMap.put(eElement.getAttribute("name"), CitiesLst.item(x).getTextContent() + "_" + CElement.getAttribute("id"));
+                        }
 
                     }
-
                 }
             }
         } catch (MalformedURLException e) {
@@ -367,7 +386,40 @@ class CitiesParserYandex {
         }
     }
 }
+class ForecastContainerYa{
+    private CitiesParserYandex CP = new CitiesParserYandex("http://weather.yandex.ru/static/cities.xml");
 
+    private ListMultimap<String,String> CountryCityMap = ArrayListMultimap.create();
+    private HashMap<String,List<Weather>> CityWeatherList = new HashMap<>();
+
+    ForecastContainerYa() {
+        CountryCityMap = CP.GetCountryCityMap();
+        for (String CountryName : CountryCityMap.keySet()) {
+            List<String> CityNames = CountryCityMap.get(CountryName);
+            for (int i = 0; i < CityNames.size(); i++) {
+                List<Weather> WeatherList = new ArrayList<Weather>();
+                Pair<String, String> City = CountryCityDivide(CityNames.get(i));
+                WeatherParserYandex WP = new WeatherParserYandex("http://export.yandex.ru/weather-ng/forecasts/" + City.getKey() + ".xml");
+                WeatherList = WP.GetWeatherList();
+                CityWeatherList.put(City.getKey(),WeatherList);
+                System.out.println(City.getKey()+ "  "+ WeatherList.size());
+            }
+
+        }
+    }
+
+    public HashMap<String,List<Weather>> GetCityWeatherList(){
+        return CityWeatherList;
+    }
+
+    private static Pair <String,String> CountryCityDivide(String Cityname){
+        String s1,s2;
+        s1 = Cityname.substring(0,Cityname.indexOf('_'));
+        s2 = Cityname.substring(Cityname.indexOf('_')+1);
+        Pair<String,String> p = new Pair<>(s2,s1);
+        return  p;
+    }
+}
 class ForecastParserWUA{
 
     private List<Weather> WeatherList = new ArrayList<Weather>();
@@ -576,7 +628,7 @@ class CountryCityParserWUA {
         CountryIDMap = CountryIDParser.GetCountryId();
 
         for (String s: CountryIDMap.keySet()) {
-            CityIdParserUA CityIdParser = new CityIdParserUA("http://xml.weather.ua/1.2/city/?country="+s); //создаем парсеры городов
+            CityIdParserWUA CityIdParser = new CityIdParserWUA("http://xml.weather.ua/1.2/city/?country="+s); //создаем парсеры городов
             HashMap<String, String> put = CityIdParser.GetCitiesId();
             items = items+put.size();
             CountryCityMap.put(s, put);//создаем карту <ID СТРАНЫ, MAP <ID города, ИМЯ города>>
@@ -609,12 +661,12 @@ class CountryCityParserWUA {
 
 }
 
-class CityIdParserUA{
+class CityIdParserWUA {
 
     private HashMap<String,String> CityIdName = new HashMap<>();
     private String url;
 
-    public CityIdParserUA(String url){
+    public CityIdParserWUA(String url){
         this.url = url;
         try {
             URL UrlToParse = new URL(url);
