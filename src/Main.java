@@ -10,9 +10,18 @@ public class Main {
     public static void main(String[] args) throws ParseException {
 
         ForecastContainerYa FCY = new ForecastContainerYa();
-        FCY.GetCityWeatherList();
-        
-        System.out.println(FCY.GetCityWeatherList().toString());
+        try{
+            for (Integer tempCityId:FCY.GetCityWeatherList().keySet()){
+                System.out.println("Погода в городе "+FCY.GetCityIdMap().get(tempCityId)+":");
+                for (int i = 0;i<FCY.GetCityWeatherList().get(tempCityId).size();i++){
+                    System.out.println(FCY.GetCityWeatherList().get(tempCityId).get(i).GetToString());
+                }
+            }
+            System.out.println(FCY.GetCityWeatherList().toString());
+
+        }catch(NullPointerException e){
+
+        }
 
         //CountryCityParserWUA c = new CountryCityParserWUA();
        // c.GetCitiesMap();

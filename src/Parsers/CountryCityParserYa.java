@@ -3,7 +3,6 @@ package Parsers;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ListMultimap;
 import com.sun.org.apache.xerces.internal.parsers.DOMParser;
-import javafx.util.Pair;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -20,8 +19,9 @@ import java.util.HashMap;
  * Created by yuraf_000 on 05.06.2014.
  */
 public class CountryCityParserYa {
-    private ListMultimap<Integer, Pair<String,String>> CountryCityMap = ArrayListMultimap.create();
+    private ListMultimap<Integer, Integer> CountryCityMap = ArrayListMultimap.create();
     private HashMap<Integer,String> CountryIdMap = new HashMap<>();
+    private HashMap<Integer,String> CityIdMap = new HashMap<>();
     private int counter = 0;
     public CountryCityParserYa(String url) {
         ParseXMLCities(url);
@@ -29,9 +29,10 @@ public class CountryCityParserYa {
         System.out.println("Количество городов: " + counter);
     }
 
-    public ListMultimap<Integer, Pair<String,String>> GetCountryCityMap() {
+    public ListMultimap<Integer, Integer> GetCountryCityMap() {
         return CountryCityMap;
     }
+    public HashMap<Integer,String> GetCityIdMap() { return CityIdMap; }
     public HashMap<Integer,String> GetCountryIdMap (){
         return CountryIdMap;
     }
@@ -53,21 +54,24 @@ public class CountryCityParserYa {
                     for (int x = 0; x < CitiesLst.getLength(); x++) {
                         Element CElement = (Element) CitiesLst.item(x);
                         //CountryIdMap.put()
-
+                        int tempCityId = Integer.parseInt(CElement.getAttribute("id"));
                         switch (eElement.getAttribute("name").toString()) {
                             case "США":
                                 if (CitiesLst.item(x).getTextContent().indexOf(",") == -1) {
-                                    CountryCityMap.put(CountryId,  new Pair<>(CElement.getAttribute("id"),CitiesLst.item(x).getTextContent()));
+                                    CountryCityMap.put(CountryId, tempCityId);
+                                    CityIdMap.put(tempCityId,CitiesLst.item(x).getTextContent());
                                     counter++;
                                 }
                                 else {
-                                    CountryCityMap.put(CountryId, new Pair<>(CElement.getAttribute("id"),CitiesLst.item(x).getTextContent().substring(0, CitiesLst.item(x).getTextContent().indexOf(","))));
+                                    CountryCityMap.put(CountryId, tempCityId );
+                                    CityIdMap.put(tempCityId,CitiesLst.item(x).getTextContent().substring(0, CitiesLst.item(x).getTextContent().indexOf(",")));
                                     counter++;
                                 }
                                 break;
 
                             default:
-                                CountryCityMap.put(CountryId, new Pair<>(CElement.getAttribute("id"),CitiesLst.item(x).getTextContent()));
+                                CountryCityMap.put(CountryId, tempCityId);
+                                CityIdMap.put(tempCityId,CitiesLst.item(x).getTextContent());
                                 counter++;
 
                         }

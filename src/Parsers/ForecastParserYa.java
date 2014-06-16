@@ -83,12 +83,18 @@ public class ForecastParserYa {
             nodeLst = null;
 
         } catch (MalformedURLException e) {
+            //System.out.println("MailformedURL");
             e.printStackTrace();
         } catch (IOException e) {
+            //System.out.println("IOException");
             e.printStackTrace();
+            //return null;
         } catch (SAXException e) {
+            //System.out.println("SAX");
             e.printStackTrace();
+
         } catch (ParseException e) {
+            //System.out.println("Parse");
             e.printStackTrace();
         }
         return resList;
@@ -144,7 +150,9 @@ public class ForecastParserYa {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
+            WeatherList = null;
             e.printStackTrace();
+            //WeatherList = null;
         } catch (SAXException e) {
             e.printStackTrace();
         } catch (ParseException e) {
@@ -154,11 +162,11 @@ public class ForecastParserYa {
     }
     public ForecastParserYa(String url){
         GetCurrent(url);
-        WeatherList.add(WC);
-        Collection<Weather> collection = new ArrayList<Weather>(GetWeekPredict(url));
-        WeatherList.addAll(collection);
-        collection = null;
-
+        if (WeatherList!=null){
+            WeatherList.add(WC);
+            Collection<Weather> collection = new ArrayList<Weather>(GetWeekPredict(url));
+            WeatherList.addAll(collection);
+        }
     }
     public List<Weather> GetWeatherList(){
         return WeatherList;
