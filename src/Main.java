@@ -1,3 +1,4 @@
+import Parsers.ForecastContainerWUA;
 import Parsers.ForecastContainerYa;
 
 import java.text.ParseException;
@@ -9,7 +10,7 @@ public class Main {
 
     public static void main(String[] args) throws ParseException {
 
-        ForecastContainerYa FCY = new ForecastContainerYa();
+        ForecastContainerYa FCY = new ForecastContainerYa("Ирландия");
         try{
             for (Integer tempCityId:FCY.GetCityWeatherList().keySet()){
                 System.out.println("Погода в городе "+FCY.GetCityIdMap().get(tempCityId)+":");
@@ -17,31 +18,26 @@ public class Main {
                     System.out.println(FCY.GetCityWeatherList().get(tempCityId).get(i).GetToString());
                 }
             }
-            System.out.println(FCY.GetCityWeatherList().toString());
+            //System.out.println(FCY.GetCityWeatherList().toString());
 
         }catch(NullPointerException e){
 
         }
 
-        //CountryCityParserWUA c = new CountryCityParserWUA();
-       // c.GetCitiesMap();
+        ForecastContainerWUA FCWUA = new ForecastContainerWUA("Ирландия");
 
-//        ForecastContainerWUA FCW = new ForecastContainerWUA("Ирландия,Австралия");
-//        HashMap<String,List<Parsers.Weather>> CWL= FCW.GetCityWeatherList();
-//        HashMap<String,String> CIN = FCW.GetCountryIdMap();
-//        HashMap<String,HashMap<String,String>> CCN = FCW.GetCountyCitiesMap();
-//        for(String CountryId : CIN.keySet()){
-//            System.out.println("Страна: " + CIN.get(CountryId));
-//            HashMap<String,String> tempCitiesNames = CCN.get(CountryId);
-//            for(String tempCityId : tempCitiesNames.keySet()){
-//                List<Parsers.Weather> tempWeatherList = CWL.get(tempCityId);
-//                System.out.println("Город: "+ tempCitiesNames.get(tempCityId));
-//                for(int i = 0; i < tempWeatherList.size(); i++){
-//                    System.out.println(tempWeatherList.get(i).GetToString());
-//                }
-//            }
-//        }
+        try{
+            for (Integer tempCityId:FCWUA.GetCityWeatherList().keySet()){
+                System.out.println("Погода в городе "+FCWUA.GetCityNames().get(tempCityId)+":");
+                for (int i = 0;i<FCWUA.GetCityWeatherList().get(tempCityId).size();i++){
+                    System.out.println(FCWUA.GetCityWeatherList().get(tempCityId).get(i).GetToString());
+                }
+            }
+            System.out.println(FCWUA.GetCityWeatherList().toString());
 
+        }catch(NullPointerException e){
+
+        }
 
     }
 

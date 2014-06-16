@@ -6,11 +6,15 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1e50eb4-8d33-4174-983a-091fbaf79c77" name="Default" comment="Refactor to produce more usable code">
+    <list default="true" id="f1e50eb4-8d33-4174-983a-091fbaf79c77" name="Default" comment="pre final refactor yandex parsers">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Parsers/CityIdParserWUA.java" afterPath="$PROJECT_DIR$/src/Parsers/CityIdParserWUA.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Parsers/CountryCityParserWUA.java" afterPath="$PROJECT_DIR$/src/Parsers/CountryCityParserWUA.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Parsers/CountryCityParserYa.java" afterPath="$PROJECT_DIR$/src/Parsers/CountryCityParserYa.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Parsers/CountryIdParserWUA.java" afterPath="$PROJECT_DIR$/src/Parsers/CountryIdParserWUA.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Parsers/ForecastContainerWUA.java" afterPath="$PROJECT_DIR$/src/Parsers/ForecastContainerWUA.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Parsers/ForecastContainerYa.java" afterPath="$PROJECT_DIR$/src/Parsers/ForecastContainerYa.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Parsers/ForecastParserYa.java" afterPath="$PROJECT_DIR$/src/Parsers/ForecastParserYa.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Parsers/Weather.java" afterPath="$PROJECT_DIR$/src/Parsers/Weather.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="untitled.iws" />
@@ -37,12 +41,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1122">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.6591837" vertical-offset="204" max-vertical-offset="1054">
+              <caret line="31" column="64" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -50,12 +56,12 @@
       <file leaf-file-name="ForecastParserYa.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Parsers/ForecastParserYa.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-              <caret line="101" column="40" selection-start-line="101" selection-start-column="40" selection-end-line="101" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1836">
+              <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
               <folding>
-                <element signature="method#GetWeekPredict#0;class#ForecastParserYa#0" expanded="false" />
                 <element signature="method#GetCurrent#0;class#ForecastParserYa#0" expanded="false" />
-                <element signature="method#ForecastParserYa#0;class#ForecastParserYa#0" expanded="false" />
+                <element signature="e#7512#7513#0" expanded="true" />
+                <element signature="e#7546#7547#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -64,8 +70,8 @@
       <file leaf-file-name="ForecastParserWUA.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Parsers/ForecastParserWUA.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="2567">
-              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="2567">
+              <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -74,11 +80,17 @@
       <file leaf-file-name="ForecastContainerWUA.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Parsers/ForecastContainerWUA.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1479">
+              <caret line="66" column="62" selection-start-line="66" selection-start-column="62" selection-end-line="66" selection-end-column="139" />
               <folding>
-                <element signature="method#ForecastContainerWUA#0;class#ForecastContainerWUA#0" expanded="false" />
-                <element signature="method#ForecastContainerWUA#1;class#ForecastContainerWUA#0" expanded="false" />
+                <element signature="e#682#683#0" expanded="true" />
+                <element signature="e#720#721#0" expanded="true" />
+                <element signature="e#772#773#0" expanded="true" />
+                <element signature="e#804#805#0" expanded="true" />
+                <element signature="e#868#869#0" expanded="true" />
+                <element signature="e#907#908#0" expanded="true" />
+                <element signature="e#962#963#0" expanded="true" />
+                <element signature="e#997#998#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -87,24 +99,22 @@
       <file leaf-file-name="CountryCityParserWUA.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Parsers/CountryCityParserWUA.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
-              <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="952">
+              <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
               <folding>
-                <element signature="e#451#452#0" expanded="true" />
-                <element signature="e#479#480#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#GetCountryIdNamesByCountryNames#0;class#CountryCityParserWUA#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CountryIdParserWUA.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CountryIdParserWUA.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Parsers/CountryIdParserWUA.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.21996303" vertical-offset="51" max-vertical-offset="1173">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding>
-                <element signature="method#GetCountryId#0;class#CountryIdParserWUA#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1241">
+              <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -112,9 +122,12 @@
       <file leaf-file-name="ForecastContainerYa.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Parsers/ForecastContainerYa.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="918">
-              <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+              <caret line="13" column="62" selection-start-line="13" selection-start-column="62" selection-end-line="13" selection-end-column="104" />
+              <folding>
+                <element signature="method#ForecastContainerYa#0;class#ForecastContainerYa#0" expanded="false" />
+                <element signature="method#ForecastContainerYa#1;class#ForecastContainerYa#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,7 +136,7 @@
         <entry file="file://$PROJECT_DIR$/src/DBProcessor/DBProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -132,9 +145,11 @@
       <file leaf-file-name="CountryCityParserYa.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Parsers/CountryCityParserYa.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="1360">
-              <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="258" max-vertical-offset="884">
+              <caret line="49" column="50" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
+              <folding>
+                <element signature="method#ParseXMLCities#0;class#CountryCityParserYa#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -142,11 +157,9 @@
       <file leaf-file-name="Weather.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Parsers/Weather.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="70" max-vertical-offset="714">
-              <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-              <folding>
-                <element signature="method#GetToString#0;class#Weather#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="527" max-vertical-offset="1088">
+              <caret line="68" column="92" selection-start-line="68" selection-start-column="92" selection-end-line="68" selection-end-column="92" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -185,14 +198,18 @@
         <option value="$PROJECT_DIR$/src/parsers/WeatherParserYandex.java" />
         <option value="$PROJECT_DIR$/src/parsers/ForecastParserYa.java" />
         <option value="$PROJECT_DIR$/src/parsers/CountryCityParserYa.java" />
-        <option value="$PROJECT_DIR$/src/Parsers/CityIdParserWUA.java" />
         <option value="$PROJECT_DIR$/src/DBConnector/DBConnector.java" />
         <option value="$PROJECT_DIR$/src/DBProcessor/DBConnector.java" />
         <option value="$PROJECT_DIR$/src/DBProcessor/DBProcessor.java" />
-        <option value="$PROJECT_DIR$/src/Parsers/CountryCityParserYa.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/Parsers/ForecastContainerYa.java" />
         <option value="$PROJECT_DIR$/src/Parsers/ForecastParserYa.java" />
+        <option value="$PROJECT_DIR$/src/Parsers/CityIdParserWUA.java" />
+        <option value="$PROJECT_DIR$/src/Parsers/CountryCityParserWUA.java" />
+        <option value="$PROJECT_DIR$/src/Parsers/ForecastContainerWUA.java" />
+        <option value="$PROJECT_DIR$/src/Parsers/CountryIdParserWUA.java" />
+        <option value="$PROJECT_DIR$/src/Parsers/ForecastContainerYa.java" />
+        <option value="$PROJECT_DIR$/src/Parsers/CountryCityParserYa.java" />
+        <option value="$PROJECT_DIR$/src/Parsers/Weather.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
@@ -594,7 +611,7 @@
       <workItem from="1402781089719" duration="8727000" />
       <workItem from="1402847528032" duration="635000" />
       <workItem from="1402864064131" duration="10687000" />
-      <workItem from="1402937126267" duration="887000" />
+      <workItem from="1402937126267" duration="12715000" />
     </task>
     <task id="LOCAL-00001" summary="new parsers structures">
       <created>1401957550408</created>
@@ -612,11 +629,15 @@
       <created>1402847367775</created>
       <updated>1402847367775</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="pre final refactor yandex parsers">
+      <created>1402939354910</created>
+      <updated>1402939354910</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174438000" />
+    <option name="totallyTimeSpent" value="186266000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -640,7 +661,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -649,9 +670,9 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40232313" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40200445" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3452116" sideWeight="0.29659212" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40200445" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14862682" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -662,7 +683,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27795526" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3452116" sideWeight="0.7034079" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3452116" sideWeight="0.7034079" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -691,11 +712,12 @@
     <MESSAGE value="refactor" />
     <MESSAGE value="refactor2" />
     <MESSAGE value="Refactor to produce more usable code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor to produce more usable code" />
+    <MESSAGE value="pre final refactor yandex parsers" />
+    <option name="LAST_COMMIT_MESSAGE" value="pre final refactor yandex parsers" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="53" />
+      <option name="time" value="64" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -703,13 +725,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/glassfish4/jdk7/jre/lib/rt.jar!/java/lang/String.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3672" max-vertical-offset="3774">
-          <caret line="216" column="0" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/glassfish4/jdk7/jre/lib/rt.jar!/com/sun/org/apache/xerces/internal/dom/ParentNode.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="1581">
@@ -721,7 +736,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="6112" max-vertical-offset="9044">
           <caret line="428" column="45" selection-start-line="428" selection-start-column="45" selection-end-line="428" selection-end-column="45" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -743,7 +760,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="5695" max-vertical-offset="7276">
           <caret line="363" column="22" selection-start-line="363" selection-start-column="22" selection-end-line="363" selection-end-column="22" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -772,7 +791,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5202">
           <caret line="348" column="1" selection-start-line="348" selection-start-column="1" selection-end-line="348" selection-end-column="1" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -801,7 +822,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="5474">
           <caret line="30" column="72" selection-start-line="30" selection-start-column="72" selection-end-line="30" selection-end-column="72" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -830,7 +853,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="5542">
           <caret line="30" column="72" selection-start-line="30" selection-start-column="72" selection-end-line="30" selection-end-column="72" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -859,7 +884,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="548" max-vertical-offset="3672">
           <caret line="67" column="26" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -881,7 +908,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3808">
           <caret line="83" column="18" selection-start-line="83" selection-start-column="18" selection-end-line="83" selection-end-column="18" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -903,7 +932,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="3128">
           <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -918,7 +949,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="3281">
           <caret line="29" column="60" selection-start-line="29" selection-start-column="60" selection-end-line="29" selection-end-column="60" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -933,7 +966,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2380">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -941,7 +976,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1494" max-vertical-offset="2601">
           <caret line="102" column="64" selection-start-line="102" selection-start-column="64" selection-end-line="102" selection-end-column="64" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -987,13 +1024,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parsers/CityIdParserWUA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935">
-          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/glassfish4/jdk7/jre/lib/rt.jar!/java/net/URL.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1215" max-vertical-offset="1751">
@@ -1001,18 +1031,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="jar://C:/glassfish4/jdk7/jre/lib/rt.jar!/java/net/SocketInputStream.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1122">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.33265308" vertical-offset="109" max-vertical-offset="731">
+          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parsers/ForecastContainerYa.java">
+    <entry file="file://$PROJECT_DIR$/src/Parsers/CityIdParserWUA.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="833">
-          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
+          <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1020,77 +1050,102 @@
     <entry file="file://$PROJECT_DIR$/src/DBProcessor/DBProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Parsers/Weather.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="70" max-vertical-offset="714">
-          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-          <folding>
-            <element signature="method#GetToString#0;class#Weather#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parsers/ForecastParserWUA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="164" max-vertical-offset="714">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="527" max-vertical-offset="1088">
+          <caret line="68" column="92" selection-start-line="68" selection-start-column="92" selection-end-line="68" selection-end-column="92" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parsers/ForecastParserYa.java">
+    <entry file="file://$PROJECT_DIR$/src/Parsers/CountryIdParserWUA.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="101" column="40" selection-start-line="101" selection-start-column="40" selection-end-line="101" selection-end-column="40" />
-          <folding>
-            <element signature="method#GetWeekPredict#0;class#ForecastParserYa#0" expanded="false" />
-            <element signature="method#GetCurrent#0;class#ForecastParserYa#0" expanded="false" />
-            <element signature="method#ForecastParserYa#0;class#ForecastParserYa#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1241">
+          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parsers/ForecastContainerWUA.java">
+    <entry file="file://$PROJECT_DIR$/src/Parsers/ForecastContainerYa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+          <caret line="13" column="62" selection-start-line="13" selection-start-column="62" selection-end-line="13" selection-end-column="104" />
           <folding>
-            <element signature="method#ForecastContainerWUA#0;class#ForecastContainerWUA#0" expanded="false" />
-            <element signature="method#ForecastContainerWUA#1;class#ForecastContainerWUA#0" expanded="false" />
+            <element signature="method#ForecastContainerYa#0;class#ForecastContainerYa#0" expanded="false" />
+            <element signature="method#ForecastContainerYa#1;class#ForecastContainerYa#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Parsers/CountryCityParserYa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-          <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="258" max-vertical-offset="884">
+          <caret line="49" column="50" selection-start-line="49" selection-start-column="50" selection-end-line="49" selection-end-column="50" />
+          <folding>
+            <element signature="method#ParseXMLCities#0;class#CountryCityParserYa#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Parsers/ForecastContainerWUA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="1479">
+          <caret line="66" column="62" selection-start-line="66" selection-start-column="62" selection-end-line="66" selection-end-column="139" />
+          <folding>
+            <element signature="e#682#683#0" expanded="true" />
+            <element signature="e#720#721#0" expanded="true" />
+            <element signature="e#772#773#0" expanded="true" />
+            <element signature="e#804#805#0" expanded="true" />
+            <element signature="e#868#869#0" expanded="true" />
+            <element signature="e#907#908#0" expanded="true" />
+            <element signature="e#962#963#0" expanded="true" />
+            <element signature="e#997#998#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Parsers/CountryCityParserWUA.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
-          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="952">
+          <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="22" selection-end-column="12" />
           <folding>
-            <element signature="e#451#452#0" expanded="true" />
-            <element signature="e#479#480#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#GetCountryIdNamesByCountryNames#0;class#CountryCityParserWUA#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parsers/CountryIdParserWUA.java">
+    <entry file="file://$PROJECT_DIR$/src/Parsers/ForecastParserYa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21996303" vertical-offset="51" max-vertical-offset="1173">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1836">
+          <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
           <folding>
-            <element signature="method#GetCountryId#0;class#CountryIdParserWUA#0" expanded="false" />
+            <element signature="method#GetCurrent#0;class#ForecastParserYa#0" expanded="false" />
+            <element signature="e#7512#7513#0" expanded="true" />
+            <element signature="e#7546#7547#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Parsers/ForecastParserWUA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2601">
+          <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6591837" vertical-offset="204" max-vertical-offset="1054">
+          <caret line="31" column="64" selection-start-line="31" selection-start-column="64" selection-end-line="31" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

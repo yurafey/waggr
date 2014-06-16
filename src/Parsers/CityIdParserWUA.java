@@ -16,7 +16,7 @@ import java.util.HashMap;
  * Created by yuraf_000 on 05.06.2014.
  */
 public class CityIdParserWUA {
-    private HashMap<String,String> CityIdName = new HashMap<>();
+    private HashMap<Integer,String> CityIdName = new HashMap<>();
     private String url;
 
     public CityIdParserWUA(String url){
@@ -30,7 +30,7 @@ public class CityIdParserWUA {
 
             for (int i = 1; i < nodeLst.getLength(); i++) {
                 Element e = (Element) nodeLst.item(i);
-                String CityId = e.getAttribute("id");
+                Integer CityId = Integer.parseInt(e.getAttribute("id"));
                 String CityName = (((Element) nodeLst.item(i)).getElementsByTagName("name")).item(0).getTextContent();
                 //System.out.println(CountryNameId + "   " + CountryName);
                 CityIdName.put(CityId, CityName);
@@ -45,7 +45,7 @@ public class CityIdParserWUA {
         }
     }
 
-    public HashMap<String,String> GetCitiesId(){
+    public HashMap<Integer,String> GetCitiesId(){
         return CityIdName;
     }
 }

@@ -35,6 +35,24 @@ public class ForecastContainerYa{
 
         }
     }
+    public ForecastContainerYa(String CountryNames) {
+        CountryCityMap = CP.GetCountryCityMapByNames(CountryNames);
+        CountryIdMap = CP.GetCountryIdMap();
+        CityIdMap = CP.GetCityIdMap();
+        for (Integer CountryId : CountryCityMap.keySet()) {
+            List <Integer> CityIds = CountryCityMap.get(CountryId);
+            for (int i = 0; i < CityIds.size(); i++) {
+                List<Weather> WeatherList = new ArrayList<Weather>();
+                ForecastParserYa WP = new ForecastParserYa("http://export.yandex.ru/weather-ng/forecasts/" + CityIds.get(i) + ".xml");
+                WeatherList = WP.GetWeatherList();
+                if (WeatherList != null){
+                    CityWeatherList.put(CityIds.get(i),WeatherList);
+                    System.out.println(CityIds.get(i)+ "  "+ WeatherList.size());
+                }
+            }
+
+        }
+    }
 
     public HashMap<Integer,List<Weather>> GetCityWeatherList(){
         return CityWeatherList;

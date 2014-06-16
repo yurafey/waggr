@@ -66,7 +66,8 @@ public class Weather{
         if (ispredict)
             return String.format("Forecast date %s %s : temperature %d C*, air pressure %d mm, humidity %d, wind %.1f %s",
                     dateFormat.format(date).substring(0,dateFormat.format(date).indexOf(" ")),
-                    dateFormat.format(date).substring(dateFormat.format(date).indexOf(" ")).equals(" 13:00")? "DAY" : "NIGHT",
+                    dateFormat.format(date).substring(dateFormat.format(date).indexOf(" ")),
+                    //dateFormat.format(date).substring(dateFormat.format(date).indexOf(" ")).equals(" 13:00")? "DAY" : "NIGHT",
                     temperature,
                     pressure,
                     humidity,

@@ -13,7 +13,9 @@ import org.xml.sax.SAXException;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by yuraf_000 on 05.06.2014.
@@ -25,10 +27,33 @@ public class CountryCityParserYa {
     private int counter = 0;
     public CountryCityParserYa(String url) {
         ParseXMLCities(url);
-
         System.out.println("Количество городов: " + counter);
     }
 
+    public ListMultimap<Integer, Integer> GetCountryCityMapByNames(String Names) {
+        ListMultimap<Integer, Integer> CountryCityMapLocal = ArrayListMultimap.create();
+        List<String> inputCountryList = new ArrayList<>();
+        if (Names.indexOf(',')!=-1) {
+            while (Names.indexOf(',') != -1) {
+                int i = Names.indexOf(',');
+                inputCountryList.add(Names.substring(0, i));
+                Names = Names.substring(i + 1);
+            }
+            inputCountryList.add(Names);
+        }else {
+            inputCountryList.add(Names);
+        }
+
+        for(Integer id:CountryIdMap.keySet()){
+            for (int x=0; x< inputCountryList.size();x++){
+                if (CountryIdMap.get(id).equals(inputCountryList.get(x))){
+                    CountryCityMapLocal.putAll(id,CountryCityMap.get(id));
+                }
+            }
+        }
+
+        return CountryCityMapLocal;
+    }
     public ListMultimap<Integer, Integer> GetCountryCityMap() {
         return CountryCityMap;
     }
