@@ -42,10 +42,10 @@ public class ForecastParserYa {
                         SimpleDateFormat parserSDF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                         switch (attr.toString()) {
                             case "day_short":
-                                parserSDF.parse(((Element) nNode).getAttribute("date").toString() + " 13:00:00");
+                                parserSDF.parse(((Element) nNode).getAttribute("date").toString() + " 15:00:00");
                                 break;
                             case "night_short":
-                                parserSDF.parse(((Element) nNode).getAttribute("date").toString() + " 01:00:00");
+                                parserSDF.parse(((Element) nNode).getAttribute("date").toString() + " 03:00:00");
                         }
                         Calendar c = parserSDF.getCalendar();
                         Date d = c.getTime();

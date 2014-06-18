@@ -21,7 +21,7 @@ public class ForecastContainerWUA{
     public HashMap<Integer,List<Weather>> GetCityWeatherList(){
         return CityWeatherList;
     }
-    public HashMap<Integer,String> GetCityNames (){
+    public HashMap<Integer,String> GetCityIdMap(){
         return CityNames;
     }
     public ListMultimap<Integer,Integer> GetCountyCitiesMap() {
@@ -45,13 +45,6 @@ public class ForecastContainerWUA{
                 System.out.println("CityId: " + tempCityList.get(i));
                 CityWeatherList.put(tempCityList.get(i), FP.GetWeatherList());
             }
-//            for (Integer CityId : CityNames.keySet()) {
-//                //CityNames.putAll(CityId, CountryCitiesMap.get(CountryId));
-//                System.out.println("CityId: " + CityId);
-//                ForecastParserWUA FP = new ForecastParserWUA("http://xml.weather.ua/1.2/forecast/" + CityId + "?dayf=5&lang=ru");
-//                //for (int x = 0; x<WeatherList.size();x++)   System.out.println(WeatherList.get(x).GetToString());
-//                CityWeatherList.put(CityId, FP.GetWeatherList());
-//            }
 
         }
     }
@@ -69,17 +62,7 @@ public class ForecastContainerWUA{
                 CityWeatherList.put(tempCityList.get(i), FP.GetWeatherList());
             }
         }
-//        for (String CountryId : CountryCitiesMap.keySet()) {
-//            System.out.println("Country id: " + CountryId);
-//            CityNames = CountryCitiesMap.get(CountryId);
-//            for (String CityId : CityNames.keySet()) {
-//                System.out.println("CityId: " + CityId);
-//                ForecastParserWUA FP = new ForecastParserWUA("http://xml.weather.ua/1.2/forecast/" + CityId + "?dayf=5&lang=ru");
-//                //for (int x = 0; x<WeatherList.size();x++)   System.out.println(WeatherList.get(x).GetToString());
-//                CityWeatherList.put(CityId, FP.GetWeatherList());
-//            }
-//
-//        }
+
     }
 
 }
