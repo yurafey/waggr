@@ -11,14 +11,14 @@ public class Main {
 
     public static void main(String[] args) throws ParseException {
         DBConnector db = new DBConnector();
+        String CountryNames = "Австралия,Ирландия,Азербайджан";
+        ForecastContainerYa FCY = new ForecastContainerYa(CountryNames);
+        ForecastContainerWUA FWUA = new ForecastContainerWUA(CountryNames);
 
-        ForecastContainerYa FCY = new ForecastContainerYa("Ирландия");
         db.WriteWeatherDataYandex(FCY.GetCityWeatherList(), FCY.GetCityIdMap());
-
-        ForecastContainerWUA FWUA = new ForecastContainerWUA("Ирландия");
         db.WriteWeatherDataWUA(FWUA.GetCityWeatherList(),FWUA.GetCityIdMap());
-
         db.DBConnectionClose();
+
 //        ForecastContainerYa FCY = new ForecastContainerYa("Ирландия");
 //        try{
 //            for (Integer tempCityId:FCY.GetCityWeatherList().keySet()){

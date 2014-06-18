@@ -78,7 +78,7 @@ public class DBConnector {
 
         try {
 
-            String stm = "INSERT INTO "+tableName+"(timestamp, town_id, town_name, temperature, pressure, humidity, wind_speed, wind_direction) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+            String stm = "INSERT INTO "+tableName+"(timestamp, city_id, city_name, temperature, pressure, humidity, wind_speed, wind_direction) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement tempPst = waggrConnection.prepareStatement(stm);
             for(Integer CityId: CityWeatherList.keySet()){
                 List<Weather> tmpWeatherList = CityWeatherList.get(CityId);
