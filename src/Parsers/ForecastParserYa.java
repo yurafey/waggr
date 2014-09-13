@@ -1,5 +1,6 @@
 package Parsers;
 
+import BusinessLogic.Weather;
 import com.sun.org.apache.xerces.internal.parsers.DOMParser;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -34,9 +35,12 @@ public class ForecastParserYa {
             for (int i = 0; i < nodeLst.getLength(); i++) {   // входим в поиск по nodes "day"
                 Node nNode = nodeLst.item(i);
                 NodeList node2Lst = ((Element) nNode).getElementsByTagName("day_part");
-                for (int n = 0; n<node2Lst.getLength(); n++){
-                    String attr = (((Element)node2Lst.item(n)).getAttribute("type"));
-                    if ((attr.equals("day_short"))||(attr.equals("night_short"))){
+                for (int n = 0; n<node2Lst.getLength(); n++) {
+                    //if (node2Lst.)
+                    if (node2Lst.item(n).getNodeType() == Node.ELEMENT_NODE){
+
+                    String attr = (((Element) node2Lst.item(n)).getAttribute("type"));
+                    if ((attr.equals("day_short")) || (attr.equals("night_short"))) {
                         Element e = (Element) node2Lst.item(n);
                         Weather weatherTmp = new Weather();
                         SimpleDateFormat parserSDF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -78,6 +82,7 @@ public class ForecastParserYa {
                         weatherTmp = null;
 
                     }
+                } //скобка на if
                 }
             }
             nodeLst = null;
@@ -151,7 +156,8 @@ public class ForecastParserYa {
             e.printStackTrace();
         } catch (IOException e) {
             WeatherList = null;
-            e.printStackTrace();
+            System.out.println("PARSERS ERROR: YANDEXPARSER: Cant load forecast url: "+url);
+            //e.printStackTrace();
             //WeatherList = null;
         } catch (SAXException e) {
             e.printStackTrace();

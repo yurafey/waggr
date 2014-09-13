@@ -24,12 +24,61 @@ public class CountryCityParserYa {
     private ListMultimap<Integer, Integer> CountryCityMap = ArrayListMultimap.create();
     private HashMap<Integer,String> CountryIdMap = new HashMap<>();
     private HashMap<Integer,String> CityIdMap = new HashMap<>();
-    private int counter = 0;
+    private int cityCounter = 0;
     public CountryCityParserYa(String url) {
-        ParseXMLCities(url);
-        System.out.println("Количество городов: " + counter);
-    }
+        System.out.println("Retrieving lists countries and cities in Yandex DB...");
+        try {
+            String resCityId = null;
+            URL UrlToParse = new URL(url);
+            DOMParser p = new DOMParser();
+            p.parse(new InputSource(UrlToParse.openStream()));
+            Document doc = p.getDocument();
+            NodeList nodeLst = doc.getElementsByTagName("country");
+            int CountryId = 0;
+            for (int i = 0; i < nodeLst.getLength(); i++) {
+                Node nNode = nodeLst.item(i);
+                if (nNode.getNodeType()==Node.ELEMENT_NODE) {
+                    Element eElement = (Element) nNode;
+                    CountryIdMap.put(CountryId,eElement.getAttribute("name").toString());//создаем карту стран
+                    NodeList CitiesLst = eElement.getElementsByTagName("city");
+                    for (int x = 0; x < CitiesLst.getLength(); x++) {
+                        Element CElement = (Element) CitiesLst.item(x);
+                        //CountryIdMap.put()
+                        int tempCityId = Integer.parseInt(CElement.getAttribute("id"));
+                        switch (eElement.getAttribute("name").toString()) {
+                            case "США":
+                                if (CitiesLst.item(x).getTextContent().indexOf(",") == -1) {
+                                    CountryCityMap.put(CountryId, tempCityId);
+                                    CityIdMap.put(tempCityId,CitiesLst.item(x).getTextContent());
+                                    cityCounter++;
+                                }
+                                else {
+                                    CountryCityMap.put(CountryId, tempCityId );
+                                    CityIdMap.put(tempCityId,CitiesLst.item(x).getTextContent().substring(0, CitiesLst.item(x).getTextContent().indexOf(",")));
+                                    cityCounter++;
+                                }
+                                break;
 
+                            default:
+                                CountryCityMap.put(CountryId, tempCityId);
+                                CityIdMap.put(tempCityId,CitiesLst.item(x).getTextContent());
+                                cityCounter++;
+
+                        }
+
+                    }
+                    CountryId++;
+                }
+            }
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        }
+    }
+    public Integer AllCitiesLength() { return cityCounter; }
     public ListMultimap<Integer, Integer> GetCountryCityMapByNames(String Names) {
         ListMultimap<Integer, Integer> CountryCityMapLocal = ArrayListMultimap.create();
         List<String> inputCountryList = new ArrayList<>();
@@ -61,56 +110,5 @@ public class CountryCityParserYa {
     public HashMap<Integer,String> GetCountryIdMap (){
         return CountryIdMap;
     }
-    private void ParseXMLCities(String url) {
-        try {
-            String resCityId = null;
-            URL UrlToParse = new URL(url);
-            DOMParser p = new DOMParser();
-            p.parse(new InputSource(UrlToParse.openStream()));
-            Document doc = p.getDocument();
-            NodeList nodeLst = doc.getElementsByTagName("country");
-            int CountryId = 0;
-            for (int i = 0; i < nodeLst.getLength(); i++) {
-                Node nNode = nodeLst.item(i);
-                if (nNode.getNodeType()==Node.ELEMENT_NODE) {
-                    Element eElement = (Element) nNode;
-                    CountryIdMap.put(CountryId,eElement.getAttribute("name").toString());//создаем карту стран
-                    NodeList CitiesLst = eElement.getElementsByTagName("city");
-                    for (int x = 0; x < CitiesLst.getLength(); x++) {
-                        Element CElement = (Element) CitiesLst.item(x);
-                        //CountryIdMap.put()
-                        int tempCityId = Integer.parseInt(CElement.getAttribute("id"));
-                        switch (eElement.getAttribute("name").toString()) {
-                            case "США":
-                                if (CitiesLst.item(x).getTextContent().indexOf(",") == -1) {
-                                    CountryCityMap.put(CountryId, tempCityId);
-                                    CityIdMap.put(tempCityId,CitiesLst.item(x).getTextContent());
-                                    counter++;
-                                }
-                                else {
-                                    CountryCityMap.put(CountryId, tempCityId );
-                                    CityIdMap.put(tempCityId,CitiesLst.item(x).getTextContent().substring(0, CitiesLst.item(x).getTextContent().indexOf(",")));
-                                    counter++;
-                                }
-                                break;
 
-                            default:
-                                CountryCityMap.put(CountryId, tempCityId);
-                                CityIdMap.put(tempCityId,CitiesLst.item(x).getTextContent());
-                                counter++;
-
-                        }
-
-                    }
-                    CountryId++;
-                }
-            }
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        }
-    }
 }

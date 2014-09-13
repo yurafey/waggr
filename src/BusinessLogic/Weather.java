@@ -1,4 +1,4 @@
-package Parsers;
+package BusinessLogic;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -15,7 +15,7 @@ public class Weather{
     private float wind_speed;
     private String wind_direction;
     private int humidity;
-    private Boolean ispredict;
+    private Boolean ispredict = true;
 
     public void SetHumidity (int humidity){
         this.humidity = humidity;

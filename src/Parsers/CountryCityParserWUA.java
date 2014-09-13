@@ -18,8 +18,8 @@ public class CountryCityParserWUA {
 
 
     public CountryCityParserWUA(){
+        System.out.println("Retrieving lists countries and cities in WeatherUA DB...");
         CountryIDMap = CountryIDParser.GetCountryId();
-
         for (Integer s: CountryIDMap.keySet()) {
             CityIdParserWUA CityIdParser = new CityIdParserWUA("http://xml.weather.ua/1.2/city/?country="+s); //создаем парсеры городов
             HashMap<Integer, String> put = CityIdParser.GetCitiesId();

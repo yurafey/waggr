@@ -10,14 +10,23 @@ public class Main {
     private static List<String> foundCountryCities;
 
     public static void main(String[] args) throws ParseException {
+        //AuthorizationForm MForm = new AuthorizationForm();
+        //DBConnector db = new DBConnector();
+
+
         DBConnector db = new DBConnector();
-        String CountryNames = "Австралия,Ирландия,Азербайджан";
+        String CountryNames = "Азербайджан,Австралия";
         ForecastContainerYa FCY = new ForecastContainerYa(CountryNames);
         ForecastContainerWUA FWUA = new ForecastContainerWUA(CountryNames);
 
-        db.WriteWeatherDataYandex(FCY.GetCityWeatherList(), FCY.GetCityIdMap());
-        db.WriteWeatherDataWUA(FWUA.GetCityWeatherList(),FWUA.GetCityIdMap());
+        db.WriteWeatherDataYandex(FCY.GetCityWeatherList(), FCY.GetCityIdMap(),FCY.GetCountryIdMap(),FCY.GetCountryCityMap());
+        db.WriteWeatherDataWUA(FWUA.GetCityWeatherList(),FWUA.GetCityIdMap(),FWUA.GetCountryIdMap(),FWUA.GetCountyCitiesMap());
         db.DBConnectionClose();
+        //List<List<Weather>> res = new ArrayList<>();
+        //res = db.GetForecastsByCityName("Баку");
+        //System.out.println(res.get(0).get(0).GetDate().toString());
+        //System.out.println(res.get(1).get(0).GetDate().toString());
+
 
 //        ForecastContainerYa FCY = new ForecastContainerYa("Ирландия");
 //        try{
