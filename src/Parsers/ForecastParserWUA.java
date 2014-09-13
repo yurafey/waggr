@@ -1,5 +1,6 @@
 package Parsers;
 
+import BusinessLogic.Weather;
 import com.sun.org.apache.xerces.internal.parsers.DOMParser;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -155,7 +156,8 @@ public class ForecastParserWUA{
         } catch (ParseException e) {
             e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("PARSERS ERROR: WUAPARSER: Cant load forecast url: "+url);
+            //e.printStackTrace();
         }
     }
 

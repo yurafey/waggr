@@ -18,7 +18,7 @@ import java.util.List;
  * Created by yuraf_000 on 05.06.2014.
  */
 public class CountryIdParserWUA {
-    private HashMap<String, String> CountryIdName = new HashMap<>();
+    private HashMap<Integer, String> CountryIdName = new HashMap<>();
     private String url;
 
     public CountryIdParserWUA(String url) {
@@ -32,7 +32,7 @@ public class CountryIdParserWUA {
 
             for (int i = 1; i < nodeLst.getLength(); i++) {
                 Element e = (Element) nodeLst.item(i);
-                String CountryId = e.getAttribute("id");
+                Integer CountryId = Integer.parseInt(e.getAttribute("id"));
                 String CountryName = (((Element) nodeLst.item(i)).getElementsByTagName("name")).item(0).getTextContent();
                 //System.out.println(CountryNameId + "   " + CountryName);
                 CountryIdName.put(CountryId, CountryName);
@@ -46,7 +46,7 @@ public class CountryIdParserWUA {
             e.printStackTrace();
         }
     }
-    public HashMap<String, String> GetCountryIdByNames(String s){
+    public HashMap<Integer, String> GetCountryIdByNames(String s){
         List<String> inputCountryList = new ArrayList<>();
         if (s.indexOf(',')!=-1) {
             while (s.indexOf(',') != -1) {
@@ -59,9 +59,9 @@ public class CountryIdParserWUA {
             inputCountryList.add(s);
         }
 
-        HashMap<String,String> formattedCountryIdName = new HashMap<>();
+        HashMap<Integer,String> formattedCountryIdName = new HashMap<>();
 
-        for(String id:CountryIdName.keySet()){
+        for(Integer id:CountryIdName.keySet()){
             for (int x=0; x< inputCountryList.size();x++){
                 if (CountryIdName.get(id).equals(inputCountryList.get(x))){
                     formattedCountryIdName.put(id, CountryIdName.get(id));
@@ -72,7 +72,7 @@ public class CountryIdParserWUA {
         return formattedCountryIdName;
     }
 
-    public HashMap<String, String> GetCountryId() {
+    public HashMap<Integer, String> GetCountryId() {
 
         return CountryIdName;
 
