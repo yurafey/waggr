@@ -1,4 +1,4 @@
-import DBProcessor.DBConnector;
+import GUI.AuthorizationForm;
 
 import java.text.ParseException;
 import java.util.List;
@@ -8,10 +8,10 @@ public class Main {
     private static List<String> foundCountryCities;
 
     public static void main(String[] args) throws ParseException {
-        //AuthorizationForm MForm = new AuthorizationForm();
+        AuthorizationForm MForm = new AuthorizationForm();
         //DBConnector db = new DBConnector();
-        DBConnector db = new DBConnector();
-        db.GetCurrentWUA("Ленкорань","Азербайджан");
+//        DBConnector db = new DBConnector();
+//        db.GetCurrentWUA("Ленкорань","Азербайджан");
 //        String CountryNames = "Азербайджан";
 //        ForecastContainerYa FCY = new ForecastContainerYa(CountryNames);
 //        ForecastContainerWUA FWUA = new ForecastContainerWUA(CountryNames);

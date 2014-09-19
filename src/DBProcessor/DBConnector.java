@@ -61,7 +61,7 @@ public class DBConnector {
 
     }
 
-    public boolean NewUser(String login, String password, String name, String surname, String cityname) {
+    public boolean NewUser(String login, String password, String name, String surname, String cityName, String countryName) {
         try {
 
             Statement CheckUser = waggrConnection.createStatement();
@@ -71,13 +71,14 @@ public class DBConnector {
                 return false;
             }
             CheckUser.close();
-            String stm = "INSERT INTO users(login, password, name, surname, city_name) VALUES(?, ?, ?, ?, ?)";
+            String stm = "INSERT INTO users(login, password, name, surname, city_name, country_name) VALUES(?, ?, ?, ?, ?, ?)";
             PreparedStatement tempPst = waggrConnection.prepareStatement(stm);
             tempPst.setString(1, login);
             tempPst.setString(2, password);
             tempPst.setString(3, name);
             tempPst.setString(4, surname);
-            tempPst.setString(5, cityname);
+            tempPst.setString(5, cityName);
+            tempPst.setString(6, countryName);
             tempPst.executeUpdate();
             tempPst.close();
             return true;
@@ -94,17 +95,14 @@ public class DBConnector {
             if (Res.next()) {
                 Res.close();
                 Statement GetCity = waggrConnection.createStatement();
-
-                ResultSet UserData = GetCity.executeQuery("SELECT name, surname, city_name  FROM users WHERE login ='" + login + "'AND password = '" + password + "';");
+                ResultSet UserData = GetCity.executeQuery("SELECT name, surname, city_name, country_name  FROM users WHERE login ='" + login + "'AND password = '" + password + "';");
                 UserData.next();
-
-                return new User(login, UserData.getString(1), UserData.getString(2), UserData.getString(3));
+                return new User(login, UserData.getString(1), UserData.getString(2), UserData.getString(3), UserData.getString(4));
             }
             Res.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return null;
     }
 
@@ -176,7 +174,15 @@ public class DBConnector {
 
 
     }
-    public Weather GetCurrentWeather(String tableName, String cityName,String countryName){
+
+    public Weather GetCurrentWUA (String cityName,String countryName){
+        return GetCurrentWeather(weatherTableNameWUA,cityName,countryName);
+    }
+    public Weather GetCurrentYandex (String cityName,String countryName){
+        return GetCurrentWeather(weatherTableNameYandex, cityName, countryName);
+    }
+
+    private Weather GetCurrentWeather(String tableName, String cityName,String countryName){
         try {
             Statement CheckLogin = waggrConnection.createStatement();
             String query = String.format("SELECT timestamp, temperature, pressure, humidity, wind_speed, wind_direction FROM %s WHERE city_name = '%s' AND country_name = '%s' AND is_predict = FALSE;", tableName, cityName, countryName);
@@ -237,11 +243,13 @@ public class DBConnector {
         }
         return null;
     }
-    public Boolean CheckCity (String cityName){
+    public Boolean CheckCity (String cityName, String countryName){
         try {
-            String query = "SELECT * FROM "+weatherTableNameWUA+" WHERE city_name ='" + cityName + "';" +
-                    "SELECT * FROM "+weatherTableNameYandex+" WHERE city_name ='" + cityName + "';";
-            PreparedStatement pst = waggrConnection.prepareStatement(query);
+            String query1 = String.format("SELECT * FROM %s WHERE city_name = '%s' AND country_name = '%s';",weatherTableNameWUA,cityName,countryName);
+            String query2 = String.format("SELECT * FROM %s WHERE city_name = '%s' AND country_name = '%s';",weatherTableNameYandex,cityName,countryName);
+//            String query = "SELECT * FROM "+weatherTableNameWUA+" WHERE city_name ='" + cityName + "';" +
+//                    "SELECT * FROM "+weatherTableNameYandex+" WHERE city_name ='" + cityName + "';";
+            PreparedStatement pst = waggrConnection.prepareStatement(query1+query2);
             Boolean isResult = pst.execute();
             do {
                 if (pst.getResultSet().next()) return true;
