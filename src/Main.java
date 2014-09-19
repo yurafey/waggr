@@ -1,6 +1,4 @@
 import DBProcessor.DBConnector;
-import Parsers.ForecastContainerWUA;
-import Parsers.ForecastContainerYa;
 
 import java.text.ParseException;
 import java.util.List;
@@ -12,18 +10,22 @@ public class Main {
     public static void main(String[] args) throws ParseException {
         //AuthorizationForm MForm = new AuthorizationForm();
         //DBConnector db = new DBConnector();
-
-
         DBConnector db = new DBConnector();
-        String CountryNames = "Азербайджан,Австралия";
-        ForecastContainerYa FCY = new ForecastContainerYa(CountryNames);
-        ForecastContainerWUA FWUA = new ForecastContainerWUA(CountryNames);
-
-        db.WriteWeatherDataYandex(FCY.GetCityWeatherList(), FCY.GetCityIdMap(),FCY.GetCountryIdMap(),FCY.GetCountryCityMap());
-        db.WriteWeatherDataWUA(FWUA.GetCityWeatherList(),FWUA.GetCityIdMap(),FWUA.GetCountryIdMap(),FWUA.GetCountyCitiesMap());
-        db.DBConnectionClose();
+        db.GetCurrentWUA("Ленкорань","Азербайджан");
+//        String CountryNames = "Азербайджан";
+//        ForecastContainerYa FCY = new ForecastContainerYa(CountryNames);
+//        ForecastContainerWUA FWUA = new ForecastContainerWUA(CountryNames);
+//
+//        db.WriteWeatherDataYandex(FCY.GetCityWeatherList(), FCY.GetCityIdMap(),FCY.GetCountryIdMap(),FCY.GetCountryCityMap());
+//        db.WriteWeatherDataWUA(FWUA.GetCityWeatherList(),FWUA.GetCityIdMap(),FWUA.GetCountryIdMap(),FWUA.GetCountyCitiesMap());
+//
+//        List<List<Weather>> res = new ArrayList<>();
+//        res = db.GetForecastsByCityAndCountyName("Сумгаит","Азербайджан");
+        //System.out.println(res.get(0).get(0).GetDate().toString());
+        //System.out.println(res.get(1).get(0).GetDate().toString());
+//        db.DBConnectionClose();
         //List<List<Weather>> res = new ArrayList<>();
-        //res = db.GetForecastsByCityName("Баку");
+        //res = db.GetForecastsByCityAndCountyName("Баку");
         //System.out.println(res.get(0).get(0).GetDate().toString());
         //System.out.println(res.get(1).get(0).GetDate().toString());
 
