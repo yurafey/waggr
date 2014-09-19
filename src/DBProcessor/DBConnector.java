@@ -94,10 +94,11 @@ public class DBConnector {
             if (Res.next()) {
                 Res.close();
                 Statement GetCity = waggrConnection.createStatement();
-                ResultSet Res2 = GetCity.executeQuery("SELECT city_name FROM users WHERE login ='" + login + "'AND password = '" + password + "';");
-                Res2.next();
-                String city_name = Res2.getString(1);
-                return new User(login, city_name);
+
+                ResultSet UserData = GetCity.executeQuery("SELECT name, surname, city_name  FROM users WHERE login ='" + login + "'AND password = '" + password + "';");
+                UserData.next();
+
+                return new User(login, UserData.getString(1), UserData.getString(2), UserData.getString(3));
             }
             Res.close();
         } catch (SQLException e) {
@@ -137,7 +138,7 @@ public class DBConnector {
 
         try {
 
-            String stm = "INSERT INTO " + tableName + "(timestamp, city_id, city_name, temperature, pressure, humidity, wind_speed, wind_direction, country_name) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String stm = "INSERT INTO " + tableName + "(timestamp, city_id, city_name, temperature, pressure, humidity, wind_speed, wind_direction, country_name, is_predict) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement tempPst = waggrConnection.prepareStatement(stm);
 
             for (Integer CountryId: CountryCityMap.keySet()){
@@ -158,6 +159,7 @@ public class DBConnector {
                             tempPst.setFloat(7, tmpWeather.GetWindSpeed());
                             tempPst.setString(8, tmpWeather.GetWindDirection());
                             tempPst.setString(9, CountryIdMap.get(CountryId));
+                            tempPst.setBoolean(10, tmpWeather.GetIsPredict());
                             tempPst.execute();
                         }
                     } catch (NullPointerException e) {
@@ -172,42 +174,40 @@ public class DBConnector {
             e.printStackTrace();
         }
 
-//        try {
-//
-//            String stm = "INSERT INTO " + tableName + "(timestamp, city_id, city_name, temperature, pressure, humidity, wind_speed, wind_direction) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
-//            PreparedStatement tempPst = waggrConnection.prepareStatement(stm);
-//            for (Integer CityId : CityWeatherList.keySet()) {
-//                List<Weather> tmpWeatherList = CityWeatherList.get(CityId);
-//                for (int i = 0; i < tmpWeatherList.size(); i++) {
-//                    Weather tmpWeather = tmpWeatherList.get(i);
-//                    Timestamp sqlDate = new Timestamp(tmpWeather.GetDate().getTime());
-//                    tempPst.setTimestamp(1, sqlDate);
-//                    tempPst.setInt(2, CityId);
-//                    tempPst.setString(3, CityIdMap.get(CityId));
-//                    tempPst.setInt(4, tmpWeather.GetTemperature());
-//                    tempPst.setInt(5, tmpWeather.GetPressure());
-//                    tempPst.setInt(6, tmpWeather.GetHumidity());
-//                    tempPst.setFloat(7, tmpWeather.GetWindSpeed());
-//                    tempPst.setString(8, tmpWeather.GetWindDirection());
-//                    tempPst.execute();
-//
-//                }
-//
-//            }
-//            tempPst.close();
-//
-//
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
 
     }
+    public Weather GetCurrentWeather(String tableName, String cityName,String countryName){
+        try {
+            Statement CheckLogin = waggrConnection.createStatement();
+            String query = String.format("SELECT timestamp, temperature, pressure, humidity, wind_speed, wind_direction FROM %s WHERE city_name = '%s' AND country_name = '%s' AND is_predict = FALSE;", tableName, cityName, countryName);
+            ResultSet res = CheckLogin.executeQuery(query);
+            if (res.next()){
+                Weather weatherResult = new Weather();
+                weatherResult.SetDate((Date) res.getTimestamp(1));
+                weatherResult.SetTemperature(res.getInt(2));
+                weatherResult.SetPressure(res.getInt(3));
+                weatherResult.SetHumidity(res.getInt(4));
+                weatherResult.SetWindSpeed(res.getFloat(5));
+                weatherResult.SetWindDirection(res.getString(6));
+                weatherResult.SetIsPredict(false);
+                return weatherResult;
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
 
-    public List<List<Weather>> GetForecastsByCityName(String cityName) {
+
+//    public Weather GetCurrentYan(String cityname){
+//
+//    }
+
+    public List<List<Weather>> GetForecastsByCityAndCountyName(String cityName,String countryName) {
         try {
             ResultSet rs = null;
-            String query = "SELECT timestamp, temperature, pressure, humidity, wind_speed, wind_direction FROM " + weatherTableNameYandex + " WHERE city_name = '" + cityName + "';"+
-                           "SELECT timestamp, temperature, pressure, humidity, wind_speed, wind_direction FROM " + weatherTableNameWUA + " WHERE city_name = '" + cityName + "';";
+            String query = "SELECT timestamp, temperature, pressure, humidity, wind_speed, wind_direction, is_predict FROM " + weatherTableNameYandex + " WHERE city_name = '" + cityName + "' AND country_name = '" +countryName+ "';" +
+                           "SELECT timestamp, temperature, pressure, humidity, wind_speed, wind_direction, is_predict FROM " + weatherTableNameWUA + " WHERE city_name = '" + cityName + "' AND country_name = '" +countryName+ "';";
             PreparedStatement pst = waggrConnection.prepareStatement(query);
             boolean isResult = pst.execute();
             List<List<Weather>> resultWeatherLists = new ArrayList<>();
@@ -224,6 +224,7 @@ public class DBConnector {
                     weatherResult.SetHumidity(rs.getInt(4));
                     weatherResult.SetWindSpeed(rs.getFloat(5));
                     weatherResult.SetWindDirection(rs.getString(6));
+                    weatherResult.SetIsPredict(rs.getBoolean(7));
                     WeatherList.add(weatherResult);
                 }
                 resultWeatherLists.add(WeatherList);
