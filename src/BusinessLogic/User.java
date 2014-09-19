@@ -7,12 +7,14 @@ public class User {
     private String userName = null;
     private String userSurname = null;
     private String userCity = null;
+    private String userCountry = null;
     private String userLogin = null;
     private RealFeel userRealFeel = null;
-    public User (String login, String name, String surname, String city){
+    public User (String login, String name, String surname, String cityName, String countryName){
         userName = name;
         userSurname = surname;
-        userCity = city;
+        userCity = cityName;
+        userCountry = countryName;
         userLogin = login;
     }
     public String GetUserName(){
@@ -24,5 +26,8 @@ public class User {
     public String GetUserLogin () { return userLogin; }
     public String GetUserCity(){
         return userCity;
+    }
+    public String GetUserCountry() {
+        return userCountry;
     }
  }

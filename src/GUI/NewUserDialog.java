@@ -17,6 +17,7 @@ public class NewUserDialog extends JDialog {
     private JTextField textField4;
     private JLabel SuccessField;
     private JPanel pan1;
+    private JTextField textField5;
 
 
     private DBConnector db = new DBConnector();
@@ -60,7 +61,7 @@ public class NewUserDialog extends JDialog {
     }
 
     private void onOK() {
-        if (textField1.getText().isEmpty()||textField2.getText().isEmpty()||textField3.getText().isEmpty()||textField4.getText().isEmpty()){
+        if (textField1.getText().isEmpty()||textField2.getText().isEmpty()||textField3.getText().isEmpty()||textField4.getText().isEmpty()||textField5.getText().isEmpty()){
             JOptionPane.showMessageDialog(this,"Введите все данные","Ошибка",JOptionPane.INFORMATION_MESSAGE);
             return ;
         }
@@ -68,11 +69,11 @@ public class NewUserDialog extends JDialog {
             JOptionPane.showMessageDialog(this,"Пароли не совпадают либо не введены","Ошибка",JOptionPane.INFORMATION_MESSAGE);
             return ;
         }
-        if (!db.CheckCity(textField4.getText())){
-            JOptionPane.showMessageDialog(this,"Города "+textField4.getText()+" нет в базе","Ошибка",JOptionPane.INFORMATION_MESSAGE);
+        if (!db.CheckCity(textField4.getText(),textField5.getText())){
+            JOptionPane.showMessageDialog(this,"Города "+textField4.getText()+" или страны "+ textField5.getText()+" нет в базе","Ошибка",JOptionPane.INFORMATION_MESSAGE);
             return ;
         }
-        Boolean res = db.NewUser(textField1.getText(),String.valueOf(passwordField1.getPassword()),textField2.getText(),textField3.getText(),textField4.getText());
+        Boolean res = db.NewUser(textField1.getText(),String.valueOf(passwordField1.getPassword()),textField2.getText(),textField3.getText(),textField4.getText(),textField5.getText());
         if (!res){
             JOptionPane.showMessageDialog(this,"Логин "+textField1.getText()+" уже существует","Ошибка",JOptionPane.INFORMATION_MESSAGE);
             return ;
