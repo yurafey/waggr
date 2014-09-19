@@ -6,15 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1e50eb4-8d33-4174-983a-091fbaf79c77" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GUI/CurrentWeatherTableContainer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DBProcessor/DBConnector.java" afterPath="$PROJECT_DIR$/src/DBProcessor/DBConnector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/MainForm.form" afterPath="$PROJECT_DIR$/src/GUI/MainForm.form" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/MainForm.java" afterPath="$PROJECT_DIR$/src/GUI/MainForm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/NewUserDialog.form" afterPath="$PROJECT_DIR$/src/GUI/NewUserDialog.form" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/NewUserDialog.java" afterPath="$PROJECT_DIR$/src/GUI/NewUserDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BusinessLogic/User.java" afterPath="$PROJECT_DIR$/src/BusinessLogic/User.java" />
+    <list default="true" id="f1e50eb4-8d33-4174-983a-091fbaf79c77" name="Default" comment="GUI and DB logic update&#10;new db methods, table view in main frame">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="untitled.iws" />
@@ -35,7 +27,7 @@
     <SUITE FILE_PATH="coverage/waggr$Main.coverage" NAME="Main Coverage Results" MODIFIED="1400437326193" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
+    <option name="PATCH_PATH" value="C:\Users\yuraf_000\IdeaProjects\waggr" />
   </component>
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
@@ -158,9 +150,11 @@
       <file leaf-file-name="ForecastContainerYa.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Parsers/ForecastContainerYa.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.3972603" vertical-offset="0" max-vertical-offset="935">
-              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.33513513" vertical-offset="1" max-vertical-offset="1037">
+              <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -719,7 +713,7 @@
       <workItem from="1410992205284" duration="1864000" />
       <workItem from="1411035501914" duration="1321000" />
       <workItem from="1411080145797" duration="19268000" />
-      <workItem from="1411164444460" duration="2440000" />
+      <workItem from="1411164444460" duration="3299000" />
     </task>
     <task id="LOCAL-00001" summary="new parsers structures">
       <created>1401957550408</created>
@@ -761,11 +755,15 @@
       <created>1411088714452</created>
       <updated>1411088714452</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="GUI and DB logic update&#10;new db methods, table view in main frame">
+      <created>1411167103574</created>
+      <updated>1411167103574</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="346824000" />
+    <option name="totallyTimeSpent" value="347683000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -793,7 +791,7 @@
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23109691" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.10756124" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -801,7 +799,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40089086" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2973274" sideWeight="0.41640043" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32962137" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14862682" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -812,7 +810,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17358893" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2973274" sideWeight="0.58359957" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2973274" sideWeight="0.58359957" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -848,7 +846,8 @@
     <MESSAGE value="1) parsers update (refactor + speed improvement)&#10;2) dbprocessor update (+added new fun, country's registration)&#10;3) added some entity's&#10;4) GUI update" />
     <MESSAGE value="1) parsers update (refactor + speed improvement)&#10;2) dbprocessor update (+added new fun, country's registration)&#10;3) added some entity's in BL&#10;4) GUI update" />
     <MESSAGE value="new methods in dbconnector" />
-    <option name="LAST_COMMIT_MESSAGE" value="new methods in dbconnector" />
+    <MESSAGE value="GUI and DB logic update&#10;new db methods, table view in main frame" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUI and DB logic update&#10;new db methods, table view in main frame" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1241,9 +1240,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Parsers/ForecastContainerYa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3972603" vertical-offset="0" max-vertical-offset="935">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.33513513" vertical-offset="1" max-vertical-offset="1037">
+          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
