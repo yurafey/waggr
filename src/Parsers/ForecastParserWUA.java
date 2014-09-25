@@ -64,27 +64,27 @@ public class ForecastParserWUA{
                 String currentDate = current.getAttribute("last_updated");
                 SimpleDateFormat parserSDF = new SimpleDateFormat("E, dd MMM yyyy HH:mm:ss", Locale.ENGLISH);
                 Date d = parserSDF.parse(currentDate);
-                wc.SetDate(d);
-                wc.SetIsPredict(false);
+                wc.setDate(d);
+                wc.setIsPredict(false);
                 NodeList node0Lst = current.getChildNodes();
                 //System.out.println("Current node child nodes " + node0Lst.getLength());
                 for (int z = 0; z < node0Lst.getLength(); z++) {
                     if (node0Lst.item(z).getNodeType() == Node.ELEMENT_NODE) {
                         switch (node0Lst.item(z).getNodeName()) {
                             case "t":
-                                wc.SetTemperature(Integer.parseInt(node0Lst.item(z).getTextContent()));
+                                wc.setTemperature(Integer.parseInt(node0Lst.item(z).getTextContent()));
                                 break;
                             case "p":
-                                wc.SetPressure(Integer.parseInt(node0Lst.item(z).getTextContent()));
+                                wc.setPressure(Integer.parseInt(node0Lst.item(z).getTextContent()));
                                 break;
                             case "w":
-                                wc.SetWindSpeed(Float.parseFloat(node0Lst.item(z).getTextContent()));
+                                wc.setWindSpeed(Float.parseFloat(node0Lst.item(z).getTextContent()));
                                 break;
                             case "w_rumb":
-                                wc.SetWindDirection(this.ConvertWindDirection(Integer.parseInt(node0Lst.item(z).getTextContent())));
+                                wc.setWindDirection(this.ConvertWindDirection(Integer.parseInt(node0Lst.item(z).getTextContent())));
                                 break;
                             case "h":
-                                wc.SetHumidity(Integer.parseInt(node0Lst.item(z).getTextContent()));
+                                wc.setHumidity(Integer.parseInt(node0Lst.item(z).getTextContent()));
                                 break;
                             default:
                                 continue;
@@ -94,7 +94,7 @@ public class ForecastParserWUA{
 
                 WeatherList.add(wc);
             } else {
-                wc.SetIsPredict(true);
+                wc.setIsPredict(true);
             }
 
             NodeList nodeLst = doc.getElementsByTagName("forecast");
@@ -108,11 +108,11 @@ public class ForecastParserWUA{
                         SimpleDateFormat equalParser = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
                         Date d1 = parserSDF2.parse(date + " " + time + ":00:00");
 
-                        if (wc.GetIsPredict() || !(equalParser.format(d1).equals(equalParser.format(wc.GetDate())))) {   //проверяем чтобы не записывать прогноз на текущий день
+                        if (wc.getIsPredict() || !(equalParser.format(d1).equals(equalParser.format(wc.getDate())))) {   //проверяем чтобы не записывать прогноз на текущий день
                             NodeList daynodeLst = node2Lst.item(i).getChildNodes();
 
                             Weather wp = new Weather();
-                            wp.SetDate(d1);
+                            wp.setDate(d1);
                             for (int z = 0; z < daynodeLst.getLength(); z++) {
                                 if (daynodeLst.item(z).getNodeType() == Node.ELEMENT_NODE) {
                                     if (daynodeLst.item(z).getChildNodes().getLength() > 1) {
@@ -123,18 +123,18 @@ public class ForecastParserWUA{
 
                                         switch (daynodeLst.item(z).getNodeName()) {
                                             case "t":
-                                                wp.SetTemperature(mid);
+                                                wp.setTemperature(mid);
                                                 break;
                                             case "p":
-                                                wp.SetPressure(mid);
+                                                wp.setPressure(mid);
                                                 break;
                                             case "wind":
-                                                wp.SetWindSpeed(midf);
+                                                wp.setWindSpeed(midf);
                                                 int rumb = Integer.parseInt(((Element) daynodeLst.item(z)).getElementsByTagName("rumb").item(0).getTextContent());
-                                                wp.SetWindDirection(this.ConvertWindDirection(rumb));
+                                                wp.setWindDirection(this.ConvertWindDirection(rumb));
                                                 break;
                                             case "hmid":
-                                                wp.SetHumidity(mid);
+                                                wp.setHumidity(mid);
                                                 break;
                                             default:
                                                 continue;
@@ -142,7 +142,7 @@ public class ForecastParserWUA{
                                     }
                                 }
                             }
-                            wp.SetIsPredict(true);
+                            wp.setIsPredict(true);
                             WeatherList.add(wp);
                         }
 

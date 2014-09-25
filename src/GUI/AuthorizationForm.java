@@ -1,7 +1,7 @@
 package GUI;
 
 import BusinessLogic.User;
-import DBProcessor.DBConnector;
+import DataAccessLayer.DBConnector;
 
 import javax.swing.*;
 import java.awt.*;
@@ -46,9 +46,6 @@ public class AuthorizationForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 OkClicked();
-
-                //db.NewUser(Field1.getText(),String.valueOf(Field2.getPassword()),"Name1","Name2");
-
             }
         });
         RegButton.addActionListener(new ActionListener() {
@@ -69,14 +66,15 @@ public class AuthorizationForm extends JFrame {
         setVisible(true);
     }
     private void OkClicked(){
-        User checkUser = db.CheckUser(Field1.getText(),String.valueOf(Field2.getPassword()));
+        User checkUser = db.сheckUser(Field1.getText(), String.valueOf(Field2.getPassword()));
         if (checkUser == null){
             JOptionPane.showMessageDialog(this,"Неверный логин/пароль","Ошибка",JOptionPane.INFORMATION_MESSAGE);
             return;
         }
-
-        setVisible(false);
+        dispose();
+        db.connectionClose();
         MainForm m = new MainForm(checkUser);
+
     }
 
 }

@@ -1,4 +1,4 @@
-package DBProcessor;
+package DataAccessLayer;
 
 import BusinessLogic.User;
 import BusinessLogic.Weather;
@@ -34,7 +34,7 @@ public class DBConnector {
 
     }
 
-    public void DBConnectionClose() {
+    public void connectionClose() {
         try {
             waggrConnection.close();
             System.out.println("Connection closed");
@@ -43,25 +43,25 @@ public class DBConnector {
         }
     }
 
-    public Connection GetConnection() {
+    public Connection getConnection() {
         return waggrConnection;
     }
 
-    public void WriteWeatherDataYandex(HashMap<Integer, List<Weather>> CityWeatherListYandex, HashMap<Integer, String> CityIdMapYandex , HashMap<Integer,String> CountryIdMapYandex , ListMultimap<Integer,Integer> CountryCityMapYandex) {
-        ClearTable(weatherTableNameYandex);
-        ClearSequence("seq1");
-        WriteWeatherData(weatherTableNameYandex, CityWeatherListYandex, CityIdMapYandex, CountryIdMapYandex, CountryCityMapYandex);
+    public void writeWeatherDataYandex(HashMap<Integer, List<Weather>> CityWeatherListYandex, HashMap<Integer, String> CityIdMapYandex, HashMap<Integer, String> CountryIdMapYandex, ListMultimap<Integer, Integer> CountryCityMapYandex) {
+        clearTable(weatherTableNameYandex);
+        clearSequence("seq1");
+        writeWeatherData(weatherTableNameYandex, CityWeatherListYandex, CityIdMapYandex, CountryIdMapYandex, CountryCityMapYandex);
 
     }
 
-    public void WriteWeatherDataWUA(HashMap<Integer, List<Weather>> CityWeatherListWUA, HashMap<Integer, String> CityIdMapWUA, HashMap<Integer,String> CountryIdMapWUA , ListMultimap<Integer,Integer> CountryCityMapWUA) {
-        ClearTable(weatherTableNameWUA);
-        ClearSequence("seq2");
-        WriteWeatherData(weatherTableNameWUA, CityWeatherListWUA, CityIdMapWUA, CountryIdMapWUA, CountryCityMapWUA);
+    public void writeWeatherDataWUA(HashMap<Integer, List<Weather>> CityWeatherListWUA, HashMap<Integer, String> CityIdMapWUA, HashMap<Integer, String> CountryIdMapWUA, ListMultimap<Integer, Integer> CountryCityMapWUA) {
+        clearTable(weatherTableNameWUA);
+        clearSequence("seq2");
+        writeWeatherData(weatherTableNameWUA, CityWeatherListWUA, CityIdMapWUA, CountryIdMapWUA, CountryCityMapWUA);
 
     }
 
-    public boolean NewUser(String login, String password, String name, String surname, String cityName, String countryName) {
+    public boolean newUser(String login, String password, String name, String surname, String cityName, String countryName) {
         try {
 
             Statement CheckUser = waggrConnection.createStatement();
@@ -88,7 +88,7 @@ public class DBConnector {
         return false;
     }
 
-    public User CheckUser(String login, String password) {
+    public User сheckUser(String login, String password) {
         try {
             Statement CheckLogin = waggrConnection.createStatement();
             ResultSet Res = CheckLogin.executeQuery("SELECT * FROM users WHERE login ='" + login + "'AND password = '" + password + "';");
@@ -105,8 +105,25 @@ public class DBConnector {
         }
         return null;
     }
+    public User getUser (String login){
+        try {
+            Statement CheckLogin = waggrConnection.createStatement();
+            ResultSet Res = CheckLogin.executeQuery("SELECT * FROM users WHERE login ='" + login + "';");
+            if (Res.next()) {
+                Res.close();
+                Statement GetCity = waggrConnection.createStatement();
+                ResultSet UserData = GetCity.executeQuery("SELECT name, surname, city_name, country_name  FROM users WHERE login ='" + login +  "';");
+                UserData.next();
+                return new User(login, UserData.getString(1), UserData.getString(2), UserData.getString(3), UserData.getString(4));
+            }
+            Res.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
-    private Boolean ClearSequence(String sequenceName) {
+    private Boolean clearSequence(String sequenceName) {
         try {
             Statement StClear = waggrConnection.createStatement();
             Boolean res = StClear.execute("SELECT setval('" + sequenceName + "', 0);");
@@ -118,7 +135,7 @@ public class DBConnector {
         return null;
     }
 
-    private Boolean ClearTable(String tableName) {
+    private Boolean clearTable(String tableName) {
         try {
             Statement StDel = waggrConnection.createStatement();
             Boolean res = StDel.execute("DELETE FROM " + tableName + ";");
@@ -132,7 +149,7 @@ public class DBConnector {
         return null;
     }
 
-    private void WriteWeatherData (String tableName, HashMap<Integer, List<Weather>> CityWeatherList, HashMap<Integer, String> CityIdMap, HashMap<Integer,String> CountryIdMap , ListMultimap<Integer,Integer> CountryCityMap) {
+    private void writeWeatherData(String tableName, HashMap<Integer, List<Weather>> CityWeatherList, HashMap<Integer, String> CityIdMap, HashMap<Integer, String> CountryIdMap, ListMultimap<Integer, Integer> CountryCityMap) {
 
         try {
 
@@ -147,17 +164,17 @@ public class DBConnector {
                         List<Weather> tmpWeatherList = CityWeatherList.get(CityId);
                         for (int i = 0; i < tmpWeatherList.size(); i++) {
                             Weather tmpWeather = tmpWeatherList.get(i);
-                            Timestamp sqlDate = new Timestamp(tmpWeather.GetDate().getTime());
+                            Timestamp sqlDate = new Timestamp(tmpWeather.getDate().getTime());
                             tempPst.setTimestamp(1, sqlDate);
                             tempPst.setInt(2, CityId);
                             tempPst.setString(3, CityIdMap.get(CityId));
-                            tempPst.setInt(4, tmpWeather.GetTemperature());
-                            tempPst.setInt(5, tmpWeather.GetPressure());
-                            tempPst.setInt(6, tmpWeather.GetHumidity());
-                            tempPst.setFloat(7, tmpWeather.GetWindSpeed());
-                            tempPst.setString(8, tmpWeather.GetWindDirection());
+                            tempPst.setInt(4, tmpWeather.getTemperature());
+                            tempPst.setInt(5, tmpWeather.getPressure());
+                            tempPst.setInt(6, tmpWeather.getHumidity());
+                            tempPst.setFloat(7, tmpWeather.getWindSpeed());
+                            tempPst.setString(8, tmpWeather.getWindDirection());
                             tempPst.setString(9, CountryIdMap.get(CountryId));
-                            tempPst.setBoolean(10, tmpWeather.GetIsPredict());
+                            tempPst.setBoolean(10, tmpWeather.getIsPredict());
                             tempPst.execute();
                         }
                     } catch (NullPointerException e) {
@@ -175,27 +192,27 @@ public class DBConnector {
 
     }
 
-    public Weather GetCurrentWUA (String cityName,String countryName){
-        return GetCurrentWeather(weatherTableNameWUA,cityName,countryName);
+    public Weather getCurrentWUA(String cityName, String countryName){
+        return getCurrentWeather(weatherTableNameWUA, cityName, countryName);
     }
-    public Weather GetCurrentYandex (String cityName,String countryName){
-        return GetCurrentWeather(weatherTableNameYandex, cityName, countryName);
+    public Weather getCurrentYandex(String cityName, String countryName){
+        return getCurrentWeather(weatherTableNameYandex, cityName, countryName);
     }
 
-    private Weather GetCurrentWeather(String tableName, String cityName,String countryName){
+    private Weather getCurrentWeather(String tableName, String cityName, String countryName){
         try {
             Statement CheckLogin = waggrConnection.createStatement();
             String query = String.format("SELECT timestamp, temperature, pressure, humidity, wind_speed, wind_direction FROM %s WHERE city_name = '%s' AND country_name = '%s' AND is_predict = FALSE;", tableName, cityName, countryName);
             ResultSet res = CheckLogin.executeQuery(query);
             if (res.next()){
                 Weather weatherResult = new Weather();
-                weatherResult.SetDate((Date) res.getTimestamp(1));
-                weatherResult.SetTemperature(res.getInt(2));
-                weatherResult.SetPressure(res.getInt(3));
-                weatherResult.SetHumidity(res.getInt(4));
-                weatherResult.SetWindSpeed(res.getFloat(5));
-                weatherResult.SetWindDirection(res.getString(6));
-                weatherResult.SetIsPredict(false);
+                weatherResult.setDate((Date) res.getTimestamp(1));
+                weatherResult.setTemperature(res.getInt(2));
+                weatherResult.setPressure(res.getInt(3));
+                weatherResult.setHumidity(res.getInt(4));
+                weatherResult.setWindSpeed(res.getFloat(5));
+                weatherResult.setWindDirection(res.getString(6));
+                weatherResult.setIsPredict(false);
                 return weatherResult;
             }
         } catch (SQLException e){
@@ -209,12 +226,14 @@ public class DBConnector {
 //
 //    }
 
-    public List<List<Weather>> GetForecastsByCityAndCountyName(String cityName,String countryName) {
+    public List<List<Weather>> getForecastsByCityAndCountyName(String cityName, String countryName) {
         try {
             ResultSet rs = null;
-            String query = "SELECT timestamp, temperature, pressure, humidity, wind_speed, wind_direction, is_predict FROM " + weatherTableNameYandex + " WHERE city_name = '" + cityName + "' AND country_name = '" +countryName+ "';" +
-                           "SELECT timestamp, temperature, pressure, humidity, wind_speed, wind_direction, is_predict FROM " + weatherTableNameWUA + " WHERE city_name = '" + cityName + "' AND country_name = '" +countryName+ "';";
-            PreparedStatement pst = waggrConnection.prepareStatement(query);
+            String query1 = String.format("SELECT timestamp, temperature, pressure, humidity, wind_speed, wind_direction FROM %s WHERE city_name = '%s' AND country_name = '%s' AND is_predict = 'TRUE' ORDER BY timestamp;",weatherTableNameYandex,cityName,countryName);
+            String query2 = String.format("SELECT timestamp, temperature, pressure, humidity, wind_speed, wind_direction FROM %s WHERE city_name = '%s' AND country_name = '%s' AND is_predict = 'TRUE' ORDER BY timestamp;",weatherTableNameWUA,cityName,countryName);
+            //String query = "SELECT timestamp, temperature, pressure, humidity, wind_speed, wind_direction, is_predict FROM " + weatherTableNameYandex + " WHERE city_name = '" + cityName + "' AND country_name = '" +countryName+ "';" +
+            //              "SELECT timestamp, temperature, pressure, humidity, wind_speed, wind_direction, is_predict FROM " + weatherTableNameWUA + " WHERE city_name = '" + cityName + "' AND country_name = '" +countryName+ "';";
+            PreparedStatement pst = waggrConnection.prepareStatement(query1+query2);
             boolean isResult = pst.execute();
             List<List<Weather>> resultWeatherLists = new ArrayList<>();
             do {
@@ -224,13 +243,13 @@ public class DBConnector {
 //                    String result = String.format("Forecast date %s  temperature %d C*, air pressure %d mm, humidity %d, wind %.1f %s", rs.getTimestamp(1).toString(), rs.getInt(2), rs.getInt(3), rs.getInt(4), rs.getFloat(5), rs.getString(6));
 //                    System.out.println(result);
                     Weather weatherResult = new Weather();
-                    weatherResult.SetDate((Date) rs.getTimestamp(1));
-                    weatherResult.SetTemperature(rs.getInt(2));
-                    weatherResult.SetPressure(rs.getInt(3));
-                    weatherResult.SetHumidity(rs.getInt(4));
-                    weatherResult.SetWindSpeed(rs.getFloat(5));
-                    weatherResult.SetWindDirection(rs.getString(6));
-                    weatherResult.SetIsPredict(rs.getBoolean(7));
+                    weatherResult.setDate((Date) rs.getTimestamp(1));
+                    weatherResult.setTemperature(rs.getInt(2));
+                    weatherResult.setPressure(rs.getInt(3));
+                    weatherResult.setHumidity(rs.getInt(4));
+                    weatherResult.setWindSpeed(rs.getFloat(5));
+                    weatherResult.setWindDirection(rs.getString(6));
+                    weatherResult.setIsPredict(true);
                     WeatherList.add(weatherResult);
                 }
                 resultWeatherLists.add(WeatherList);
@@ -266,4 +285,49 @@ public class DBConnector {
 
         return null;
     }
+    public List<String> CheckCity (String cityName){
+        try {
+            List<String>countryNameList = new ArrayList<>();
+            String query1 = String.format("SELECT country_name FROM %s WHERE city_name = '%s';",weatherTableNameWUA,cityName);
+            String query2 = String.format("SELECT country_name FROM %s WHERE city_name = '%s';",weatherTableNameYandex,cityName);
+//            String query = "SELECT * FROM "+weatherTableNameWUA+" WHERE city_name ='" + cityName + "';" +
+//                    "SELECT * FROM "+weatherTableNameYandex+" WHERE city_name ='" + cityName + "';";
+            PreparedStatement pst = waggrConnection.prepareStatement(query1+query2);
+            Boolean isResult = pst.execute();
+            do {
+                ResultSet resSet = pst.getResultSet();
+                while(resSet.next()){
+                    String countryName = resSet.getString(1);
+                    if (!countryNameList.contains(countryName)) countryNameList.add(resSet.getString(1));
+                }
+                isResult = pst.getMoreResults();
+            }while (isResult);
+            return countryNameList;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public boolean setUserCity(String userLogin, String cityName, String countryName){
+
+        try {
+            Statement CheckUser = waggrConnection.createStatement();
+            ResultSet Res = CheckUser.executeQuery("SELECT * FROM users WHERE login ='" + userLogin + "';");
+            if (!Res.next()) {
+                CheckUser.close();
+                return false;
+            }
+            CheckUser.close();
+            String stm = String.format("UPDATE users SET city_name = '%s', country_name = '%s' WHERE login = '%s';",cityName,countryName,userLogin);
+            Statement pst = waggrConnection.createStatement();
+            pst.execute(stm);
+            pst.close();
+            return true;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 }

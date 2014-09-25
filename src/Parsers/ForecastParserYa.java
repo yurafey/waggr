@@ -53,26 +53,26 @@ public class ForecastParserYa {
                         }
                         Calendar c = parserSDF.getCalendar();
                         Date d = c.getTime();
-                        weatherTmp.SetDate(d);
-                        weatherTmp.SetIsPredict(true);
+                        weatherTmp.setDate(d);
+                        weatherTmp.setIsPredict(true);
                         NodeList node3Lst = e.getChildNodes();
                         for (int y = 0; y < node3Lst.getLength(); y++) {
                             Node items = node3Lst.item(y);
                             switch (items.getNodeName().toString()) {
                                 case "temperature":
-                                    weatherTmp.SetTemperature(Integer.parseInt(items.getTextContent()));
+                                    weatherTmp.setTemperature(Integer.parseInt(items.getTextContent()));
                                     break;
                                 case "pressure":
-                                    weatherTmp.SetPressure(Integer.parseInt(items.getTextContent()));
+                                    weatherTmp.setPressure(Integer.parseInt(items.getTextContent()));
                                     break;
                                 case "wind_speed":
-                                    weatherTmp.SetWindSpeed(Float.valueOf(items.getTextContent()));
+                                    weatherTmp.setWindSpeed(Float.valueOf(items.getTextContent()));
                                     break;
                                 case "wind_direction":
-                                    weatherTmp.SetWindDirection(items.getTextContent());
+                                    weatherTmp.setWindDirection(items.getTextContent());
                                     break;
                                 case "humidity":
-                                    weatherTmp.SetHumidity(Integer.parseInt(items.getTextContent()));
+                                    weatherTmp.setHumidity(Integer.parseInt(items.getTextContent()));
                                     break;
                                 default:
                                     break;
@@ -119,32 +119,32 @@ public class ForecastParserYa {
                     Node items = node1list.item(z);
                     switch (items.getNodeName().toString()) {
                         case "temperature":
-                            weatherTmp.SetTemperature(Integer.parseInt(items.getTextContent()));
+                            weatherTmp.setTemperature(Integer.parseInt(items.getTextContent()));
                             break;
                         case "pressure":
-                            weatherTmp.SetPressure(Integer.parseInt(items.getTextContent()));
+                            weatherTmp.setPressure(Integer.parseInt(items.getTextContent()));
                             break;
                         case "wind_speed":
-                            weatherTmp.SetWindSpeed(Float.valueOf(items.getTextContent()));
+                            weatherTmp.setWindSpeed(Float.valueOf(items.getTextContent()));
                             break;
                         case "wind_direction":
-                            weatherTmp.SetWindDirection(items.getTextContent());
+                            weatherTmp.setWindDirection(items.getTextContent());
                             break;
                         case "observation_time":
                             SimpleDateFormat parserSDF = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
                             parserSDF.parse(items.getTextContent().toString());
                             Calendar c = parserSDF.getCalendar();
                             Date d = c.getTime();
-                            weatherTmp.SetDate(d);
+                            weatherTmp.setDate(d);
                             break;
                         case "humidity":
-                            weatherTmp.SetHumidity(Integer.parseInt(items.getTextContent()));
+                            weatherTmp.setHumidity(Integer.parseInt(items.getTextContent()));
                             break;
                         default:
                             break;
                     }
                 }
-                weatherTmp.SetIsPredict(false);
+                weatherTmp.setIsPredict(false);
                 WC = weatherTmp;
                 weatherTmp = null;
                 node1 = null;

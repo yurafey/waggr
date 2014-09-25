@@ -17,51 +17,51 @@ public class Weather{
     private int humidity;
     private Boolean ispredict = true;
 
-    public void SetHumidity (int humidity){
+    public void setHumidity(int humidity){
         this.humidity = humidity;
     }
-    public void SetIsPredict (Boolean is){
+    public void setIsPredict(Boolean is){
         this.ispredict = is;
     }
-    public void SetDate(Date date){
+    public void setDate(Date date){
         this.date = date;
     }
-    public void SetTemperature(int temperature){
+    public void setTemperature(int temperature){
         this.temperature  = temperature;
     }
-    public void SetPressure(int pressure){
+    public void setPressure(int pressure){
         this.pressure  = pressure;
     }
-    public void SetWindSpeed(float wind_speed){
+    public void setWindSpeed(float wind_speed){
         this.wind_speed  = wind_speed;
     }
-    public void SetWindDirection(String wind_direction){
+    public void setWindDirection(String wind_direction){
         this.wind_direction  = wind_direction;
     }
 
-    public int GetHumidity() {
+    public int getHumidity() {
         return humidity;
     }
-    public Boolean GetIsPredict (){
+    public Boolean getIsPredict(){
         return ispredict;
     }
-    public Date GetDate(){
+    public Date getDate(){
         return date;
     }
-    public int GetTemperature(){
+    public int getTemperature(){
         return temperature;
     }
-    public int GetPressure(){
+    public int getPressure(){
         return pressure;
     }
-    public String GetWindDirection() {
+    public String getWindDirection() {
         return wind_direction;
     }
-    public float GetWindSpeed(){
+    public float getWindSpeed(){
         return wind_speed;
     }
 
-    public String GetToString(){
+    public String getToString(){
         //Временаня структура вывода для удобной отладки
         if (ispredict)
             return String.format("Forecast date %s %s : temperature %d C*, air pressure %d mm, humidity %d, wind %.1f %s",

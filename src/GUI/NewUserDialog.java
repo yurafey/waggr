@@ -1,6 +1,6 @@
 package GUI;
 
-import DBProcessor.DBConnector;
+import DataAccessLayer.DBConnector;
 
 import javax.swing.*;
 import java.awt.event.*;
@@ -73,7 +73,7 @@ public class NewUserDialog extends JDialog {
             JOptionPane.showMessageDialog(this,"Города "+textField4.getText()+" или страны "+ textField5.getText()+" нет в базе","Ошибка",JOptionPane.INFORMATION_MESSAGE);
             return ;
         }
-        Boolean res = db.NewUser(textField1.getText(),String.valueOf(passwordField1.getPassword()),textField2.getText(),textField3.getText(),textField4.getText(),textField5.getText());
+        Boolean res = db.newUser(textField1.getText(), String.valueOf(passwordField1.getPassword()), textField2.getText(), textField3.getText(), textField4.getText(), textField5.getText());
         if (!res){
             JOptionPane.showMessageDialog(this,"Логин "+textField1.getText()+" уже существует","Ошибка",JOptionPane.INFORMATION_MESSAGE);
             return ;
@@ -83,7 +83,7 @@ public class NewUserDialog extends JDialog {
     }
 
     private void onCancel() {
-        db.DBConnectionClose();
+        db.connectionClose();
 // add your code here if necessary
         dispose();
     }
