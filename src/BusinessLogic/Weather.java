@@ -15,13 +15,13 @@ public class Weather{
     private float wind_speed;
     private String wind_direction;
     private int humidity;
-    private Boolean ispredict = true;
+    private Boolean isPredict = true;
 
     public void setHumidity(int humidity){
         this.humidity = humidity;
     }
     public void setIsPredict(Boolean is){
-        this.ispredict = is;
+        this.isPredict = is;
     }
     public void setDate(Date date){
         this.date = date;
@@ -43,7 +43,7 @@ public class Weather{
         return humidity;
     }
     public Boolean getIsPredict(){
-        return ispredict;
+        return isPredict;
     }
     public Date getDate(){
         return date;
@@ -62,8 +62,7 @@ public class Weather{
     }
 
     public String getToString(){
-        //Временаня структура вывода для удобной отладки
-        if (ispredict)
+        if (isPredict)
             return String.format("Forecast date %s %s : temperature %d C*, air pressure %d mm, humidity %d, wind %.1f %s",
                     dateFormat.format(date).substring(0,dateFormat.format(date).indexOf(" ")),
                     dateFormat.format(date).substring(dateFormat.format(date).indexOf(" ")),

@@ -77,6 +77,7 @@ public class SetCountryDialog extends JDialog {
         radioButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+                radioButton1.setSelected(true);
                 radioButton2.setSelected(false);
                 radioButton3.setSelected(false);
                 radioButton4.setSelected(false);
@@ -87,6 +88,7 @@ public class SetCountryDialog extends JDialog {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 radioButton1.setSelected(false);
+                radioButton2.setSelected(true);
                 radioButton3.setSelected(false);
                 radioButton4.setSelected(false);
                 radioButton5.setSelected(false);
@@ -122,7 +124,6 @@ public class SetCountryDialog extends JDialog {
     }
 
     private void onOK() {
-// add your code here
         dispose();
     }
     public String getSelectedName (){
@@ -134,7 +135,6 @@ public class SetCountryDialog extends JDialog {
         return null;
     }
     private void onCancel() {
-// add your code here if necessary
         dispose();
     }
 }

@@ -12,7 +12,7 @@ import java.util.List;
  * Created by yuraf_000 on 05.06.2014.
  */
 public class ForecastContainerYa{
-    private CountryCityParserYa CCP = new CountryCityParserYa("http://weather.yandex.ru/static/cities.xml");
+    private CountryCityParserYa CCP = new CountryCityParserYa("https://pogoda.yandex.ru/static/cities.xml");
     private HashMap<Integer,String> CountryIdMap = new HashMap<>();
     private HashMap<Integer,String> CityIdMap = new HashMap<>();
     private ListMultimap<Integer,Integer> CountryCityMap = ArrayListMultimap.create();

@@ -31,6 +31,7 @@ public class CountryCityParserYa {
             String resCityId = null;
             URL UrlToParse = new URL(url);
             DOMParser p = new DOMParser();
+            System.out.println(url.toString());
             p.parse(new InputSource(UrlToParse.openStream()));
             Document doc = p.getDocument();
             NodeList nodeLst = doc.getElementsByTagName("country");

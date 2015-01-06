@@ -1,28 +1,40 @@
 package ServiceLayer;
 
-import BusinessLogic.RealFeel;
+import BusinessLogic.RealFeelWorker;
 import BusinessLogic.Weather;
 import DataAccessLayer.DBConnector;
 
+import java.text.DateFormatSymbols;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 
 /**
  * Created by yuraf_000 on 24.09.2014.
  */
-public class WeatherForecastTableContainer {
+public class WeatherForecastTableService {
     private DBConnector db = new DBConnector();
     //private List<Weather> weatherForecast = new ArrayList<>();
     private List<List<Weather>> forecastsList = new ArrayList<>();
-    private RealFeel realFeel = null;
+    private RealFeelWorker realFeelWorker = null;
     private String cityName = null;
     private String countryName = null;
     private final String[] colNames = {"Дата","Температура","Влажность","Давление воздуха","Скорость ветра","Направление ветра"};
     private List<Object> rowsYandex = new ArrayList<>();
     private List<Object> rowsWeatherUA = new ArrayList<>();
 
-    public WeatherForecastTableContainer(String cityName, String countryName){
+    private static DateFormatSymbols myDateFormatSymbols = new DateFormatSymbols(){
+
+        @Override
+        public String[] getMonths() {
+            return new String[]{"января", "февраля", "марта", "апреля", "мая", "июня",
+                    "июля", "августа", "сентября", "октября", "ноября", "декабря"};
+        }
+
+    };
+    public WeatherForecastTableService(String cityName, String countryName){
         this.cityName = cityName;
         this.countryName = countryName;
         TableProcessor();
@@ -48,17 +60,35 @@ public class WeatherForecastTableContainer {
 
     private List<Object> getRows(List<Weather> forecastList){
         List<Object> resultList = new ArrayList<>();
-        if (forecastList.size()==0) resultList.add(Arrays.asList("N/A","N/A","N/A","N/A"));
+        if (forecastList.size()==0) resultList.add(Arrays.asList("N/A","N/A","N/A","N/A","N/A","N/A"));
         else {
             for (int i = 0; i < forecastList.size(); i++){
                 Weather forecastElement = forecastList.get(i);
+                java.util.Date fdate = forecastElement.getDate();
+                Calendar cal = Calendar.getInstance();
+                cal.setTime(fdate);
+                String partOfDay = "";
+                switch (cal.get(Calendar.HOUR_OF_DAY)){
+                    case 3: partOfDay = "(ночь)";
+                        break;
+                    case 9: partOfDay = "(утро)";
+                        break;
+                    case 15: partOfDay = "(день)";
+                        break;
+                    case 21: partOfDay = "(вечер)";
+                        break;
+                    default:
+                }
+                SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM", myDateFormatSymbols );
                 resultList.add(Arrays.asList(
-                        forecastElement.getDate().toString(),forecastElement.getTemperature(),
+                        dateFormat.format(fdate)+" "+partOfDay,forecastElement.getTemperature(),
                         forecastElement.getHumidity(),forecastElement.getPressure(),forecastElement.getWindSpeed(),forecastElement.getWindDirection()));
             }
         }
         return resultList;
     }
+
+
 
     public Object getValueAtYandex(int row, int col){
         return ((List<Object>) rowsYandex.get(row)).get(col);

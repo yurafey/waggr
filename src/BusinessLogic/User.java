@@ -4,14 +4,16 @@ package BusinessLogic;
  * Created by yuraf_000 on 19.06.2014.
  */
 public class User {
-
-
     private String userName = null;
     private String userSurname = null;
     private String userCity = null;
     private String userCountry = null;
     private String userLogin = null;
-    private RealFeel userRealFeel = null;
+    private String userPassword = null;
+    private RealFeelWorker userRealFeelWorker = null;
+    public User() {
+        //
+    }
     public User (String login, String name, String surname, String cityName, String countryName){
         userName = name;
         userSurname = surname;
@@ -19,7 +21,17 @@ public class User {
         userCountry = countryName;
         userLogin = login;
     }
-
+    public User (String login, String password, String name, String surname, String cityName, String countryName){
+        userLogin = login;
+        userPassword = password;
+        userName = name;
+        userSurname = surname;
+        userCity = cityName;
+        userCountry = countryName;
+    }
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
+    }
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -36,6 +48,9 @@ public class User {
         this.userLogin = userLogin;
     }
 
+    public String getUserPassword() {
+        return userPassword;
+    }
     public String getUserName(){
         return userName;
     }

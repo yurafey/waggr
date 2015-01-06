@@ -1,11 +1,10 @@
 package GUI;
 
-import BusinessLogic.User;
-import DataAccessLayer.DBConnector;
-import ServiceLayer.CurrentWeatherTableContainer;
-import ServiceLayer.WeatherForecastTableContainer;
+import ServiceLayer.*;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableModel;
 import java.awt.event.*;
@@ -19,58 +18,64 @@ public class MainForm extends JFrame{
     private JPanel rootPanel;
     private JTabbedPane tabbedPane1;
     private JLabel UserLabel;
-    private JTextField DefaultCityField;
+    private JTextField defaultCityField;
     private JButton saveCity;
     private JTextField searchCityField;
     private JButton forecastButton;
     private JTable tableCurrentWeather;
     private JScrollPane JscrollPane1;
     private JPanel JPanel1;
-    private JButton ExitProfileButton;
+    private JButton exitProfileButton;
     private JTable table5dayWeatherUA;
     private JTable table5dayWeatherYandex;
-    private CurrentWeatherTableContainer currentWeather = null;
-    private WeatherForecastTableContainer weatherForecast = null;
-    private User user = null;
-    private DBConnector db = new DBConnector();
+    private JLabel label1;
+    private WeatherCurrentTableService currentWeather = null;
+    private WeatherForecastTableService weatherForecast = null;
+    private WeatherForecastUpdateService weatherForecastUpdateService = null;
+    private UsersService usersService = new UsersService();
+    private CityService cityService = new CityService();
+    //final MainForm rootForm = this;
 
 
 
-    public MainForm(User mainUser) {
+    public MainForm(Object user, WeatherForecastUpdateService weatherForecastUpdateService) {
+        this.weatherForecastUpdateService = weatherForecastUpdateService;
+        usersService.setCurrentUser(user);
         setTitle("WAGGR Weather Aggregator");
         setSize(800,450);
         setLocationRelativeTo(null);
         setContentPane(rootPanel);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        user = mainUser;
-        UserLabel.setText(UserLabel.getText()+ user.getUserName()+" "+user.getUserSurname());
-        DefaultCityField.setText(user.getUserCity()+", "+user.getUserCountry());
-        searchCityField.setText(DefaultCityField.getText());
-        //currentWeather = new CurrentWeatherTableContainer(user.getUserCity(),user.getUserCountry());
-        updateTableModels(user.getUserCity(), user.getUserCountry());
+        UserLabel.setText(usersService.getCurrentUserName()+" "+usersService.getCurrentUserSurname());
+        String userCity = usersService.getCurrentUserCity();
+        String userCountry = usersService.getCurrentUserCountry();
+        String currentCountryCity = userCity+", "+userCountry;
+        defaultCityField.setText(currentCountryCity);
+        searchCityField.setText(currentCountryCity);
+        updateTableModels(userCity, userCountry);
         addListeners();
         pack();
         setVisible(true);
     }
 
     private void addListeners(){
-        DefaultCityField.addMouseListener(new MouseAdapter() {
+        defaultCityField.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                DefaultCityField.setText("");
+                defaultCityField.setText("");
             }
         });
-        DefaultCityField.addFocusListener(new FocusListener(){
+        defaultCityField.addFocusListener(new FocusListener(){
 
             @Override
             public void focusGained(FocusEvent focusEvent) {
-                //пока не используется
+                //
             }
 
             @Override
             public void focusLost(FocusEvent focusEvent) {
-                if (DefaultCityField.getText().isEmpty()){
-                    DefaultCityField.setText(user.getUserCity()+", "+user.getUserCountry());
+                if (defaultCityField.getText().isEmpty()){
+                    defaultCityField.setText(usersService.getCurrentUserCity()+", "+usersService.getCurrentUserCountry());
                 }
             }
         });
@@ -96,49 +101,53 @@ public class MainForm extends JFrame{
             }
         });
 
-        ExitProfileButton.addActionListener(new ActionListener() {
+        exitProfileButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+                SwingUtilities.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        AuthorizationForm authorizationForm = new AuthorizationForm(weatherForecastUpdateService);
+                    }
+                });
                 dispose();
-
-                AuthorizationForm newform = new AuthorizationForm();
             }
         });
 
         saveCity.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                if (DefaultCityField.getText().isEmpty()) {
-                    JOptionPane.showMessageDialog(saveCity,"Введите название города в поле избранного города","Ошибка",JOptionPane.INFORMATION_MESSAGE);
+                if (defaultCityField.getText().isEmpty()) {
+                    JOptionPane.showMessageDialog(saveCity, "Введите название города в поле избранного города", "Ошибка", JOptionPane.INFORMATION_MESSAGE);
                     return;
                 }
                 List<String> countryNames = new ArrayList<String>();
-                String cityNameText = DefaultCityField.getText();
-                if(cityNameText.contains(",")) {
-                    cityNameText = cityNameText.substring(0,cityNameText.indexOf(','));
-                }
-                countryNames = db.CheckCity(cityNameText);
-                if (countryNames.isEmpty()) {
-                    JOptionPane.showMessageDialog(saveCity,"Город не найден","Ошибка",JOptionPane.INFORMATION_MESSAGE);
+                String cityNameText = getTrimmedCityField(defaultCityField);
+                countryNames = cityService.checkCityExists(cityNameText);
+                if (countryNames == null) {
+                    JOptionPane.showMessageDialog(saveCity, "Город не найден", "Ошибка", JOptionPane.INFORMATION_MESSAGE);
                     return;
-                } else if (countryNames.size()>1){
+                } else if (countryNames.size() > 1) {
                     SetCountryDialog dialog = new SetCountryDialog(countryNames);
                     dialog.pack();
                     dialog.setVisible(true);
                     String selectedCountryName = dialog.getSelectedName();
-                    if(db.setUserCity(user.getUserLogin(),cityNameText,selectedCountryName)) {
-                        DefaultCityField.setText(String.format("%s, %s", cityNameText, selectedCountryName));
-                        searchCityField.setText(DefaultCityField.getText());
-                        updateUser();
-                        updateTableModels(user.getUserCity(), user.getUserCountry());
+                    if (usersService.setCurrentUserLocation(cityNameText, selectedCountryName)) {
+                        String selectedLocation = String.format("%s, %s", cityNameText, selectedCountryName);
+                        defaultCityField.setText(selectedLocation);
+                        searchCityField.setText(selectedLocation);
+                        updateTableModels(usersService.getCurrentUserCity(), usersService.getCurrentUserCountry());
                         return;
                     }
+                } else {
+                    String countryName = countryNames.get(0);
+                    if (usersService.setCurrentUserLocation(cityNameText, countryName)) {
+                        String selectedLocation = String.format("%s, %s", cityNameText, countryName);
+                        defaultCityField.setText(selectedLocation);
+                        searchCityField.setText(selectedLocation);
+                        updateTableModels(usersService.getCurrentUserCity(), usersService.getCurrentUserCountry());
+                    }
                 }
-                String selectedCountryName = countryNames.get(0);
-                if (db.setUserCity(user.getUserLogin(),cityNameText,selectedCountryName)) DefaultCityField.setText(String.format("%s, %s",cityNameText,selectedCountryName));
-                searchCityField.setText(DefaultCityField.getText());
-                updateUser();
-                updateTableModels(user.getUserCity(), user.getUserCountry());
             }
         });
 
@@ -151,12 +160,9 @@ public class MainForm extends JFrame{
                     return;
                 }
                 List<String> countryNames = new ArrayList<String>();
-                String cityNameText = searchCityField.getText();
-                if(cityNameText.contains(",")) {
-                    cityNameText = cityNameText.substring(0,cityNameText.indexOf(','));
-                }
-                countryNames = db.CheckCity(cityNameText);
-                if (countryNames.isEmpty()) {
+                String cityNameText = getTrimmedCityField(searchCityField);
+                countryNames = cityService.checkCityExists(cityNameText);
+                if (countryNames==null) {
                     JOptionPane.showMessageDialog(searchCityField, "Город не найден", "Ошибка", JOptionPane.INFORMATION_MESSAGE);
                     return;
                 } else if (countryNames.size()>1){
@@ -164,20 +170,30 @@ public class MainForm extends JFrame{
                     dialog.pack();
                     dialog.setVisible(true);
                     countryName = dialog.getSelectedName();
+                    System.out.println(countryName);
                     updateTableModels(cityNameText, countryName);
                     searchCityField.setText(String.format("%s, %s",cityNameText,countryName));
+                } else {
+                    countryName = countryNames.get(0);
+                    updateTableModels(cityNameText, countryName);
+                    searchCityField.setText(String.format("%s, %s", cityNameText, countryName));
                 }
-                countryName = countryNames.get(0);
-                updateTableModels(cityNameText, countryName);
-                searchCityField.setText(String.format("%s, %s",cityNameText,countryName));
-
             }
         });
     }
+
+    private String getTrimmedCityField(JTextField field) {
+        String cityNameText = field.getText();
+        if(cityNameText.contains(",")) {
+            return cityNameText.substring(0,cityNameText.indexOf(','));
+        } else {
+            return cityNameText;
+        }
+    }
+
     private boolean updateTableModels(String cityName, String countryName){
-        //currentWeather.onClose();
-         currentWeather = new CurrentWeatherTableContainer(cityName,countryName);
-         weatherForecast = new WeatherForecastTableContainer(cityName,countryName);
+        currentWeather = new WeatherCurrentTableService(usersService.getCurrentUserLogin(),cityName,countryName);
+        weatherForecast = new WeatherForecastTableService(cityName,countryName);
 
         TableModel currentWeatherTableModel = new AbstractTableModel() {
             @Override
@@ -205,7 +221,9 @@ public class MainForm extends JFrame{
         };
         tableCurrentWeather.setModel(currentWeatherTableModel);
 
-        TableModel weather5dayTableModelYandex = new AbstractTableModel() {
+
+
+        TableModel weatherForecastTableModelYandex = new AbstractTableModel() {
             @Override
             public int getColumnCount() { return weatherForecast.getColNames().length ; }
 
@@ -227,10 +245,15 @@ public class MainForm extends JFrame{
             @Override
             public Class getColumnClass(int c) {return (String.class);}
 
-        };
-        table5dayWeatherYandex.setModel(weather5dayTableModelYandex);
 
-        TableModel weather5dayTableModelWUA = new AbstractTableModel() {
+        };
+
+        table5dayWeatherYandex.setModel(weatherForecastTableModelYandex);
+        table5dayWeatherYandex.getColumnModel().getColumn(0).setMaxWidth(110);
+        table5dayWeatherYandex.getColumnModel().getColumn(0).setMinWidth(110);
+        table5dayWeatherYandex.getColumnModel().getColumn(0).setPreferredWidth(110);
+
+        TableModel weatherForecastTableModelWUA = new AbstractTableModel() {
             @Override
             public int getColumnCount() { return weatherForecast.getColNames().length ; }
 
@@ -253,17 +276,62 @@ public class MainForm extends JFrame{
             public Class getColumnClass(int c) {return (String.class);}
 
         };
-        table5dayWeatherUA.setModel(weather5dayTableModelWUA);
+        table5dayWeatherUA.setModel(weatherForecastTableModelWUA);
+        table5dayWeatherUA.getColumnModel().getColumn(0).setMaxWidth(110);
+        table5dayWeatherUA.getColumnModel().getColumn(0).setMinWidth(110);
+        table5dayWeatherUA.getColumnModel().getColumn(0).setPreferredWidth(110);
 
-        //здесь будет обновление 9ти дней
+        ListSelectionModel selModel = table5dayWeatherYandex.getSelectionModel();
+
+        selModel.addListSelectionListener(new ListSelectionListener() {
+            public void valueChanged(ListSelectionEvent e) {
+                List <String> value= new ArrayList();
+                int[] selectedRows = table5dayWeatherYandex.getSelectedRows();
+                TableModel model = table5dayWeatherYandex.getModel();
+                TableModel model2 = table5dayWeatherUA.getModel();
+                if (!model.getValueAt(0,0).equals("N/A")) {
+                    if (!model2.getValueAt(0,0).equals("N/A")) {
+                        if (selectedRows.length==1) {
+                            value.add((String)model.getValueAt(selectedRows[0], 0));
+                        } else {
+                            for(int i = 0; i < selectedRows.length; i++) {
+                                int selIndex = selectedRows[i];
+                                String row = (String)model.getValueAt(selIndex, 0);
+                                String substr = row.substring(0,row.indexOf('(')-1);
+                                value.add(substr);
+                                //value.add(row);
+                            }
+                        }
+                        List<Integer> rows = new ArrayList<Integer>();
+                        int vs = value.size();
+                        for (int i = 0; i < model2.getRowCount(); i++) {
+                            for (String v : value) {
+                                String toCompare = (String) model2.getValueAt(i,0);
+                                if (vs>1) toCompare = toCompare.substring(0,toCompare.indexOf('(')-1);
+                                if (v.equals(toCompare)) {
+                                    rows.add(i);
+                                }
+                            }
+                        }
+                        int rs = rows.size();
+                        ListSelectionModel selectionModel =  table5dayWeatherUA.getSelectionModel();
+                        if (rs!=0){
+                            selectionModel.setSelectionInterval(rows.get(0), (rs==1)?rows.get(0):rows.get(rs-1));
+                        } else {
+                            selectionModel.clearSelection();
+                        }
+                    }
+                }
+            }
+        });
 
         weatherForecast.onClose();
         currentWeather.onClose();
         return true;
     }
-    private void updateUser (){
-        user = db.getUser(user.getUserLogin());
-    }
+//    private void updateUser (){
+//        user = db.getUser(user.getUserLogin());
+//    }
 
 
 }

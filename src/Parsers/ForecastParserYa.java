@@ -82,24 +82,18 @@ public class ForecastParserYa {
                         weatherTmp = null;
 
                     }
-                } //скобка на if
+                }
                 }
             }
             nodeLst = null;
 
         } catch (MalformedURLException e) {
-            //System.out.println("MailformedURL");
             e.printStackTrace();
         } catch (IOException e) {
-            //System.out.println("IOException");
             e.printStackTrace();
-            //return null;
         } catch (SAXException e) {
-            //System.out.println("SAX");
             e.printStackTrace();
-
         } catch (ParseException e) {
-            //System.out.println("Parse");
             e.printStackTrace();
         }
         return resList;
@@ -156,9 +150,7 @@ public class ForecastParserYa {
             e.printStackTrace();
         } catch (IOException e) {
             WeatherList = null;
-            System.out.println("PARSERS ERROR: YANDEXPARSER: Cant load forecast url: "+url);
-            //e.printStackTrace();
-            //WeatherList = null;
+            System.out.println("PARSERS ERROR: YANDEXPARSER: load url: "+url);
         } catch (SAXException e) {
             e.printStackTrace();
         } catch (ParseException e) {

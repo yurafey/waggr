@@ -1,6 +1,8 @@
 package GUI;
 
 import DataAccessLayer.DBConnector;
+import ServiceLayer.CityService;
+import ServiceLayer.UsersService;
 
 import javax.swing.*;
 import java.awt.event.*;
@@ -18,8 +20,8 @@ public class NewUserDialog extends JDialog {
     private JLabel SuccessField;
     private JPanel pan1;
     private JTextField textField5;
-
-
+    private CityService cityService = new CityService();
+    private UsersService usersService = new UsersService();
     private DBConnector db = new DBConnector();
 
     public NewUserDialog() {
@@ -63,20 +65,20 @@ public class NewUserDialog extends JDialog {
     private void onOK() {
         if (textField1.getText().isEmpty()||textField2.getText().isEmpty()||textField3.getText().isEmpty()||textField4.getText().isEmpty()||textField5.getText().isEmpty()){
             JOptionPane.showMessageDialog(this,"Введите все данные","Ошибка",JOptionPane.INFORMATION_MESSAGE);
-            return ;
+            return;
         }
         if (!String.valueOf(passwordField1.getPassword()).equals(String.valueOf(passwordField2.getPassword()))||passwordField1.getPassword().length==0||passwordField2.getPassword().length==0){
             JOptionPane.showMessageDialog(this,"Пароли не совпадают либо не введены","Ошибка",JOptionPane.INFORMATION_MESSAGE);
-            return ;
+            return;
         }
-        if (!db.CheckCity(textField4.getText(),textField5.getText())){
+        if (!cityService.checkCityExists(textField4.getText(), textField5.getText())){
             JOptionPane.showMessageDialog(this,"Города "+textField4.getText()+" или страны "+ textField5.getText()+" нет в базе","Ошибка",JOptionPane.INFORMATION_MESSAGE);
-            return ;
+            return;
         }
-        Boolean res = db.newUser(textField1.getText(), String.valueOf(passwordField1.getPassword()), textField2.getText(), textField3.getText(), textField4.getText(), textField5.getText());
+        boolean res = usersService.newUser(textField1.getText(),String.valueOf(passwordField1.getPassword()),textField2.getText(),textField3.getText(), textField4.getText(),textField5.getText());
         if (!res){
             JOptionPane.showMessageDialog(this,"Логин "+textField1.getText()+" уже существует","Ошибка",JOptionPane.INFORMATION_MESSAGE);
-            return ;
+            return;
         }
         JOptionPane.showMessageDialog(this,"Пользователь добавлен!","Успешно",JOptionPane.INFORMATION_MESSAGE);
         onCancel();
