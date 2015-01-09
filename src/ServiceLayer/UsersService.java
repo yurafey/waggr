@@ -14,6 +14,7 @@ public class UsersService {
         return userWorker.newUser(login,password,name,surname,cityName,countryName);
     }
 
+
     public boolean updatePassword(String login, String oldPassword, String newPassword) {
        return userWorker.updateUserPassword(login,oldPassword,newPassword);
     }
@@ -40,6 +41,10 @@ public class UsersService {
 
     public void setCurrentUser(Object user) {
         mainUser = (User) user;
+    }
+
+    public User getMainUser() {
+        return mainUser;
     }
 
     public String getCurrentUserLogin() { return mainUser.getUserLogin(); }

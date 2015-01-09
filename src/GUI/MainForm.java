@@ -29,6 +29,7 @@ public class MainForm extends JFrame{
     private JTable table5dayWeatherUA;
     private JTable table5dayWeatherYandex;
     private JLabel label1;
+    private JButton realFeelButton;
     private WeatherCurrentTableService currentWeather = null;
     private WeatherForecastTableService weatherForecast = null;
     private WeatherForecastUpdateService weatherForecastUpdateService = null;
@@ -104,13 +105,13 @@ public class MainForm extends JFrame{
         exitProfileButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+                dispose();
                 SwingUtilities.invokeLater(new Runnable() {
                     @Override
                     public void run() {
                         AuthorizationForm authorizationForm = new AuthorizationForm(weatherForecastUpdateService);
                     }
                 });
-                dispose();
             }
         });
 
@@ -154,7 +155,7 @@ public class MainForm extends JFrame{
         forecastButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                String countryName = null;
+                String countryName;
                 if (searchCityField.getText().isEmpty()) {
                     JOptionPane.showMessageDialog(searchCityField,"Введите название города для поиска","Ошибка",JOptionPane.INFORMATION_MESSAGE);
                     return;
@@ -178,6 +179,18 @@ public class MainForm extends JFrame{
                     updateTableModels(cityNameText, countryName);
                     searchCityField.setText(String.format("%s, %s", cityNameText, countryName));
                 }
+            }
+        });
+
+        realFeelButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SwingUtilities.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        RealFeelForm realFeelForm = new RealFeelForm(new RealFeelService(usersService.getCurrentUserLogin()));
+                    }
+                });
             }
         });
     }

@@ -71,6 +71,7 @@ public class DBConnector {
             newRealFeel.setFloat(7,wind_speed);
             newRealFeel.setString(8,wind_direction);
             newRealFeel.setString(9,country_name);
+            System.out.println(newRealFeel.toString());
             int i = newRealFeel.executeUpdate();
             if (i!=0) {
                 newRealFeel.close();
@@ -86,28 +87,30 @@ public class DBConnector {
     public List<RealFeel> getRealFeel(String cityName, String countryName, int numOfRes) {
         try {
             Statement statement = waggrConnection.createStatement();
-            String stm = String.format("SELECT login, timestamp, city_name, country_name, temperature, pressure, " +
-                    "humidity, wind_speed, wind_direction FROM realfeel WHERE city_name = '%s' AND country_name = '%s' ORDER BY timestamp LIMIT %s;",cityName,countryName,numOfRes);
-            System.out.println(stm);
+//            String stm = String.format("SELECT login, timestamp, city_name, country_name, temperature, pressure, " +
+//                    "humidity, wind_speed, wind_direction FROM realfeel WHERE city_name = '%s' AND country_name = '%s' ORDER BY timestamp LIMIT %s;",cityName,countryName,numOfRes);
+            String stm = String.format("SELECT login, timestamp, temperature, pressure, " +
+                    "humidity, wind_speed, wind_direction FROM realfeel WHERE city_name = '%s' AND country_name = '%s' ORDER BY timestamp DESC LIMIT %s;",cityName,countryName,numOfRes);
+            //System.out.println(stm);
             ResultSet res = statement.executeQuery(stm);
             List<RealFeel> result = new ArrayList<>();
-
             while (res.next()){
-                System.out.println("!!!");
+                //System.out.println("!!!");
                 RealFeel tempRealFeel = new RealFeel();
                 tempRealFeel.setUserLogin(res.getString(1));
-                tempRealFeel.setDate(res.getDate(2));
-                tempRealFeel.setCityName(res.getString(3));
-                tempRealFeel.setCountryName(res.getString(4));
-                tempRealFeel.setTemperature(res.getInt(5));
-                tempRealFeel.setPressure(res.getInt(6));
-                tempRealFeel.setHumidity(res.getInt(7));
-                tempRealFeel.setWindSpeed(res.getFloat(8));
-                tempRealFeel.setWindDirection(res.getString(9));
+                tempRealFeel.setDate(res.getTimestamp(2));
+                tempRealFeel.setCityName(cityName);
+                tempRealFeel.setCountryName(countryName);
+                tempRealFeel.setTemperature(res.getInt(3));
+                tempRealFeel.setPressure(res.getInt(4));
+                tempRealFeel.setHumidity(res.getInt(5));
+                tempRealFeel.setWindSpeed(res.getFloat(6));
+                tempRealFeel.setWindDirection(res.getString(7));
                 result.add(tempRealFeel);
             }
             if (result.size()!=0) {
                 statement.close();
+                System.out.println("ress111");
                 System.out.println(result);
                 return result;
             }

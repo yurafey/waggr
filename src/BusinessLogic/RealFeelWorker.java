@@ -13,23 +13,23 @@ public class RealFeelWorker {
     private Weather currentWeatherWUA = null;
     private Weather currentWeatherYandex = null;
     private RealFeel realFeel = new RealFeel();
-    private int range = 5;
+    private int tempRange = 5;
+    private int presRange = 20;
+    private int humRange = 30;
+    private int windRange = 10;
     private DBConnector dbConnector = new DBConnector();
 
-    public void setRange(int range){
-        this.range = range;
-    }
-
-    public RealFeelWorker(String userLogin, String cityName, String countryName) {
+    public RealFeelWorker(String cityName, String countryName) {
         realFeel.setCityName(cityName);
         realFeel.setCountryName(countryName);
-        realFeel.setUserLogin(userLogin);
         weatherWorker = new WeatherWorker(cityName,countryName);
         currentWeatherYandex = weatherWorker.getCurrentWeatherYandex();
         currentWeatherWUA = weatherWorker.getCurrentWeatherWUA();
     }
 
-    public boolean newRealFeel(RealFeel realFeelWeather) {
+    public boolean newRealFeel(String userLogin,RealFeel realFeelWeather) {
+        realFeel.setUserLogin(userLogin);
+        System.out.println(realFeelWeather.getTemperature()+" "+realFeelWeather.getPressure()+" "+ realFeelWeather.getHumidity()+" "+realFeelWeather.getWindSpeed());
         if (checkTemperature(realFeelWeather) && checkPressure(realFeelWeather) && checkHumidity(realFeelWeather) && checkWindSpeed(realFeelWeather)) {
             return dbConnector.newRealFeel(realFeelWeather.getUserLogin(), new Timestamp(new java.util.Date().getTime()),
                     realFeelWeather.getCityName(), realFeelWeather.getCountryName(), realFeelWeather.getTemperature(), realFeelWeather.getPressure(), realFeelWeather.getHumidity(), realFeelWeather.getWindSpeed(), realFeelWeather.getWindDirection());
@@ -44,9 +44,9 @@ public class RealFeelWorker {
     private boolean checkTemperature(RealFeel realFeel) {
         int currentTemperatureYandex = currentWeatherYandex.getTemperature();
         int currentTemperatureWUA = currentWeatherWUA.getTemperature();
-        if (((currentTemperatureYandex - range)<realFeel.getTemperature())&&((currentTemperatureYandex + range)>realFeel.getTemperature())) {
+        if (((currentTemperatureYandex - tempRange)<=realFeel.getTemperature())&&((currentTemperatureYandex + tempRange)>=realFeel.getTemperature())) {
             return true;
-        } else if (((currentTemperatureWUA - range)<realFeel.getTemperature())&&((currentTemperatureWUA+ range)>realFeel.getTemperature())) {
+        } else if (((currentTemperatureWUA - tempRange)<=realFeel.getTemperature())&&((currentTemperatureWUA+ tempRange)>=realFeel.getTemperature())) {
             return true;
         } else {
             return false;
@@ -56,9 +56,9 @@ public class RealFeelWorker {
     private boolean checkPressure(RealFeel realFeel) {
         int currentPressureYandex = currentWeatherYandex.getPressure();
         int currentPressureWUA = currentWeatherWUA.getPressure();
-        if (((currentPressureYandex - range)<realFeel.getPressure())&&((currentPressureYandex + range)>realFeel.getPressure())) {
+        if (((currentPressureYandex - presRange)<=realFeel.getPressure())&&((currentPressureYandex + presRange)>=realFeel.getPressure())) {
             return true;
-        } else if (((currentPressureWUA - range)<realFeel.getPressure())&&((currentPressureWUA + range)>realFeel.getPressure())) {
+        } else if (((currentPressureWUA - presRange)<=realFeel.getPressure())&&((currentPressureWUA + presRange)>=realFeel.getPressure())) {
             return true;
         } else {
             return false;
@@ -68,9 +68,9 @@ public class RealFeelWorker {
     private boolean checkHumidity(RealFeel realFeel) {
         int currentHumidityYandex = currentWeatherYandex.getHumidity();
         int currentHumidityWUA = currentWeatherWUA.getHumidity();
-        if (((currentHumidityYandex - range)<realFeel.getHumidity())&&((currentHumidityYandex + range)>realFeel.getHumidity())) {
+        if (((currentHumidityYandex - humRange)<=realFeel.getHumidity())&&((currentHumidityYandex + humRange)>=realFeel.getHumidity())) {
             return true;
-        } else if (((currentHumidityWUA - range)<realFeel.getHumidity())&&((currentHumidityWUA + range)>realFeel.getHumidity())) {
+        } else if (((currentHumidityWUA - humRange)<=realFeel.getHumidity())&&((currentHumidityWUA + humRange)>=realFeel.getHumidity())) {
             return true;
         } else {
             return false;
@@ -80,15 +80,12 @@ public class RealFeelWorker {
     private boolean checkWindSpeed(RealFeel realFeel) {
         float currentWindSpeedYandex = currentWeatherYandex.getWindSpeed();
         float currentWindSpeedWUA = currentWeatherWUA.getWindSpeed();
-        if (((currentWindSpeedYandex - range)<realFeel.getWindSpeed())&&((currentWindSpeedYandex + range)>realFeel.getWindSpeed())) {
+        if (((currentWindSpeedYandex - windRange)<=realFeel.getWindSpeed())&&((currentWindSpeedYandex + windRange)>=realFeel.getWindSpeed())) {
             return true;
-        } else if (((currentWindSpeedWUA - range)<realFeel.getWindSpeed())&&((currentWindSpeedWUA + range)>realFeel.getWindSpeed())) {
+        } else if (((currentWindSpeedWUA - windRange)<=realFeel.getWindSpeed())&&((currentWindSpeedWUA + windRange)>=realFeel.getWindSpeed())) {
             return true;
         } else {
             return false;
         }
     }
-//    public RealFeel getRealFeel(String city_Name,String country_Name) {
-//        return realFeel;
-//    }
 }
