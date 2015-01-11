@@ -1,4 +1,4 @@
-package GUI;
+package PresentationLayer;
 
 import javax.swing.*;
 import java.awt.event.*;

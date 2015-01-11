@@ -311,8 +311,17 @@ public class DBConnector {
     public Weather getCurrentWUA(String cityName, String countryName){
         return getCurrentWeather(weatherTableNameWUA, cityName, countryName);
     }
+
+    public Weather getCurrentWUA(int cityId){
+        return getCurrentWeather(weatherTableNameWUA, cityId);
+    }
+
     public Weather getCurrentYandex(String cityName, String countryName){
         return getCurrentWeather(weatherTableNameYandex, cityName, countryName);
+    }
+
+    public Weather getCurrentYandex(int cityId){
+        return getCurrentWeather(weatherTableNameYandex, cityId);
     }
 
     private Weather getCurrentWeather(String tableName, String cityName, String countryName){
@@ -331,6 +340,58 @@ public class DBConnector {
                 weatherResult.setIsPredict(false);
                 return weatherResult;
             }
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private Weather getCurrentWeather(String tableName, int cityId){
+        try {
+            Statement getWeather = waggrConnection.createStatement();
+            String query = String.format("SELECT timestamp, temperature, pressure, humidity, wind_speed, wind_direction FROM %s WHERE city_id = '%s' AND is_predict = FALSE;", tableName, cityId);
+            ResultSet res = getWeather.executeQuery(query);
+            if (res.next()){
+                Weather weatherResult = new Weather();
+                weatherResult.setDate((Date) res.getTimestamp(1));
+                weatherResult.setTemperature(res.getInt(2));
+                weatherResult.setPressure(res.getInt(3));
+                weatherResult.setHumidity(res.getInt(4));
+                weatherResult.setWindSpeed(res.getFloat(5));
+                weatherResult.setWindDirection(res.getString(6));
+                weatherResult.setIsPredict(false);
+                return weatherResult;
+            }
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public String getCityNameWUA (int cityId) {
+        try {
+            Statement getName = waggrConnection.createStatement();
+            String query = String.format("SELECT city_name FROM %s WHERE city_id = '%s';", weatherTableNameWUA, cityId);
+            ResultSet res = getName.executeQuery(query);
+            if (res.next()){
+                return  res.getString(1);
+            }
+            return null;
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public String getCityNameYandex (int cityId) {
+        try {
+            Statement getName = waggrConnection.createStatement();
+            String query = String.format("SELECT city_name FROM %s WHERE city_id = '%s';", weatherTableNameYandex, cityId);
+            ResultSet res = getName.executeQuery(query);
+            if (res.next()){
+                return  res.getString(1);
+            }
+            return null;
         } catch (SQLException e){
             e.printStackTrace();
         }

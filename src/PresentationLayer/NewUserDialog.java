@@ -1,4 +1,4 @@
-package GUI;
+package PresentationLayer;
 
 import DataAccessLayer.DBConnector;
 import ServiceLayer.CityService;

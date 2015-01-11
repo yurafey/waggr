@@ -2,7 +2,7 @@
  * Created by JFormDesigner on Mon Dec 22 02:27:53 MSK 2014
  */
 
-package GUI;
+package PresentationLayer;
 
 import ServiceLayer.UsersService;
 
@@ -44,9 +44,13 @@ public class AdminPwdForm extends JFrame {
         }
     }
 
+    private void cancelButtonActionPerformed(ActionEvent e) {
+        dispose();
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - ÑÑÐ²ÑÑÐ² ÑÑÐ²ÑÑÐ²
+        // Generated using JFormDesigner Evaluation license - 123 123
         dialogPane = new JPanel();
         contentPanel = new JPanel();
         passwordField1 = new JPasswordField();
@@ -71,7 +75,7 @@ public class AdminPwdForm extends JFrame {
             // JFormDesigner evaluation mark
             dialogPane.setBorder(new javax.swing.border.CompoundBorder(
                 new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
-                    "", javax.swing.border.TitledBorder.CENTER,
+                    "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
                     javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
                     java.awt.Color.red), dialogPane.getBorder())); dialogPane.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
 
@@ -139,6 +143,12 @@ public class AdminPwdForm extends JFrame {
 
                 //---- cancelButton ----
                 cancelButton.setText("Cancel");
+                cancelButton.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        cancelButtonActionPerformed(e);
+                    }
+                });
                 buttonBar.add(cancelButton, new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0,
                     GridBagConstraints.CENTER, GridBagConstraints.BOTH,
                     new Insets(0, 0, 0, 0), 0, 0));
@@ -152,7 +162,7 @@ public class AdminPwdForm extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - ÑÑÐ²ÑÑÐ² ÑÑÐ²ÑÑÐ²
+    // Generated using JFormDesigner Evaluation license - 123 123
     private JPanel dialogPane;
     private JPanel contentPanel;
     private JPasswordField passwordField1;

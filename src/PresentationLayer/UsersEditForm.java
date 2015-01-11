@@ -2,7 +2,7 @@
  * Created by JFormDesigner on Sun Dec 21 02:06:44 MSK 2014
  */
 
-package GUI;
+package PresentationLayer;
 
 import ServiceLayer.UsersTableService;
 

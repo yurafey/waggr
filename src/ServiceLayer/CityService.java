@@ -11,9 +11,6 @@ public class CityService {
     DBConnector dbConnector = new DBConnector();
     public List<String> checkCityExists(String cityName) {
         List<String> checkList = dbConnector.checkCity(cityName);
-        System.out.println(checkList==null?"null":"notnull");
-        System.out.println(checkList.toString().isEmpty());
-        System.out.println(checkList);
         if (checkList.size()!=0&&checkList!=null) {
             return checkList;
         } else {

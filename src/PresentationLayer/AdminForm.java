@@ -2,7 +2,7 @@
  * Created by JFormDesigner on Wed Nov 26 13:27:38 MSK 2014
  */
 
-package GUI;
+package PresentationLayer;
 
 import ServiceLayer.AdminService;
 import ServiceLayer.WeatherForecastUpdateService;
