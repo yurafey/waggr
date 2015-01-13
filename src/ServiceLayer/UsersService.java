@@ -3,6 +3,8 @@ package ServiceLayer;
 import BusinessLogic.User;
 import BusinessLogic.UserWorker;
 
+import java.util.List;
+
 /**
  * Created by yuraf_000 on 25.12.2014.
  */
@@ -33,6 +35,14 @@ public class UsersService {
         } else {
             return false;
         }
+    }
+
+    public List<User> getUsersList() {
+        return userWorker.getUserList();
+    }
+
+    public boolean updateUser(String userLogin, User newUser) {
+        return userWorker.updateUser(userLogin,newUser);
     }
 
     private void reloadMainUser() {

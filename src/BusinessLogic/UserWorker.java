@@ -2,6 +2,8 @@ package BusinessLogic;
 
 import DataAccessLayer.DBConnector;
 
+import java.util.List;
+
 /**
  * Created by yuraf_000 on 03.12.2014.
  */
@@ -67,6 +69,10 @@ public class UserWorker {
             }
         }
         return false;
+    }
+
+    public List<User> getUserList() {
+        return db.getUsersList();
     }
 
     public void close() {

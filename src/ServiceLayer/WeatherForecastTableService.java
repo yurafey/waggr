@@ -2,6 +2,7 @@ package ServiceLayer;
 
 import BusinessLogic.RealFeelWorker;
 import BusinessLogic.Weather;
+import BusinessLogic.WeatherWorker;
 import DataAccessLayer.DBConnector;
 
 import java.text.DateFormatSymbols;
@@ -15,12 +16,8 @@ import java.util.List;
  * Created by yuraf_000 on 24.09.2014.
  */
 public class WeatherForecastTableService {
-    private DBConnector db = new DBConnector();
-    //private List<Weather> weatherForecast = new ArrayList<>();
+    private WeatherWorker weatherWorker = null;
     private List<List<Weather>> forecastsList = new ArrayList<>();
-    private RealFeelWorker realFeelWorker = null;
-    private String cityName = null;
-    private String countryName = null;
     private final String[] colNames = {"Дата","Температура","Влажность","Давление воздуха","Скорость ветра","Направление ветра"};
     private List<Object> rowsYandex = new ArrayList<>();
     private List<Object> rowsWeatherUA = new ArrayList<>();
@@ -35,13 +32,12 @@ public class WeatherForecastTableService {
 
     };
     public WeatherForecastTableService(String cityName, String countryName){
-        this.cityName = cityName;
-        this.countryName = countryName;
+        weatherWorker = new WeatherWorker(cityName,countryName);
         TableProcessor();
     }
    // public
     private void TableProcessor (){
-        forecastsList = db.getForecastsByCityAndCountyName(cityName,countryName);
+        forecastsList = weatherWorker.getForecastsByCityAndCountyName();
         rowsYandex.clear();
         rowsWeatherUA.clear();
         for (int listCounter = 0; listCounter < forecastsList.size();listCounter++){
@@ -98,12 +94,6 @@ public class WeatherForecastTableService {
         return ((List<Object>) rowsWeatherUA.get(row)).get(col);
     }
 
-    public void setCityName(String cityName) {
-        this.cityName = cityName;
-    }
-    public void setCountryName(String countryName) {
-        this.countryName = countryName;
-    }
     public String[] getColNames() {
         return colNames;
     }
@@ -114,6 +104,6 @@ public class WeatherForecastTableService {
         return rowsWeatherUA;
     }
     public void onClose(){
-        db.connectionClose();
+        weatherWorker.onClose();
     }
 }

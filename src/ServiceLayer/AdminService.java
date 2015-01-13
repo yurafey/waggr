@@ -1,5 +1,7 @@
 package ServiceLayer;
 
+import BusinessLogic.Admin;
+import BusinessLogic.WeatherWorker;
 import DataAccessLayer.DBConnector;
 import Utils.ConsoleWorker;
 
@@ -15,7 +17,7 @@ import java.io.PrintStream;
 public class AdminService {
     private ConsoleWorker consoleWorker = null;
     private final PipedInputStream outPipe = new PipedInputStream();
-    private DBConnector dbConnector = new DBConnector();
+    private Admin adminUtils = new Admin();
     private WeatherForecastUpdateService weatherForecastUpdateService = null;
 
     public AdminService(WeatherForecastUpdateService weatherForecastUpdateService) {
@@ -94,20 +96,20 @@ public class AdminService {
     }
 
     public String getCurrentCountries() {
-        return dbConnector.getCurrentCountries();
+        return adminUtils.getCurrentCountriesToRefresh();
     }
 
     public String getCurrentPeriod() {
-        return dbConnector.getCurrentPeriod();
+        return adminUtils.getCurrentRefreshPeriod();
     }
 
     public boolean setCurrentCountries(String countryNames) {
-        return dbConnector.setCurrentCountries(countryNames);
+        return adminUtils.setCurrentCountriesToRefresh(countryNames);
     }
 
     public boolean setCurrentPeriod(String currentPeriod) {
         weatherForecastUpdateService.setRefreshTime(Integer.parseInt(currentPeriod));
-        return dbConnector.setCurrentPeriod(currentPeriod);
+        return adminUtils.setCurrentRefreshPeriod(currentPeriod);
     }
 
 

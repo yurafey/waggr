@@ -1,6 +1,7 @@
 package ServiceLayer;
 
 import BusinessLogic.User;
+import BusinessLogic.UserWorker;
 import DataAccessLayer.DBConnector;
 
 import java.util.ArrayList;
@@ -14,12 +15,11 @@ public class UsersTableService {
     private final String[] colNames = {"Логин","Пароль", "Имя", "Фамилия", "Город","Страна"};
     private List<List<String>> rows = new ArrayList<>();
     private List<List<String>> oldRows = new ArrayList<>();
-    //private UserWorker userWorker= new UserWorker();
-    DBConnector db = new DBConnector();
+    private UsersService userService= new UsersService();
 
     public UsersTableService() {
 
-        List<User> usersList =  db.getUsersList();
+        List<User> usersList =  userService.getUsersList();
         for (User user:usersList){
             if (!user.getUserLogin().equals("admin"))
             rows.add(Arrays.asList(user.getUserLogin(), user.getUserPassword(), user.getUserName(), user.getUserSurname(), user.getUserCity(), user.getUserCountry()));
@@ -63,7 +63,7 @@ public class UsersTableService {
                 u.setUserSurname(newRow.get(3));
                 u.setUserCity(newRow.get(4));
                 u.setUserCountry(newRow.get(5));
-                diff = db.updateUser(oldRow.get(0),u);
+                diff = userService.updateUser(oldRow.get(0),u);
             }
         }
         if (diff) {
@@ -82,9 +82,8 @@ public class UsersTableService {
     public List<List<String>> getRows() {
         return rows;
     }
-    public void onClose(){
-        db.connectionClose();
+    public void onClose() {
+        userService.close();
     }
-
 }
 
