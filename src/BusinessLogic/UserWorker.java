@@ -71,6 +71,13 @@ public class UserWorker {
         return false;
     }
 
+    public boolean deleteUser(String userLogin) {
+        if (checkUserLogin(userLogin)) {
+            return db.deleteUser(userLogin);
+        }
+        return false;
+    }
+
     public List<User> getUserList() {
         return db.getUsersList();
     }

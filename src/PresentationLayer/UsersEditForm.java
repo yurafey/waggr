@@ -17,10 +17,15 @@ import java.awt.event.ActionListener;
  * @author ÑÑÐ²ÑÑÐ² ÑÑÐ²ÑÑÐ²
  */
 public class UsersEditForm extends JFrame {
-    private UsersTableService usersTableService = new UsersTableService();
+    private UsersTableService usersTableService;
+    private TableModel usersTable;
     public UsersEditForm() {
         initComponents();
-        TableModel usersTable = new AbstractTableModel() {
+        updateTable();
+    }
+    private void updateTable() {
+        usersTableService = new UsersTableService();
+        usersTable = new AbstractTableModel() {
             @Override
             public int getRowCount() {
                 return usersTableService.getRows().size();
@@ -76,14 +81,26 @@ public class UsersEditForm extends JFrame {
         }
     }
 
+    private void button4ActionPerformed(ActionEvent e) {
+        int[] selectedRows = table1.getSelectedRows();
+        if (selectedRows.length==1) {
+            if (usersTableService.deleteUser(selectedRows[0])) {
+                JOptionPane.showMessageDialog(button4, "Пользователь удален!", "Успешно", JOptionPane.PLAIN_MESSAGE);
+                updateTable();
+            }
+        }
+        return;
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - ÑÑÐ²ÑÑÐ² ÑÑÐ²ÑÑÐ²
+        // Generated using JFormDesigner Evaluation license - 123 123
         scrollPane1 = new JScrollPane();
         table1 = new JTable();
         button1 = new JButton();
         button2 = new JButton();
         button3 = new JButton();
+        button4 = new JButton();
 
         //======== this ========
         setTitle("\u0420\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435\u0439");
@@ -130,6 +147,17 @@ public class UsersEditForm extends JFrame {
         contentPane.add(button3);
         button3.setBounds(230, 425, 175, button3.getPreferredSize().height);
 
+        //---- button4 ----
+        button4.setText("\u0423\u0434\u0430\u043b\u0438\u0442\u044c \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f");
+        button4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                button4ActionPerformed(e);
+            }
+        });
+        contentPane.add(button4);
+        button4.setBounds(5, 425, 195, button4.getPreferredSize().height);
+
         { // compute preferred size
             Dimension preferredSize = new Dimension();
             for(int i = 0; i < contentPane.getComponentCount(); i++) {
@@ -149,11 +177,12 @@ public class UsersEditForm extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - ÑÑÐ²ÑÑÐ² ÑÑÐ²ÑÑÐ²
+    // Generated using JFormDesigner Evaluation license - 123 123
     private JScrollPane scrollPane1;
     private JTable table1;
     private JButton button1;
     private JButton button2;
     private JButton button3;
+    private JButton button4;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

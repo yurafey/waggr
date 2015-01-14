@@ -39,6 +39,14 @@ public class UsersTableService {
         rows.set(row,r);
     }
 
+    private String getOldUserLogin (int row) {
+        return oldRows.get(row).get(0);
+    }
+
+    public boolean deleteUser(int row) {
+        return userService.deleteUser(getOldUserLogin(row));
+    }
+
     public Boolean rollBack () {
         if (!rows.equals(oldRows)){
             try {
@@ -76,6 +84,7 @@ public class UsersTableService {
         }
         else return false;
     }
+
     public String[] getColNames() {
         return colNames;
     }

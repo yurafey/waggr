@@ -139,6 +139,7 @@ public class DBConnector {
             tempPst.close();
         } catch (SQLException e) {
             e.printStackTrace();
+
         }
         return false;
     }
@@ -174,15 +175,31 @@ public class DBConnector {
             if (Res.next()) {
                 Res.close();
                 Statement GetCity = waggrConnection.createStatement();
-                ResultSet UserData = GetCity.executeQuery("SELECT name, surname, city_name, country_name  FROM users WHERE login ='" + login +  "';");
+                ResultSet UserData = GetCity.executeQuery("SELECT password, name, surname, city_name, country_name  FROM users WHERE login ='" + login +  "';");
                 UserData.next();
-                return new User(login, UserData.getString(1), UserData.getString(2), UserData.getString(3), UserData.getString(4));
+                return new User(login, UserData.getString(1), UserData.getString(2), UserData.getString(3), UserData.getString(4),UserData.getString(5));
             }
             Res.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public boolean deleteUser(String userLogin) {
+        try {
+            Statement deleteUser = waggrConnection.createStatement();
+            String del = String.format("DELETE FROM users WHERE login = '%s';", userLogin);
+            int res = deleteUser.executeUpdate(del);
+            if (res!=0) {
+                deleteUser.close();
+                return true;
+            }
+            deleteUser.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
 

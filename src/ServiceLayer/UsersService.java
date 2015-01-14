@@ -37,6 +37,10 @@ public class UsersService {
         }
     }
 
+    public boolean deleteUser(String userLogin) {
+        return userWorker.deleteUser(userLogin);
+    }
+
     public List<User> getUsersList() {
         return userWorker.getUserList();
     }
