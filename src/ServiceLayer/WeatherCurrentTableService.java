@@ -3,8 +3,6 @@ package ServiceLayer;
 import BusinessLogic.RealFeel;
 import BusinessLogic.Weather;
 import BusinessLogic.WeatherWorker;
-import DataAccessLayer.DBConnector;
-
 import java.text.DateFormatSymbols;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -15,7 +13,6 @@ import java.util.List;
  * Created by yuraf_000 on 19.09.2014.
  */
 public class WeatherCurrentTableService {
-    private DBConnector db = new DBConnector();
     private WeatherWorker weatherWorker = null;
     private List<RealFeel> realFeelList = null;
     private String[] colNames = null;
@@ -69,6 +66,6 @@ public class WeatherCurrentTableService {
         return rows;
     }
     public void onClose(){
-        db.connectionClose();
+        //
     }
 }

@@ -1,6 +1,7 @@
 package ServiceLayer;
 
-import DataAccessLayer.DBConnector;
+import DataAccessLayer.AdminGateway;
+import DataAccessLayer.WeatherGateway;
 import Parsers.ForecastContainerWUA;
 import Parsers.ForecastContainerYa;
 
@@ -10,7 +11,8 @@ import javax.swing.*;
  * Created by yuraf_000 on 26.11.2014.
  */
 public class WeatherForecastUpdateService extends SwingWorker {
-    private DBConnector db = null;
+    private WeatherGateway weatherGateway = null;
+    private AdminGateway adminGateway = null;
     private String CountryNames = null;
     private Integer refreshTime;
     public enum stateOfService {
@@ -34,10 +36,11 @@ public class WeatherForecastUpdateService extends SwingWorker {
     @Override
     protected Object doInBackground() throws Exception {
         while (true) {
-            db = new DBConnector();
+            weatherGateway = new WeatherGateway();
+            adminGateway = new AdminGateway();
             currentState = stateOfService.UPDATING;
-            CountryNames = db.getCurrentCountries();
-            refreshTime = Integer.parseInt(db.getCurrentPeriod());
+            CountryNames = adminGateway.getCurrentCountries();
+            refreshTime = Integer.parseInt(adminGateway.getCurrentPeriod());
             ForecastContainerYa FCY = new ForecastContainerYa(CountryNames);
             if (isCancelled()) {
                 currentState = stateOfService.CANCELED;
@@ -48,9 +51,9 @@ public class WeatherForecastUpdateService extends SwingWorker {
                 currentState = stateOfService.CANCELED;
                 return null;
             }
-            db.writeWeatherDataYandex(FCY.GetCityWeatherList(), FCY.GetCityIdMap(), FCY.GetCountryIdMap(), FCY.GetCountryCityMap());
-            db.writeWeatherDataWUA(FCWUA.GetCityWeatherList(), FCWUA.GetCityIdMap(), FCWUA.GetCountryIdMap(), FCWUA.GetCountyCitiesMap());
-            db.connectionClose();
+            weatherGateway.writeWeatherDataYandex(FCY.GetCityWeatherList(), FCY.GetCityIdMap(), FCY.GetCountryIdMap(), FCY.GetCountryCityMap());
+            weatherGateway.writeWeatherDataWUA(FCWUA.GetCityWeatherList(), FCWUA.GetCityIdMap(), FCWUA.GetCountryIdMap(), FCWUA.GetCountyCitiesMap());
+            weatherGateway.connectionClose();
             if (isCancelled()) {
                 currentState = stateOfService.CANCELED;
                 return null;
@@ -73,7 +76,7 @@ public class WeatherForecastUpdateService extends SwingWorker {
                     }
                 }
             } else break;
-            db.connectionClose();
+            weatherGateway.connectionClose();
         } return null;
     }
 

@@ -1,22 +1,22 @@
 package ServiceLayer;
 
 import BusinessLogic.Weather;
-import DataAccessLayer.DBConnector;
-import org.json.simple.JSONArray;
+import DataAccessLayer.CityGateway;
+import DataAccessLayer.WeatherGateway;
 import org.json.simple.JSONObject;
-import sun.awt.windows.WEmbeddedFrame;
 
 /**
  * Created by URI on 10.01.2015.
  */
 public class JSONBuilderService {
     public static JSONObject prepareAndGetJSON (String provider, int cityId) {
-        DBConnector dbConnector = new DBConnector();
+        WeatherGateway weatherGateway = new WeatherGateway();
+        CityGateway cityGateway = new CityGateway();
         switch (provider) {
             case "WUA": {
-                Weather currentWUA = dbConnector.getCurrentWUA(cityId);
+                Weather currentWUA = weatherGateway.getCurrentWUA(cityId);
                 if (currentWUA != null) {
-                    String cityName = dbConnector.getCityNameWUA(cityId);
+                    String cityName = cityGateway.getCityNameWUA(cityId);
                     if (cityName!=null) {
                         return prepareJSON(currentWUA,cityName);
                     }
@@ -24,9 +24,9 @@ public class JSONBuilderService {
                 return null;
             }
             case "Yandex": {
-                Weather currentYandex = dbConnector.getCurrentYandex(cityId);
+                Weather currentYandex = weatherGateway.getCurrentYandex(cityId);
                 if (currentYandex != null) {
-                    String cityName = dbConnector.getCityNameYandex(cityId);
+                    String cityName = cityGateway.getCityNameYandex(cityId);
                     if (cityName!=null) {
                         return prepareJSON(currentYandex,cityName);
                     }

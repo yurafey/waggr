@@ -1,6 +1,5 @@
 package PresentationLayer;
 
-import DataAccessLayer.DBConnector;
 import ServiceLayer.CityService;
 import ServiceLayer.UsersService;
 
@@ -22,7 +21,7 @@ public class NewUserDialog extends JDialog {
     private JTextField textField5;
     private CityService cityService = new CityService();
     private UsersService usersService = new UsersService();
-    private DBConnector db = new DBConnector();
+
 
     public NewUserDialog() {
         setTitle("Регистрация нового пользователя");
@@ -85,16 +84,7 @@ public class NewUserDialog extends JDialog {
     }
 
     private void onCancel() {
-        db.connectionClose();
 // add your code here if necessary
         dispose();
     }
-
-
-//    public static void main(String[] args) {
-//        NewUserDialog dialog = new NewUserDialog();
-//        dialog.pack();
-//        dialog.setVisible(true);
-//        System.exit(0);
-//    }
 }

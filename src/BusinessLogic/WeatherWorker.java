@@ -1,14 +1,13 @@
 package BusinessLogic;
 
-import DataAccessLayer.DBConnector;
-
+import DataAccessLayer.WeatherGateway;
 import java.util.List;
 
 /**
  * Created by yuraf_000 on 24.12.2014.
  */
 public class WeatherWorker {
-    private DBConnector dbConnector = new DBConnector();
+    private WeatherGateway weatherGateway = new WeatherGateway();
     private String cityName = null;
     private String countryName = null;
     private Weather currentWeatherYandex = null;
@@ -17,12 +16,12 @@ public class WeatherWorker {
     public WeatherWorker(String cityName, String countryName) {
         this.cityName = cityName;
         this.countryName = countryName;
-        currentWeatherYandex = dbConnector.getCurrentYandex(cityName,countryName);
-        currentWeatherWUA = dbConnector.getCurrentWUA(cityName,countryName);
+        currentWeatherYandex = weatherGateway.getCurrentYandex(cityName,countryName);
+        currentWeatherWUA = weatherGateway.getCurrentWUA(cityName,countryName);
     }
 
     public List<List<Weather>> getForecastsByCityAndCountyName() {
-        return dbConnector.getForecastsByCityAndCountyName(cityName,countryName);
+        return weatherGateway.getForecastsByCityAndCountyName(cityName,countryName);
     }
 
     public Weather getCurrentWeatherYandex() {
@@ -34,7 +33,7 @@ public class WeatherWorker {
     }
 
     public void onClose() {
-        dbConnector.connectionClose();
+        weatherGateway.connectionClose();
     }
 
 }

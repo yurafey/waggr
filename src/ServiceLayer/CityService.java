@@ -1,16 +1,15 @@
 package ServiceLayer;
 
-import DataAccessLayer.DBConnector;
-
+import DataAccessLayer.CityGateway;
 import java.util.List;
 
 /**
  * Created by yuraf_000 on 25.12.2014.
  */
 public class CityService {
-    DBConnector dbConnector = new DBConnector();
+    CityGateway cityGateway = new CityGateway();
     public List<String> checkCityExists(String cityName) {
-        List<String> checkList = dbConnector.checkCity(cityName);
+        List<String> checkList = cityGateway.checkCity(cityName);
         if (checkList.size()!=0&&checkList!=null) {
             return checkList;
         } else {
@@ -18,6 +17,6 @@ public class CityService {
         }
     }
     public boolean checkCityExists(String cityName, String countryName) {
-        return dbConnector.checkCity(cityName,countryName);
+        return cityGateway.checkCity(cityName,countryName);
     }
 }

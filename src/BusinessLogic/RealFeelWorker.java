@@ -1,7 +1,6 @@
 package BusinessLogic;
 
-import DataAccessLayer.DBConnector;
-
+import DataAccessLayer.RealFeelGateway;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -17,7 +16,7 @@ public class RealFeelWorker {
     private int presRange = 20;
     private int humRange = 30;
     private int windRange = 10;
-    private DBConnector dbConnector = new DBConnector();
+    private RealFeelGateway realFeelGateway = new RealFeelGateway();
 
     public RealFeelWorker(String cityName, String countryName) {
         realFeel.setCityName(cityName);
@@ -31,14 +30,14 @@ public class RealFeelWorker {
         realFeel.setUserLogin(userLogin);
         System.out.println(realFeelWeather.getTemperature()+" "+realFeelWeather.getPressure()+" "+ realFeelWeather.getHumidity()+" "+realFeelWeather.getWindSpeed());
         if (checkTemperature(realFeelWeather) && checkPressure(realFeelWeather) && checkHumidity(realFeelWeather) && checkWindSpeed(realFeelWeather)) {
-            return dbConnector.newRealFeel(realFeelWeather.getUserLogin(), new Timestamp(new java.util.Date().getTime()),
+            return realFeelGateway.newRealFeel(realFeelWeather.getUserLogin(), new Timestamp(new java.util.Date().getTime()),
                     realFeelWeather.getCityName(), realFeelWeather.getCountryName(), realFeelWeather.getTemperature(), realFeelWeather.getPressure(), realFeelWeather.getHumidity(), realFeelWeather.getWindSpeed(), realFeelWeather.getWindDirection());
         }
         return false;
     }
 
     public List<RealFeel> getListOfRealFeel(int numberOfResults) {
-        return dbConnector.getRealFeel(realFeel.getCityName(),realFeel.getCountryName(),numberOfResults);
+        return realFeelGateway.getRealFeel(realFeel.getCityName(),realFeel.getCountryName(),numberOfResults);
     }
 
     private boolean checkTemperature(RealFeel realFeel) {

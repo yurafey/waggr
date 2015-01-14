@@ -1,10 +1,7 @@
 package ServiceLayer;
 
 import BusinessLogic.Admin;
-import BusinessLogic.WeatherWorker;
-import DataAccessLayer.DBConnector;
 import Utils.ConsoleWorker;
-
 import javax.swing.*;
 import java.io.IOException;
 import java.io.PipedInputStream;

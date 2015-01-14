@@ -3,8 +3,6 @@ package ServiceLayer;
 import BusinessLogic.RealFeelWorker;
 import BusinessLogic.Weather;
 import BusinessLogic.WeatherWorker;
-import DataAccessLayer.DBConnector;
-
 import java.text.DateFormatSymbols;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

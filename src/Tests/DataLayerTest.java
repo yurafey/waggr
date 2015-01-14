@@ -1,16 +1,13 @@
 package Tests;
 
 import BusinessLogic.User;
-import DataAccessLayer.DBConnector;
+import DataAccessLayer.UserGateway;
 import org.junit.Test;
-import org.postgresql.util.PSQLException;
-
-import java.sql.SQLException;
 
 import static org.junit.Assert.*;
 
 public class DataLayerTest {
-    private DBConnector dbConnector = new DBConnector();
+    private UserGateway userGateway = new UserGateway();
 
     @Test
     public void testNewGetDeleteUser() {
@@ -20,15 +17,15 @@ public class DataLayerTest {
         String surname = "testUserSurname";
         String cityName = "testUserCity";
         String countryName = "testUserCountry";
-        assertTrue(dbConnector.newUser(login, password, name, surname, cityName, countryName));
-        User checkUser = dbConnector.getUser(login);
+        assertTrue(userGateway.newUser(login, password, name, surname, cityName, countryName));
+        User checkUser = userGateway.getUser(login);
         assertEquals("testUser", checkUser.getUserLogin());
         assertEquals("testUserPassword", checkUser.getUserPassword());
         assertEquals("testUserName", checkUser.getUserName());
         assertEquals("testUserSurname",checkUser.getUserSurname());
         assertEquals("testUserCity",checkUser.getUserCity());
-        assertEquals("testUserCountry",checkUser.getUserCountry());
-        assertTrue(dbConnector.deleteUser(login));
+        assertEquals("testUserCountry", checkUser.getUserCountry());
+        assertTrue(userGateway.deleteUser(login));
     }
 
     @Test
@@ -41,17 +38,17 @@ public class DataLayerTest {
         newUser.setUserCity("testUserCity1");
         newUser.setUserCountry("testUserCountry1");
 
-        assertTrue(dbConnector.newUser("testUser", "1", "2", "3", "4", "5"));
-        assertTrue(dbConnector.updateUser("testUser", newUser));
-        assertNull(dbConnector.getUser("testUser"));
+        assertTrue(userGateway.newUser("testUser", "1", "2", "3", "4", "5"));
+        assertTrue(userGateway.updateUser("testUser", newUser));
+        assertNull(userGateway.getUser("testUser"));
 
-        User checkUser = dbConnector.getUser("testUser1");
+        User checkUser = userGateway.getUser("testUser1");
         assertEquals("testUser1", checkUser.getUserLogin());
         assertEquals("testUserPassword1", checkUser.getUserPassword());
         assertEquals("testUserName1", checkUser.getUserName());
-        assertEquals("testUserSurname1",checkUser.getUserSurname());
+        assertEquals("testUserSurname1", checkUser.getUserSurname());
         assertEquals("testUserCity1",checkUser.getUserCity());
         assertEquals("testUserCountry1",checkUser.getUserCountry());
-        assertTrue(dbConnector.deleteUser("testUser1"));
+        assertTrue(userGateway.deleteUser("testUser1"));
     }
 }

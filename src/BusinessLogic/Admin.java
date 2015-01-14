@@ -1,24 +1,23 @@
 package BusinessLogic;
 
-import DataAccessLayer.DBConnector;
+import DataAccessLayer.AdminGateway;
 
-import java.util.List;
 
 /**
  * Created by URI on 12.01.2015.
  */
 public class Admin {
-    private DBConnector dbConnector = new DBConnector();
+    private AdminGateway adminGateway = new AdminGateway();
     public String getCurrentRefreshPeriod() {
-        return dbConnector.getCurrentPeriod();
+        return adminGateway.getCurrentPeriod();
     }
     public String getCurrentCountriesToRefresh() {
-        return dbConnector.getCurrentCountries();
+        return adminGateway.getCurrentCountries();
     }
     public boolean setCurrentRefreshPeriod(String currentPeriod) {
-        return dbConnector.setCurrentPeriod(currentPeriod);
+        return adminGateway.setCurrentPeriod(currentPeriod);
     }
     public boolean setCurrentCountriesToRefresh(String countryNames) {
-        return dbConnector.setCurrentCountries(countryNames);
+        return adminGateway.setCurrentCountries(countryNames);
     }
 }

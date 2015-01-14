@@ -1,17 +1,16 @@
 package BusinessLogic;
 
-import DataAccessLayer.DBConnector;
-
+import DataAccessLayer.UserGateway;
 import java.util.List;
 
 /**
  * Created by yuraf_000 on 03.12.2014.
  */
 public class UserWorker {
-    DBConnector db = new DBConnector();
+    UserGateway userGateway = new UserGateway();
 
     public boolean checkUserLogin(String login) {
-        if (db.getUser(login)!=null) {
+        if (userGateway.getUser(login)!=null) {
             return true;
         } else {
             return false;
@@ -19,7 +18,7 @@ public class UserWorker {
     }
 
     public User getUser(String login) {
-        User newUser = db.getUser(login);
+        User newUser = userGateway.getUser(login);
         if (newUser!=null){
             return newUser;
         } else {
@@ -28,7 +27,7 @@ public class UserWorker {
     }
 
     public boolean checkAuthorization(String login, String password) {
-        String dbPassword = db.getPassword(login);
+        String dbPassword = userGateway.getPassword(login);
         if (dbPassword!=null) {
             if (password.equals(dbPassword)) return true;
         }
@@ -37,7 +36,7 @@ public class UserWorker {
 
     public boolean updateUser(String login, User newUser) {
         if (checkUserLogin(login)) {
-            if (db.updateUser(login,newUser)) {
+            if (userGateway.updateUser(login,newUser)) {
                 return true;
             }
         }
@@ -46,7 +45,7 @@ public class UserWorker {
 
     public boolean newUser(String login, String password, String name, String surname, String cityName, String countryName) {
         if (!checkUserLogin(login)) {
-            if (db.newUser(login,password,name,surname,cityName,countryName)) {
+            if (userGateway.newUser(login,password,name,surname,cityName,countryName)) {
                 return true;
             }
         }
@@ -55,7 +54,7 @@ public class UserWorker {
 
     public boolean updateUserPassword(String login, String oldPassword, String newPassword) {
         if(checkAuthorization(login, oldPassword)) {
-            if (db.updatePassword(login,newPassword)) {
+            if (userGateway.updatePassword(login,newPassword)) {
                 return true;
             }
         }
@@ -64,7 +63,7 @@ public class UserWorker {
 
     public boolean updateUserCityAndCountry(String login, String cityName, String countryName) {
         if (checkUserLogin(login)) {
-            if (db.updateUserLocation(login, cityName, countryName)) {
+            if (userGateway.updateUserLocation(login, cityName, countryName)) {
                 return true;
             }
         }
@@ -73,16 +72,16 @@ public class UserWorker {
 
     public boolean deleteUser(String userLogin) {
         if (checkUserLogin(userLogin)) {
-            return db.deleteUser(userLogin);
+            return userGateway.deleteUser(userLogin);
         }
         return false;
     }
 
     public List<User> getUserList() {
-        return db.getUsersList();
+        return userGateway.getUsersList();
     }
 
     public void close() {
-        db.connectionClose();
+        userGateway.connectionClose();
     }
 }

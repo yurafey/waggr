@@ -2,7 +2,6 @@ package ServiceLayer;
 
 import BusinessLogic.User;
 import BusinessLogic.UserWorker;
-import DataAccessLayer.DBConnector;
 
 import java.util.ArrayList;
 import java.util.Arrays;
