@@ -1,0 +1,112 @@
+JFDML JFormDesigner: "5.2.1.0.138" Java: "1.8.0_25" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "mainPanel"
+				"preferredSize": new java.awt.Dimension( 300, 200 )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+					name: "panel1"
+					auxiliary() {
+						"JavaCodeGenerator.variableLocal": true
+					}
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+						name: "panel2"
+						auxiliary() {
+							"JavaCodeGenerator.variableLocal": true
+						}
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "buttonOK"
+							"text": "OK"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"width": 66
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "buttonCancel"
+							"text": "Cancel"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 76
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 289
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 10
+					"y": 225
+					"width": 431
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+					name: "panel3"
+					auxiliary() {
+						"JavaCodeGenerator.variableLocal": true
+					}
+					add( new FormComponent( "javax.swing.JRadioButton" ) {
+						name: "radioButton1"
+						"selected": false
+						"text": "RadioButton"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) )
+					add( new FormComponent( "javax.swing.JRadioButton" ) {
+						name: "radioButton4"
+						"text": "RadioButton"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"y": 99
+					} )
+					add( new FormComponent( "javax.swing.JRadioButton" ) {
+						name: "radioButton3"
+						"text": "RadioButton"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"y": 66
+					} )
+					add( new FormComponent( "javax.swing.JRadioButton" ) {
+						name: "radioButton2"
+						"text": "RadioButton"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"y": 33
+					} )
+					add( new FormComponent( "javax.swing.JRadioButton" ) {
+						name: "radioButton5"
+						"enabled": true
+						"text": "RadioButton"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"y": 132
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 10
+					"y": 60
+					"width": 431
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label1"
+					"text": "Данный город найден в нескольких странах."
+					auxiliary() {
+						"JavaCodeGenerator.variableLocal": true
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 10
+					"y": 12
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label2"
+					"text": "Выберите страну из списка:"
+					auxiliary() {
+						"JavaCodeGenerator.variableLocal": true
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 10
+					"y": 37
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 451
+				"height": 266
+				"x": 5
+				"y": 5
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 20, 315 )
+			"size": new java.awt.Dimension( 475, 310 )
+		} )
+	}
+}

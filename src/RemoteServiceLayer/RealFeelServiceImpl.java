@@ -1,28 +1,34 @@
-package ServiceLayer;
+package RemoteServiceLayer;
 
 import BusinessLogic.*;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
 /**
  * Created by yuraf_000 on 26.12.2014.
  */
-public class RealFeelService {
+public class RealFeelServiceImpl extends UnicastRemoteObject implements RealFeelService {
     private RealFeelWorker realFeelWorker = null;
     private User currentUser = null;
     private UserWorker userWorker = new UserWorker();
 
-    public RealFeelService(String userLogin) {
-        currentUser = userWorker.getUser(userLogin);
-        realFeelWorker = new RealFeelWorker(currentUser.getUserCity(), currentUser.getUserCountry());
+    public RealFeelServiceImpl() throws RemoteException {
+        //
     }
 
-    public RealFeelService(String userLogin, String cityName, String countryName) {
+    public void initializeRealFeel(String userLogin, String cityName, String countryName) throws RemoteException {
         currentUser = userWorker.getUser(userLogin);
         realFeelWorker = new RealFeelWorker(cityName, countryName);
     }
 
-    public boolean newRealFeel(int temperature, int pressure, int humidity, float windSpeed) {
+    public void initializeRealFeel(String userLogin) throws RemoteException {
+        currentUser = userWorker.getUser(userLogin);
+        realFeelWorker = new RealFeelWorker(currentUser.getUserCity(), currentUser.getUserCountry());
+    }
+
+    public boolean newRealFeel(int temperature, int pressure, int humidity, float windSpeed) throws RemoteException {
         RealFeel newRealFeel = new RealFeel();
         newRealFeel.setTemperature(temperature);
         newRealFeel.setPressure(pressure);
@@ -35,11 +41,11 @@ public class RealFeelService {
         return realFeelWorker.newRealFeel(currentUser.getUserLogin(),newRealFeel);
     }
 
-    public List<RealFeel> getRealFeels(int numberOfResults) {
+    public List<RealFeel> getRealFeels(int numberOfResults) throws RemoteException {
         return realFeelWorker.getListOfRealFeel(numberOfResults);
     }
 
-    public String getCurrentUserCityName() {
+    public String getCurrentUserCityName() throws RemoteException {
         return currentUser.getUserCity();
     }
 }

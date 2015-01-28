@@ -2,6 +2,8 @@ package BusinessLogic;
 
 import DataAccessLayer.DBConnector;
 
+import java.util.List;
+
 /**
  * Created by yuraf_000 on 24.12.2014.
  */
@@ -19,6 +21,10 @@ public class WeatherWorker {
         currentWeatherWUA = dbConnector.getCurrentWUA(cityName,countryName);
     }
 
+    public List<List<Weather>> getForecastsByCityAndCountyName() {
+        return dbConnector.getForecastsByCityAndCountyName(cityName,countryName);
+    }
+
     public Weather getCurrentWeatherYandex() {
         return currentWeatherYandex;
     }
@@ -26,5 +32,9 @@ public class WeatherWorker {
     public Weather getCurrentWeatherWUA() {
         return currentWeatherWUA;
     }
+
+//    public void onClose() {
+//        dbConnector.connectionClose();
+//    }
 
 }

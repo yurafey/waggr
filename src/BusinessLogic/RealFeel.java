@@ -1,9 +1,11 @@
 package BusinessLogic;
 
+import java.io.Serializable;
+
 /**
  * Created by yuraf_000 on 26.12.2014.
  */
-public class RealFeel extends Weather {
+public class RealFeel extends Weather implements Serializable {
     private String countryName = null;
     private String cityName = null;
     private String userLogin = null;

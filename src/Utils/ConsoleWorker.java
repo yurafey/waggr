@@ -1,21 +1,33 @@
 package Utils;
 
+
 import javax.swing.*;
+import java.io.IOException;
 import java.io.PipedInputStream;
+import java.io.PipedOutputStream;
+import java.io.PrintStream;
 import java.util.Scanner;
 
 /**
  * Created by yuraf_000 on 25.12.2014.
  */
 public class ConsoleWorker extends SwingWorker<Void,String>{
-    private Object outLabel;
-    private Object outTextArea;
-    private PipedInputStream outPipe;
 
-    public ConsoleWorker(Object outLabel,Object outTextArea, PipedInputStream outPipe) {
-        this.outLabel = outLabel;
-        this.outTextArea = outTextArea;
-        this.outPipe=outPipe;
+
+    //    private JLabel outLabel;
+//    private JTextArea outTextArea;
+    private String logs;
+    private String refreshLog;
+    private PipedInputStream outPipe = new PipedInputStream();
+
+    public ConsoleWorker(String logs, String refreshLog) {
+        this.logs = logs;
+        this.refreshLog = refreshLog;
+        try {
+            System.setOut(new PrintStream(new PipedOutputStream(outPipe), true));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     protected Void doInBackground() throws Exception {
@@ -30,12 +42,24 @@ public class ConsoleWorker extends SwingWorker<Void,String>{
     protected void process(java.util.List<String> chunks) {
         for (String line : chunks) {
             if (line.contains("msg")) {
-                if (line.contains("ref")) ((JLabel)outLabel).setText("Идет обновление...");
+                if (line.contains("ref")) this.refreshLog = "Идет обновление...";
                 else {
-                    ((JLabel)outLabel).setText("Обновление через " + line.substring(3) + " мин.");
+                    this.refreshLog = "Обновление через " + line.substring(3) + " мин.";
                 }
             }
-            else ((JTextArea)outTextArea).append('\n'+line);
+            else {
+                StringBuilder sb = new StringBuilder(this.logs);
+                sb.append('\n'+line);
+                this.logs = sb.toString();
+            }
         }
     }
+
+    public String getRefreshLog() {
+        return refreshLog;
+    }
+    public String getLogs() {
+        return logs;
+    }
+
 }

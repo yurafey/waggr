@@ -10,31 +10,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1e50eb4-8d33-4174-983a-091fbaf79c77" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/APILayer/ClientSession.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/APILayer/HttpServer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ServiceLayer/JSONBuilderService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/json_simple_1_1_1.xml" />
-      <change type="MOVED" beforePath="C:\Users\URI\IdeaProjects_old\waggr\src\GUI\AdminForm.java" afterPath="$PROJECT_DIR$/src/PresentationLayer/AdminForm.java" />
-      <change type="MOVED" beforePath="C:\Users\URI\IdeaProjects_old\waggr\src\GUI\AdminForm.jfd" afterPath="$PROJECT_DIR$/src/PresentationLayer/AdminForm.jfd" />
-      <change type="MOVED" beforePath="C:\Users\URI\IdeaProjects_old\waggr\src\GUI\AdminPwdForm.java" afterPath="$PROJECT_DIR$/src/PresentationLayer/AdminPwdForm.java" />
-      <change type="MOVED" beforePath="C:\Users\URI\IdeaProjects_old\waggr\src\GUI\AdminPwdForm.jfd" afterPath="$PROJECT_DIR$/src/PresentationLayer/AdminPwdForm.jfd" />
-      <change type="MOVED" beforePath="C:\Users\URI\IdeaProjects_old\waggr\src\GUI\AuthorizationForm.java" afterPath="$PROJECT_DIR$/src/PresentationLayer/AuthorizationForm.java" />
-      <change type="MOVED" beforePath="C:\Users\URI\IdeaProjects_old\waggr\src\GUI\MainForm.form" afterPath="$PROJECT_DIR$/src/PresentationLayer/MainForm.form" />
-      <change type="MOVED" beforePath="C:\Users\URI\IdeaProjects_old\waggr\src\GUI\MainForm.java" afterPath="$PROJECT_DIR$/src/PresentationLayer/MainForm.java" />
-      <change type="MOVED" beforePath="C:\Users\URI\IdeaProjects_old\waggr\src\GUI\NewUserDialog.form" afterPath="$PROJECT_DIR$/src/PresentationLayer/NewUserDialog.form" />
-      <change type="MOVED" beforePath="C:\Users\URI\IdeaProjects_old\waggr\src\GUI\NewUserDialog.java" afterPath="$PROJECT_DIR$/src/PresentationLayer/NewUserDialog.java" />
-      <change type="MOVED" beforePath="C:\Users\URI\IdeaProjects_old\waggr\src\GUI\RealFeelForm.form" afterPath="$PROJECT_DIR$/src/PresentationLayer/RealFeelForm.form" />
-      <change type="MOVED" beforePath="C:\Users\URI\IdeaProjects_old\waggr\src\GUI\RealFeelForm.java" afterPath="$PROJECT_DIR$/src/PresentationLayer/RealFeelForm.java" />
-      <change type="MOVED" beforePath="C:\Users\URI\IdeaProjects_old\waggr\src\GUI\SetCountryDialog.form" afterPath="$PROJECT_DIR$/src/PresentationLayer/SetCountryDialog.form" />
-      <change type="MOVED" beforePath="C:\Users\URI\IdeaProjects_old\waggr\src\GUI\SetCountryDialog.java" afterPath="$PROJECT_DIR$/src/PresentationLayer/SetCountryDialog.java" />
-      <change type="MOVED" beforePath="C:\Users\URI\IdeaProjects_old\waggr\src\GUI\UsersEditForm.java" afterPath="$PROJECT_DIR$/src/PresentationLayer/UsersEditForm.java" />
-      <change type="MOVED" beforePath="C:\Users\URI\IdeaProjects_old\waggr\src\GUI\UsersEditForm.jfd" afterPath="$PROJECT_DIR$/src/PresentationLayer/UsersEditForm.jfd" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Waggr/Main.class" afterPath="$PROJECT_DIR$/out/production/Waggr/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ServiceLayer/CityService.java" afterPath="$PROJECT_DIR$/src/ServiceLayer/CityService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BusinessLogic/Admin.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RemoteServiceLayer/AdminService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/BusinessLogic/City.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Client.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PresentationLayer/MainForm.jfd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PresentationLayer/NewUserDialog.jfd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PresentationLayer/RealFeelForm.jfd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RemoteServiceLayer/RealFeelService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/PresentationLayer/SetCountryDialog.jfd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RemoteServiceLayer/UsersService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RemoteServiceLayer/WeatherService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/RemoteServiceLayer/WeatherServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/forms_rt.xml" />
+      <change type="DELETED" beforePath="C:\Users\URI\IdeaProjects\waggr\out\production\Waggr\Main.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\URI\IdeaProjects\waggr\src\PresentationLayer\MainForm.form" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\URI\IdeaProjects\waggr\src\PresentationLayer\NewUserDialog.form" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\URI\IdeaProjects\waggr\src\PresentationLayer\RealFeelForm.form" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\URI\IdeaProjects\waggr\src\PresentationLayer\SetCountryDialog.form" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\URI\IdeaProjects\waggr\src\ServiceLayer\CityService.java" afterPath="" />
+      <change type="MOVED" beforePath="C:\Users\URI\IdeaProjects\waggr\src\Main.java" afterPath="$PROJECT_DIR$/src/Server.java" />
+      <change type="MOVED" beforePath="C:\Users\URI\IdeaProjects\waggr\src\ServiceLayer\AdminService.java" afterPath="$PROJECT_DIR$/src/RemoteServiceLayer/AdminServiceImpl.java" />
+      <change type="MOVED" beforePath="C:\Users\URI\IdeaProjects\waggr\src\ServiceLayer\RealFeelService.java" afterPath="$PROJECT_DIR$/src/RemoteServiceLayer/RealFeelServiceImpl.java" />
+      <change type="MOVED" beforePath="C:\Users\URI\IdeaProjects\waggr\src\ServiceLayer\UsersService.java" afterPath="$PROJECT_DIR$/src/RemoteServiceLayer/UsersServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PresentationLayer/AdminForm.java" afterPath="$PROJECT_DIR$/src/PresentationLayer/AdminForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PresentationLayer/AdminForm.jfd" afterPath="$PROJECT_DIR$/src/PresentationLayer/AdminForm.jfd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PresentationLayer/AdminPwdForm.java" afterPath="$PROJECT_DIR$/src/PresentationLayer/AdminPwdForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PresentationLayer/AuthorizationForm.java" afterPath="$PROJECT_DIR$/src/PresentationLayer/AuthorizationForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Utils/ConsoleWorker.java" afterPath="$PROJECT_DIR$/src/Utils/ConsoleWorker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DataAccessLayer/DBConnector.java" afterPath="$PROJECT_DIR$/src/DataAccessLayer/DBConnector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Waggr/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/out/production/Waggr/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PresentationLayer/MainForm.java" afterPath="$PROJECT_DIR$/src/PresentationLayer/MainForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PresentationLayer/NewUserDialog.java" afterPath="$PROJECT_DIR$/src/PresentationLayer/NewUserDialog.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BusinessLogic/RealFeel.java" afterPath="$PROJECT_DIR$/src/BusinessLogic/RealFeel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PresentationLayer/RealFeelForm.java" afterPath="$PROJECT_DIR$/src/PresentationLayer/RealFeelForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PresentationLayer/SetCountryDialog.java" afterPath="$PROJECT_DIR$/src/PresentationLayer/SetCountryDialog.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BusinessLogic/User.java" afterPath="$PROJECT_DIR$/src/BusinessLogic/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BusinessLogic/UserWorker.java" afterPath="$PROJECT_DIR$/src/BusinessLogic/UserWorker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PresentationLayer/UsersEditForm.java" afterPath="$PROJECT_DIR$/src/PresentationLayer/UsersEditForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ServiceLayer/UsersTableService.java" afterPath="$PROJECT_DIR$/src/ServiceLayer/UsersTableService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Waggr.iml" afterPath="$PROJECT_DIR$/Waggr.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BusinessLogic/Weather.java" afterPath="$PROJECT_DIR$/src/BusinessLogic/Weather.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ServiceLayer/WeatherCurrentTableService.java" afterPath="$PROJECT_DIR$/src/ServiceLayer/WeatherCurrentTableService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ServiceLayer/WeatherForecastTableService.java" afterPath="$PROJECT_DIR$/src/ServiceLayer/WeatherForecastTableService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ServiceLayer/WeatherForecastUpdateService.java" afterPath="$PROJECT_DIR$/src/ServiceLayer/WeatherForecastUpdateService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BusinessLogic/WeatherWorker.java" afterPath="$PROJECT_DIR$/src/BusinessLogic/WeatherWorker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="untitled.iws" />
@@ -69,88 +90,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="HttpServer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/APILayer/HttpServer.java">
+      <file leaf-file-name="AdminService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RemoteServiceLayer/AdminService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="924">
-              <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientSession.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/APILayer/ClientSession.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7450425" vertical-offset="2154" max-vertical-offset="2860">
-              <caret line="134" column="6" selection-start-line="134" selection-start-column="6" selection-end-line="134" selection-end-column="6" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RealFeel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BusinessLogic/RealFeel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="580">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="640">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="29" selection-end-column="121" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BusinessLogic/User.java">
+      <file leaf-file-name="RealFeelService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RemoteServiceLayer/RealFeelService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="273" max-vertical-offset="1071">
-              <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="400">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="17" selection-end-column="66" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RealFeelWorker.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BusinessLogic/RealFeelWorker.java">
+      <file leaf-file-name="UsersService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RemoteServiceLayer/UsersService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="1880">
-              <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="580">
+              <caret line="25" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="String.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_25/src.zip!/java/lang/String.java">
+      <file leaf-file-name="WeatherServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RemoteServiceLayer/WeatherServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="39522" max-vertical-offset="64176">
-              <caret line="1953" column="0" selection-start-line="1953" selection-start-column="0" selection-end-line="1953" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="140" max-vertical-offset="680">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Thread.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_25/src.zip!/java/lang/Thread.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="14427" max-vertical-offset="41244">
-              <caret line="744" column="0" selection-start-line="744" selection-start-column="0" selection-end-line="744" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JSONBuilderService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ServiceLayer/JSONBuilderService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="1218">
-              <caret line="18" column="59" selection-start-line="18" selection-start-column="59" selection-end-line="18" selection-end-column="59" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -158,23 +133,61 @@
       <file leaf-file-name="ConsoleWorker.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Utils/ConsoleWorker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="777" max-vertical-offset="945">
-              <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="820" max-vertical-offset="1240">
+              <caret line="46" column="56" selection-start-line="46" selection-start-column="56" selection-end-line="46" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <file leaf-file-name="AdminServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RemoteServiceLayer/AdminServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="504" max-vertical-offset="2142">
-              <caret line="24" column="2" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="740" max-vertical-offset="2780">
+              <caret line="48" column="10" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WeatherService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RemoteServiceLayer/WeatherService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="320" max-vertical-offset="480">
+              <caret line="16" column="77" selection-start-line="16" selection-start-column="77" selection-end-line="16" selection-end-column="77" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#375#610#0" expanded="true" />
-                <element signature="e#609#610#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HttpServer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/APILayer/HttpServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="117" max-vertical-offset="840">
+              <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientSession.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/APILayer/ClientSession.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.352657" vertical-offset="920" max-vertical-offset="2740">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Server.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="1040">
+              <caret line="29" column="69" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -191,7 +204,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="simple_parsers_data_structures" />
+        <entry key="$PROJECT_DIR$" value="PostgreSQL_database" />
       </map>
     </option>
   </component>
@@ -203,24 +216,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/GUI/MainForm.form" />
-        <option value="$PROJECT_DIR$/src/GUI/RealFeelForm.jfd" />
-        <option value="$PROJECT_DIR$/src/GUI/AdminPwdForm.java" />
-        <option value="$PROJECT_DIR$/src/ServiceLayer/UsersService.java" />
-        <option value="$PROJECT_DIR$/src/GUI/RealFeelForm.form" />
-        <option value="$PROJECT_DIR$/src/ServiceLayer/RealFeelService.java" />
-        <option value="$PROJECT_DIR$/src/GUI/RealFeelForm.java" />
-        <option value="$PROJECT_DIR$/src/GUI/MainForm.java" />
-        <option value="$PROJECT_DIR$/src/BusinessLogic/RealFeelWorker.java" />
-        <option value="$PROJECT_DIR$/src/ServiceLayer/WeatherCurrentTableService.java" />
-        <option value="$PROJECT_DIR$/src/ServiceLayer/CityService.java" />
-        <option value="$PROJECT_DIR$/src/APILayer/HttpServer.java" />
         <option value="$PROJECT_DIR$/src/PresentationLayer/AdminPwdForm.jfd" />
-        <option value="$PROJECT_DIR$/src/PresentationLayer/AdminPwdForm.java" />
-        <option value="$PROJECT_DIR$/src/DataAccessLayer/DBConnector.java" />
-        <option value="$PROJECT_DIR$/src/ServiceLayer/JSONBuilderService.java" />
         <option value="$PROJECT_DIR$/src/APILayer/ClientSession.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/BusinessLogic/Admin.java" />
+        <option value="$PROJECT_DIR$/src/BusinessLogic/City.java" />
+        <option value="$PROJECT_DIR$/src/ServiceLayer/AdminService.java" />
+        <option value="$PROJECT_DIR$/src/ServiceLayer/JSONBuilderService.java" />
+        <option value="$PROJECT_DIR$/src/ServiceLayer/UsersService.java" />
+        <option value="$PROJECT_DIR$/src/RemoteServiceLayer/RealFeelServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/RemoteServiceLayer/RealFeelService.java" />
+        <option value="$PROJECT_DIR$/src/PresentationLayer/AdminPwdForm.java" />
+        <option value="$PROJECT_DIR$/src/Client.java" />
+        <option value="$PROJECT_DIR$/src/RemoteServiceLayer/UsersServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/RemoteServiceLayer/UsersService.java" />
+        <option value="$PROJECT_DIR$/src/ServiceLayer/UsersTableService.java" />
+        <option value="$PROJECT_DIR$/src/PresentationLayer/UsersEditForm.java" />
+        <option value="$PROJECT_DIR$/src/BusinessLogic/User.java" />
+        <option value="$PROJECT_DIR$/src/BusinessLogic/RealFeel.java" />
+        <option value="$PROJECT_DIR$/src/RemoteServiceLayer/WeatherCurrentTableServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/ServiceLayer/WeatherForecastUpdateService.java" />
+        <option value="$PROJECT_DIR$/src/RemoteServiceLayer/WeatherCurrentTableService.java" />
+        <option value="$PROJECT_DIR$/src/BusinessLogic/WeatherWorker.java" />
+        <option value="$PROJECT_DIR$/src/BusinessLogic/UserWorker.java" />
+        <option value="$PROJECT_DIR$/src/RemoteServiceLayer/WeatherForecastTableServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/RemoteServiceLayer/WeatherForecastTableService.java" />
+        <option value="$PROJECT_DIR$/src/DataAccessLayer/DBConnector.java" />
+        <option value="$PROJECT_DIR$/src/Utils/test.java" />
+        <option value="$PROJECT_DIR$/src/test.java" />
+        <option value="$PROJECT_DIR$/src/PresentationLayer/MainForm.form" />
+        <option value="$PROJECT_DIR$/src/PresentationLayer/AdminForm.jfd" />
+        <option value="$PROJECT_DIR$/src/BusinessLogic/Weather.java" />
+        <option value="$PROJECT_DIR$/src/Server.java" />
+        <option value="$PROJECT_DIR$/src/RemoteServiceLayer/WeatherService.java" />
+        <option value="$PROJECT_DIR$/src/PresentationLayer/NewUserDialog.form" />
+        <option value="$PROJECT_DIR$/src/ServiceLayer/WeatherCurrentTableService.java" />
+        <option value="$PROJECT_DIR$/src/ServiceLayer/WeatherForecastTableService.java" />
+        <option value="$PROJECT_DIR$/src/PresentationLayer/AuthorizationForm.java" />
+        <option value="$PROJECT_DIR$/src/PresentationLayer/NewUserDialog.java" />
+        <option value="$PROJECT_DIR$/src/PresentationLayer/RealFeelForm.java" />
+        <option value="$PROJECT_DIR$/src/PresentationLayer/RealFeelForm.jfd" />
+        <option value="$PROJECT_DIR$/src/PresentationLayer/SetCountryDialog.jfd" />
+        <option value="$PROJECT_DIR$/src/PresentationLayer/SetCountryDialog.java" />
+        <option value="$PROJECT_DIR$/src/PresentationLayer/MainForm.jfd" />
+        <option value="$PROJECT_DIR$/src/PresentationLayer/NewUserDialog.jfd" />
+        <option value="$PROJECT_DIR$/src/PresentationLayer/MainForm.java" />
+        <option value="$PROJECT_DIR$/src/Utils/ConsoleWorker.java" />
+        <option value="$PROJECT_DIR$/src/PresentationLayer/AdminForm.java" />
+        <option value="$PROJECT_DIR$/src/RemoteServiceLayer/AdminServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/RemoteServiceLayer/WeatherServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/RemoteObject.java" />
+        <option value="$PROJECT_DIR$/src/RemoteServiceLayer/AdminService.java" />
       </list>
     </option>
   </component>
@@ -229,8 +275,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
+    <option name="width" value="1932" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -262,6 +307,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -331,6 +377,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ServiceLayer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="waggr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="waggr" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RemoteServiceLayer" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -466,7 +530,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -497,11 +560,12 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="Waagr_v.0.1" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/json-simple-1.1.1.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -509,12 +573,14 @@
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="ServiceLayer" />
+      <recent name="" />
+      <recent name="RemoteServiceLayer" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Client">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="MAIN_CLASS_NAME" value="Server" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -534,6 +600,23 @@
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Cover" />
       <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Client" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Waggr" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -590,7 +673,7 @@
     </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="JAR_PATH" value="$PROJECT_DIR$/lib/json-simple-1.1.1.jar" />
+      <option name="JAR_PATH" value="$PROJECT_DIR$/postgresql-9.3-1101.jdbc41.jar" />
       <envs />
       <method />
     </configuration>
@@ -753,12 +836,14 @@
       <envs />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Client" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Application.Client" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -899,7 +984,27 @@
       <workItem from="1420890385615" duration="16545000" />
       <workItem from="1420929144544" duration="5506000" />
       <workItem from="1420991797231" duration="162000" />
-      <workItem from="1420991979214" duration="187000" />
+      <workItem from="1420991979214" duration="337000" />
+      <workItem from="1421010293350" duration="22348000" />
+      <workItem from="1421071204075" duration="12000" />
+      <workItem from="1421072410964" duration="328000" />
+      <workItem from="1421075193937" duration="570000" />
+      <workItem from="1421095092606" duration="5402000" />
+      <workItem from="1421167319536" duration="216000" />
+      <workItem from="1421314726977" duration="9491000" />
+      <workItem from="1421330963258" duration="16000" />
+      <workItem from="1421343573714" duration="599000" />
+      <workItem from="1421347486954" duration="700000" />
+      <workItem from="1422049027864" duration="4335000" />
+      <workItem from="1422091349700" duration="3975000" />
+      <workItem from="1422108329280" duration="12473000" />
+      <workItem from="1422135741388" duration="10382000" />
+      <workItem from="1422183037769" duration="831000" />
+      <workItem from="1422184252352" duration="3036000" />
+      <workItem from="1422223975059" duration="8000" />
+      <workItem from="1422224021401" duration="202000" />
+      <workItem from="1422263193690" duration="645000" />
+      <workItem from="1422458015839" duration="151000" />
     </task>
     <task id="LOCAL-00001" summary="new parsers structures">
       <created>1401957550408</created>
@@ -985,11 +1090,17 @@
       <option name="project" value="LOCAL" />
       <updated>1420847437392</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="final">
+      <created>1420992200095</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1420992200095</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="708328000" />
+    <option name="totallyTimeSpent" value="784198000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1012,24 +1123,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="true" />
+    <frame x="-9" y="0" width="1932" height="1050" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.10649547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2019334" sideWeight="0.542061" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20108108" sideWeight="0.46477392" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3103082" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1474359" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20408164" sideWeight="0.5352261" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20297556" sideWeight="0.53485954" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15833333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2197286" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="ConsoleMavenPlugin" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1042,6 +1153,8 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19128586" sideWeight="0.541103" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296875" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282313" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1077,19 +1190,21 @@
     <MESSAGE value="GUI and DB logic update&#10;new db methods, table view in main frame" />
     <MESSAGE value="new" />
     <MESSAGE value="prefinal" />
-    <option name="LAST_COMMIT_MESSAGE" value="prefinal" />
+    <MESSAGE value="final" />
+    <MESSAGE value="RMI refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="RMI refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ServiceLayer/WeatherForecastTableService.java</url>
-          <line>29</line>
+          <line>30</line>
           <properties />
           <option name="timeStamp" value="109" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="111" />
+      <option name="time" value="116" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1098,794 +1213,109 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/NewUserDialog.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parsers/CountryCityParserYa.java">
+    <entry file="file://$PROJECT_DIR$/src/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="92" max-vertical-offset="1734">
-          <caret line="33" column="45" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="1040">
+          <caret line="29" column="69" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/postgresql-9.3-1101.jdbc41.jar!/org/postgresql/jdbc2/AbstractJdbc2Connection.class">
+    <entry file="file://$PROJECT_DIR$/src/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8804348" vertical-offset="2697" max-vertical-offset="3366">
-          <caret line="193" column="0" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/NewUserDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="372" max-vertical-offset="1462">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parsers/CountryCityParserWUA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="283" max-vertical-offset="969">
-          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parsers/CountryIdParserWUA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="1241">
-          <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parsers/ForecastParserWUA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1388" max-vertical-offset="2584">
-          <caret line="56" column="54" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parsers/ForecastParserYa.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1320" max-vertical-offset="2771">
-          <caret line="143" column="18" selection-start-line="143" selection-start-column="18" selection-end-line="143" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parsers/ForecastContainerYa.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="249" max-vertical-offset="935">
-          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parsers/CityIdParserWUA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="79" max-vertical-offset="765">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/SetCountryDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1196" max-vertical-offset="1955">
-          <caret line="136" column="29" selection-start-line="136" selection-start-column="29" selection-end-line="136" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/UsersEditForm.jfd" />
-    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/AdminForm.jfd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2533">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parsers/ForecastContainerWUA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
-          <caret line="35" column="69" selection-start-line="35" selection-start-column="69" selection-end-line="35" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ServiceLayer/AdminService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1033" max-vertical-offset="1751">
-          <caret line="29" column="51" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/AuthorizationForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="676" max-vertical-offset="1394">
-          <caret line="86" column="19" selection-start-line="86" selection-start-column="19" selection-end-line="86" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/UsersEditForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2295">
-          <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/MainForm.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/AdminForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="1462">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/RealFeelForm.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/RealFeelForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="642" max-vertical-offset="1377">
-          <caret line="24" column="82" selection-start-line="24" selection-start-column="82" selection-end-line="24" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ServiceLayer/UsersTableService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="1411">
-          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BusinessLogic/WeatherWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
-          <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="320">
+          <caret line="7" column="52" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BusinessLogic/UserWorker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="1343">
-          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ServiceLayer/RealFeelService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="115" max-vertical-offset="833">
-          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ServiceLayer/ObjectClonerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
-          <caret line="29" column="57" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ServiceLayer/UsersService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1054">
-          <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://MODULES/mdl-Waggr">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>MODULES</ID>
-          <OriginalElement>mdl-Waggr</OriginalElement>
-          <nodes />
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="60.0" y="15.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
+        <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="1660">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BusinessLogic/Weather.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
-          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1260">
+          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="uml://JAVA/ServiceLayer.WeatherCurrentTableService">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>ServiceLayer.WeatherCurrentTableService</OriginalElement>
-          <nodes>
-            <node x="" y="">ServiceLayer.WeatherCurrentTableService</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="92.0" y="-44.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/BusinessLogic">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>BusinessLogic</OriginalElement>
-          <nodes>
-            <node x="" y="">BusinessLogic.WeatherWorker</node>
-            <node x="" y="">BusinessLogic.RealFeelWorker</node>
-            <node x="" y="">BusinessLogic.User</node>
-            <node x="" y="">BusinessLogic.Weather</node>
-            <node x="" y="">BusinessLogic.RealFeel</node>
-            <node x="" y="">BusinessLogic.UserWorker</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="128.0" y="130.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/123.uml">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement />
-          <nodes>
-            <node x="902.1708169291333" y="1050.0">PresentationLayer.AuthorizationForm</node>
-            <node x="1320.2277395013118" y="940.0">PresentationLayer.AdminForm</node>
-            <node x="867.2291666666667" y="700.0">ServiceLayer.UsersService</node>
-            <node x="968.1875" y="820.0">PresentationLayer.AdminPwdForm</node>
-            <node x="1533.2875820209974" y="130.0">Parsers.ForecastParserWUA</node>
-            <node x="617.4166666666667" y="820.0">PresentationLayer.SetCountryDialog</node>
-            <node x="1778.1000820209974" y="310.0">Parsers.CountryIdParserWUA</node>
-            <node x="1339.1875" y="700.0">Utils.ConsoleWorker</node>
-            <node x="1951.100082020997" y="130.0">Parsers.ForecastParserYa</node>
-            <node x="321.0" y="220.0">BusinessLogic.RealFeelWorker</node>
-            <node x="0.0" y="1125.0">ServiceLayer.ObjectClonerService</node>
-            <node x="526.0770669291334" y="940.0">PresentationLayer.MainForm</node>
-            <node x="1094.3805774278212" y="310.0">BusinessLogic.User</node>
-            <node x="1518.2139107611547" y="700.0">PresentationLayer.UsersEditForm</node>
-            <node x="757.9166666666666" y="420.0">DataAccessLayer.DBConnector</node>
-            <node x="246.5" y="600.0">BusinessLogic.WeatherWorker</node>
-            <node x="1121.1875" y="700.0">ServiceLayer.WeatherForecastUpdateService</node>
-            <node x="1589.8333333333335" y="0.0">BusinessLogic.Weather</node>
-            <node x="61.40633202099741" y="130.0">BusinessLogic.RealFeel</node>
-            <node x="248.75" y="820.0">ServiceLayer.WeatherCurrentTableService</node>
-            <node x="1960.936072834645" y="600.0">Parsers.ForecastContainerYa</node>
-            <node x="1612.2875820209974" y="310.0">Parsers.CityIdParserWUA</node>
-            <node x="2023.100082020997" y="420.0">Parsers.CountryCityParserYa</node>
-            <node x="531.5506561679788" y="600.0">BusinessLogic.UserWorker</node>
-            <node x="764.4166666666667" y="820.0">ServiceLayer.CityService</node>
-            <node x="1718.5833333333335" y="420.0">Parsers.CountryCityParserWUA</node>
-            <node x="416.5" y="700.0">ServiceLayer.RealFeelService</node>
-            <node x="1325.3541666666665" y="820.0">ServiceLayer.AdminService</node>
-            <node x="1698.8374835957998" y="600.0">Parsers.ForecastContainerWUA</node>
-            <node x="484.0" y="820.0">PresentationLayer.RealFeelForm</node>
-            <node x="821.1875" y="940.0">PresentationLayer.NewUserDialog</node>
-            <node x="38.5" y="600.0">ServiceLayer.WeatherForecastTableService</node>
-            <node x="" y="">ServiceLayer.UsersTableService</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="PresentationLayer.AdminForm" target="PresentationLayer.AuthorizationForm">
-              <point x="24.500000000000057" y="15.0" />
-              <point x="1393.727739501312" y="1030.0" />
-              <point x="1027.7958169291333" y="1030.0" />
-              <point x="58.625" y="-15.0" />
-            </edge>
-            <edge source="Parsers.ForecastContainerWUA" target="Parsers.CountryCityParserWUA">
-              <point x="19.625" y="-15.0" />
-              <point x="1796.9624835957998" y="570.0" />
-              <point x="1836.3333333333335" y="570.0" />
-              <point x="39.25" y="15.0" />
-            </edge>
-            <edge source="BusinessLogic.User" target="BusinessLogic.RealFeelWorker">
-              <point x="0.0" y="-15.0" />
-              <point x="1122.8805774278212" y="270.0" />
-              <point x="428.8125" y="270.0" />
-              <point x="50.3125" y="15.0" />
-            </edge>
-            <edge source="ServiceLayer.UsersTableService" target="DataAccessLayer.DBConnector">
-              <point x="0.0" y="-15.0" />
-              <point x="1568.7139107611547" y="510.0" />
-              <point x="859.9999999999999" y="510.0" />
-              <point x="49.58333333333326" y="15.0" />
-            </edge>
-            <edge source="PresentationLayer.UsersEditForm" target="ServiceLayer.UsersTableService">
-              <point x="27.5" y="-15.0" />
-              <point x="32.0" y="15.0" />
-            </edge>
-            <edge source="Parsers.ForecastContainerWUA" target="Parsers.ForecastParserWUA">
-              <point x="-58.875" y="-15.0" />
-              <point x="1718.4624835957998" y="570.0" />
-              <point x="1601.7875820209974" y="570.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-            <edge source="ServiceLayer.WeatherForecastUpdateService" target="Parsers.ForecastContainerWUA">
-              <point x="24.625" y="-15.0" />
-              <point x="1244.3125" y="670.0" />
-              <point x="1777.3374835957998" y="670.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-            <edge source="PresentationLayer.AdminForm" target="PresentationLayer.AdminPwdForm">
-              <point x="-36.75" y="-15.0" />
-              <point x="1332.4777395013118" y="890.0" />
-              <point x="1028.6875" y="890.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-            <edge source="ServiceLayer.WeatherForecastTableService" target="BusinessLogic.RealFeelWorker">
-              <point x="-23.5" y="-15.0" />
-              <point x="109.0" y="270.0" />
-              <point x="328.1875" y="270.0" />
-              <point x="-50.3125" y="15.0" />
-            </edge>
-            <edge source="BusinessLogic.RealFeelWorker" target="BusinessLogic.RealFeel">
-              <point x="-38.33333333333326" y="-15.0" />
-              <point x="340.16666666666674" y="200.0" />
-              <point x="115.3063320209975" y="200.0" />
-              <point x="15.400000000000091" y="15.0" />
-            </edge>
-            <edge source="PresentationLayer.MainForm" target="ServiceLayer.UsersService">
-              <point x="3.7083333333333144" y="-15.0" />
-              <point x="574.2854002624667" y="870.0" />
-              <point x="599.5" y="870.0" />
-              <point x="599.5" y="770.0" />
-              <point x="873.4166666666667" y="770.0" />
-              <point x="-43.3125" y="15.0" />
-            </edge>
-            <edge source="ServiceLayer.UsersService" target="BusinessLogic.User">
-              <point x="33.0" y="-15.0" />
-              <point x="949.7291666666667" y="660.0" />
-              <point x="1475.6875" y="660.0" />
-              <point x="1475.6875" y="390.0" />
-              <point x="1130.0055774278212" y="390.0" />
-              <point x="7.125" y="15.0" />
-            </edge>
-            <edge source="ServiceLayer.RealFeelService" target="BusinessLogic.UserWorker">
-              <point x="47.5" y="-15.0" />
-              <point x="521.0" y="680.0" />
-              <point x="567.1756561679788" y="680.0" />
-              <point x="-11.875" y="15.0" />
-            </edge>
-            <edge source="ServiceLayer.RealFeelService" target="BusinessLogic.RealFeelWorker">
-              <point x="-28.5" y="-15.0" />
-              <point x="445.0" y="660.0" />
-              <point x="373.0" y="660.0" />
-              <point x="373.0" y="290.0" />
-              <point x="371.3125" y="290.0" />
-              <point x="-7.1875" y="15.0" />
-            </edge>
-            <edge source="PresentationLayer.AdminPwdForm" target="ServiceLayer.UsersService">
-              <point x="30.25" y="-15.0" />
-              <point x="1058.9375" y="770.0" />
-              <point x="960.0416666666667" y="770.0" />
-              <point x="43.3125" y="15.0" />
-            </edge>
-            <edge source="PresentationLayer.NewUserDialog" target="ServiceLayer.CityService">
-              <point x="-47.91666666666663" y="-15.0" />
-              <point x="830.7708333333334" y="910.0" />
-              <point x="821.9166666666667" y="910.0" />
-              <point x="11.5" y="15.0" />
-            </edge>
-            <edge source="Parsers.ForecastParserYa" target="BusinessLogic.Weather">
-              <point x="0.0" y="-15.0" />
-              <point x="2012.600082020997" y="70.0" />
-              <point x="1658.8333333333335" y="70.0" />
-              <point x="30.0" y="15.0" />
-            </edge>
-            <edge source="ServiceLayer.CityService" target="DataAccessLayer.DBConnector">
-              <point x="-23.0" y="-15.0" />
-              <point x="787.4166666666667" y="760.0" />
-              <point x="780.4874015748028" y="760.0" />
-              <point x="780.4874015748028" y="570.0" />
-              <point x="807.5" y="570.0" />
-              <point x="-2.9166666666666288" y="15.0" />
-            </edge>
-            <edge source="PresentationLayer.AdminForm" target="ServiceLayer.AdminService">
-              <point x="-12.25" y="-15.0" />
-              <point x="1356.9777395013118" y="920.0" />
-              <point x="1352.1041666666665" y="920.0" />
-              <point x="-26.75" y="15.0" />
-            </edge>
-            <edge source="Parsers.ForecastContainerWUA" target="BusinessLogic.Weather">
-              <point x="58.875" y="-15.0" />
-              <point x="1836.2124835957998" y="580.0" />
-              <point x="1934.600082020997" y="580.0" />
-              <point x="1934.600082020997" y="100.0" />
-              <point x="1640.8333333333335" y="100.0" />
-              <point x="12.0" y="15.0" />
-            </edge>
-            <edge source="BusinessLogic.UserWorker" target="DataAccessLayer.DBConnector">
-              <point x="-23.75" y="-15.0" />
-              <point x="555.3006561679788" y="550.0" />
-              <point x="795.8333333333333" y="550.0" />
-              <point x="-14.583333333333371" y="15.0" />
-            </edge>
-            <edge source="PresentationLayer.MainForm" target="ServiceLayer.CityService">
-              <point x="33.375" y="-15.0" />
-              <point x="603.9520669291334" y="910.0" />
-              <point x="798.9166666666667" y="910.0" />
-              <point x="-11.5" y="15.0" />
-            </edge>
-            <edge source="BusinessLogic.RealFeel" target="BusinessLogic.Weather">
-              <point x="0.0" y="-15.0" />
-              <point x="99.90633202099741" y="70.0" />
-              <point x="1604.8333333333335" y="70.0" />
-              <point x="-24.0" y="15.0" />
-            </edge>
-            <edge source="PresentationLayer.MainForm" target="PresentationLayer.RealFeelForm">
-              <point x="-3.708333333333343" y="-15.0" />
-              <point x="566.8687335958" y="870.0" />
-              <point x="536.5" y="870.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-            <edge source="ServiceLayer.RealFeelService" target="BusinessLogic.RealFeel">
-              <point x="-47.5" y="-15.0" />
-              <point x="426.0" y="670.0" />
-              <point x="28.0" y="670.0" />
-              <point x="28.0" y="190.0" />
-              <point x="84.50633202099732" y="190.0" />
-              <point x="-15.400000000000091" y="15.0" />
-            </edge>
-            <edge source="PresentationLayer.MainForm" target="PresentationLayer.SetCountryDialog">
-              <point x="18.54166666666667" y="-15.0" />
-              <point x="589.1187335958" y="890.0" />
-              <point x="680.9166666666667" y="890.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-            <edge source="PresentationLayer.RealFeelForm" target="ServiceLayer.RealFeelService">
-              <point x="0.0" y="-15.0" />
-              <point x="536.5" y="800.0" />
-              <point x="511.5" y="800.0" />
-              <point x="38.0" y="15.0" />
-            </edge>
-            <edge source="PresentationLayer.AuthorizationForm" target="PresentationLayer.AdminForm">
-              <point x="41.875" y="-15.0" />
-              <point x="1011.0458169291333" y="1020.0" />
-              <point x="1344.7277395013118" y="1020.0" />
-              <point x="-24.5" y="15.0" />
-            </edge>
-            <edge source="ServiceLayer.WeatherForecastUpdateService" target="Parsers.ForecastContainerYa">
-              <point x="73.875" y="-15.0" />
-              <point x="1293.5625" y="680.0" />
-              <point x="2032.436072834645" y="680.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-            <edge source="ServiceLayer.UsersService" target="BusinessLogic.UserWorker">
-              <point x="0.0" y="-15.0" />
-              <point x="916.7291666666667" y="670.0" />
-              <point x="614.6756561679788" y="670.0" />
-              <point x="35.625" y="15.0" />
-            </edge>
-            <edge source="PresentationLayer.MainForm" target="ServiceLayer.WeatherCurrentTableService">
-              <point x="-18.541666666666686" y="-15.0" />
-              <point x="552.0354002624667" y="890.0" />
-              <point x="386.75" y="890.0" />
-              <point x="46.0" y="15.0" />
-            </edge>
-            <edge source="ServiceLayer.WeatherForecastTableService" target="DataAccessLayer.DBConnector">
-              <point x="70.5" y="-15.0" />
-              <point x="203.0" y="500.0" />
-              <point x="766.6666666666666" y="500.0" />
-              <point x="-43.75" y="15.0" />
-            </edge>
-            <edge source="PresentationLayer.AuthorizationForm" target="ServiceLayer.UsersService">
-              <point x="-8.375" y="-15.0" />
-              <point x="960.7958169291333" y="1000.0" />
-              <point x="946.6875" y="1000.0" />
-              <point x="946.6875" y="800.0" />
-              <point x="922.9166666666667" y="800.0" />
-              <point x="6.1875" y="15.0" />
-            </edge>
-            <edge source="BusinessLogic.RealFeelWorker" target="BusinessLogic.Weather">
-              <point x="38.33333333333326" y="-15.0" />
-              <point x="416.83333333333326" y="80.0" />
-              <point x="1610.8333333333335" y="80.0" />
-              <point x="-18.0" y="15.0" />
-            </edge>
-            <edge source="PresentationLayer.AuthorizationForm" target="PresentationLayer.MainForm">
-              <point x="-58.625" y="-15.0" />
-              <point x="910.5458169291333" y="1030.0" />
-              <point x="548.3270669291334" y="1030.0" />
-              <point x="-22.25" y="15.0" />
-            </edge>
-            <edge source="ServiceLayer.WeatherCurrentTableService" target="DataAccessLayer.DBConnector">
-              <point x="15.333333333333485" y="-15.0" />
-              <point x="356.0833333333335" y="790.0" />
-              <point x="395.0" y="790.0" />
-              <point x="395.0" y="530.0" />
-              <point x="784.1666666666666" y="530.0" />
-              <point x="-26.25" y="15.0" />
-            </edge>
-            <edge source="Parsers.CountryCityParserWUA" target="Parsers.CountryIdParserWUA">
-              <point x="52.333333333333485" y="-15.0" />
-              <point x="1849.416666666667" y="400.0" />
-              <point x="1887.6000820209974" y="400.0" />
-              <point x="36.5" y="15.0" />
-            </edge>
-            <edge source="ServiceLayer.WeatherCurrentTableService" target="BusinessLogic.RealFeel">
-              <point x="-76.66666666666652" y="-15.0" />
-              <point x="264.0833333333335" y="800.0" />
-              <point x="17.0" y="800.0" />
-              <point x="17.0" y="180.0" />
-              <point x="69.10633202099723" y="180.0" />
-              <point x="-30.800000000000182" y="15.0" />
-            </edge>
-            <edge source="ServiceLayer.RealFeelService" target="BusinessLogic.User">
-              <point x="9.5" y="-15.0" />
-              <point x="483.0" y="680.0" />
-              <point x="478.9375" y="680.0" />
-              <point x="478.9375" y="380.0" />
-              <point x="1101.5055774278212" y="380.0" />
-              <point x="-21.375" y="15.0" />
-            </edge>
-            <edge source="ServiceLayer.WeatherCurrentTableService" target="BusinessLogic.WeatherWorker">
-              <point x="-46.0" y="-15.0" />
-              <point x="294.75" y="800.0" />
-              <point x="299.0" y="800.0" />
-              <point x="299.0" y="680.0" />
-              <point x="275.5" y="680.0" />
-              <point x="-29.0" y="15.0" />
-            </edge>
-            <edge source="PresentationLayer.MainForm" target="ServiceLayer.WeatherForecastTableService">
-              <point x="-33.375" y="-15.0" />
-              <point x="537.2020669291334" y="910.0" />
-              <point x="134.45206692913337" y="910.0" />
-              <point x="134.45206692913337" y="680.0" />
-              <point x="179.5" y="680.0" />
-              <point x="47.0" y="15.0" />
-            </edge>
-            <edge source="PresentationLayer.MainForm" target="PresentationLayer.AuthorizationForm">
-              <point x="22.25" y="15.0" />
-              <point x="592.8270669291334" y="1020.0" />
-              <point x="927.2958169291333" y="1020.0" />
-              <point x="-41.875" y="-15.0" />
-            </edge>
-            <edge source="BusinessLogic.WeatherWorker" target="BusinessLogic.Weather">
-              <point x="-46.40000000000009" y="-15.0" />
-              <point x="258.0999999999999" y="480.0" />
-              <point x="6.0" y="480.0" />
-              <point x="6.0" y="60.0" />
-              <point x="1598.8333333333335" y="60.0" />
-              <point x="-30.0" y="15.0" />
-            </edge>
-            <edge source="BusinessLogic.WeatherWorker" target="DataAccessLayer.DBConnector">
-              <point x="23.200000000000045" y="-15.0" />
-              <point x="327.70000000000005" y="510.0" />
-              <point x="772.5" y="510.0" />
-              <point x="-37.91666666666663" y="15.0" />
-            </edge>
-            <edge source="PresentationLayer.NewUserDialog" target="ServiceLayer.UsersService">
-              <point x="-9.583333333333371" y="-15.0" />
-              <point x="869.1041666666666" y="910.0" />
-              <point x="876.5208333333333" y="910.0" />
-              <point x="876.5208333333333" y="790.0" />
-              <point x="898.1666666666667" y="790.0" />
-              <point x="-18.5625" y="15.0" />
-            </edge>
-            <edge source="Parsers.ForecastContainerYa" target="BusinessLogic.Weather">
-              <point x="-53.625" y="-15.0" />
-              <point x="1978.811072834645" y="580.0" />
-              <point x="1940.600082020997" y="580.0" />
-              <point x="1940.600082020997" y="90.0" />
-              <point x="1646.8333333333335" y="90.0" />
-              <point x="18.0" y="15.0" />
-            </edge>
-            <edge source="Parsers.ForecastContainerYa" target="Parsers.ForecastParserYa">
-              <point x="-17.875" y="-15.0" />
-              <point x="2014.561072834645" y="580.0" />
-              <point x="2012.600082020997" y="580.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-            <edge source="DataAccessLayer.DBConnector" target="BusinessLogic.User">
-              <point x="21.0" y="-15.0" />
-              <point x="831.4166666666666" y="390.0" />
-              <point x="1115.7555774278212" y="390.0" />
-              <point x="-7.125" y="15.0" />
-            </edge>
-            <edge source="Parsers.ForecastContainerYa" target="Parsers.CountryCityParserYa">
-              <point x="53.625" y="-15.0" />
-              <point x="2086.061072834645" y="580.0" />
-              <point x="2130.350082020997" y="580.0" />
-              <point x="35.75" y="15.0" />
-            </edge>
-            <edge source="PresentationLayer.MainForm" target="ServiceLayer.WeatherForecastUpdateService">
-              <point x="40.791666666666686" y="-15.0" />
-              <point x="611.3687335958" y="920.0" />
-              <point x="1154.922244094488" y="920.0" />
-              <point x="1154.922244094488" y="800.0" />
-              <point x="1145.8125" y="800.0" />
-              <point x="-73.875" y="15.0" />
-            </edge>
-            <edge source="Parsers.CountryCityParserWUA" target="Parsers.CityIdParserWUA">
-              <point x="-52.333333333333485" y="-15.0" />
-              <point x="1744.75" y="400.0" />
-              <point x="1674.2875820209974" y="400.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-            <edge source="DataAccessLayer.DBConnector" target="BusinessLogic.RealFeel">
-              <point x="-42.0" y="-15.0" />
-              <point x="768.4166666666666" y="370.0" />
-              <point x="76.5" y="370.0" />
-              <point x="76.5" y="200.0" />
-              <point x="99.90633202099741" y="200.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-            <edge source="DataAccessLayer.DBConnector" target="BusinessLogic.Weather">
-              <point x="42.0" y="-15.0" />
-              <point x="852.4166666666666" y="400.0" />
-              <point x="1161.8805774278212" y="400.0" />
-              <point x="1161.8805774278212" y="90.0" />
-              <point x="1616.8333333333335" y="90.0" />
-              <point x="-12.0" y="15.0" />
-            </edge>
-            <edge source="PresentationLayer.AuthorizationForm" target="PresentationLayer.NewUserDialog">
-              <point x="-25.125" y="-15.0" />
-              <point x="944.0458169291333" y="1010.0" />
-              <point x="878.6875" y="1010.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-            <edge source="PresentationLayer.MainForm" target="ServiceLayer.RealFeelService">
-              <point x="-11.125" y="-15.0" />
-              <point x="559.4520669291334" y="880.0" />
-              <point x="473.5" y="880.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-            <edge source="ServiceLayer.WeatherForecastUpdateService" target="DataAccessLayer.DBConnector">
-              <point x="-24.625" y="-15.0" />
-              <point x="1195.0625" y="650.0" />
-              <point x="1175.9375" y="650.0" />
-              <point x="1175.9375" y="550.0" />
-              <point x="836.6666666666666" y="550.0" />
-              <point x="26.25" y="15.0" />
-            </edge>
-            <edge source="ServiceLayer.UsersTableService" target="BusinessLogic.User">
-              <point x="42.66666666666674" y="-15.0" />
-              <point x="1611.3805774278212" y="580.0" />
-              <point x="1585.8944061679786" y="580.0" />
-              <point x="1585.8944061679786" y="380.0" />
-              <point x="1144.2555774278212" y="380.0" />
-              <point x="21.375" y="15.0" />
-            </edge>
-            <edge source="PresentationLayer.AdminForm" target="PresentationLayer.UsersEditForm">
-              <point x="36.75000000000006" y="-15.0" />
-              <point x="1405.977739501312" y="920.0" />
-              <point x="1573.2139107611547" y="920.0" />
-              <point x="0.0" y="15.0" />
-            </edge>
-            <edge source="ServiceLayer.WeatherCurrentTableService" target="ServiceLayer.RealFeelService">
-              <point x="76.66666666666652" y="-15.0" />
-              <point x="417.4166666666665" y="800.0" />
-              <point x="435.5" y="800.0" />
-              <point x="-38.0" y="15.0" />
-            </edge>
-            <edge source="ServiceLayer.AdminService" target="ServiceLayer.WeatherForecastUpdateService">
-              <point x="-26.75" y="-15.0" />
-              <point x="1352.1041666666665" y="790.0" />
-              <point x="1293.5625" y="790.0" />
-              <point x="73.875" y="15.0" />
-            </edge>
-            <edge source="PresentationLayer.NewUserDialog" target="DataAccessLayer.DBConnector">
-              <point x="28.75" y="-15.0" />
-              <point x="907.4375" y="900.0" />
-              <point x="1099.6875" y="900.0" />
-              <point x="1099.6875" y="580.0" />
-              <point x="819.1666666666666" y="580.0" />
-              <point x="8.75" y="15.0" />
-            </edge>
-            <edge source="ServiceLayer.AdminService" target="Utils.ConsoleWorker">
-              <point x="8.916666666666515" y="-15.0" />
-              <point x="1387.770833333333" y="770.0" />
-              <point x="1367.9375" y="770.0" />
-              <point x="-28.75" y="15.0" />
-            </edge>
-            <edge source="BusinessLogic.RealFeelWorker" target="BusinessLogic.WeatherWorker">
-              <point x="-35.9375" y="15.0" />
-              <point x="342.5625" y="280.0" />
-              <point x="258.63740157480277" y="280.0" />
-              <point x="258.63740157480277" y="470.0" />
-              <point x="281.29999999999995" y="470.0" />
-              <point x="-23.200000000000045" y="-15.0" />
-            </edge>
-            <edge source="ServiceLayer.WeatherForecastTableService" target="BusinessLogic.Weather">
-              <point x="-70.5" y="-15.0" />
-              <point x="62.0" y="580.0" />
-              <point x="0.0" y="580.0" />
-              <point x="0.0" y="50.0" />
-              <point x="1592.8333333333335" y="50.0" />
-              <point x="-36.0" y="15.0" />
-            </edge>
-            <edge source="Parsers.ForecastParserWUA" target="BusinessLogic.Weather">
-              <point x="45.666666666666515" y="-15.0" />
-              <point x="1647.454248687664" y="110.0" />
-              <point x="1634.8333333333335" y="110.0" />
-              <point x="6.0" y="15.0" />
-            </edge>
-            <edge source="BusinessLogic.RealFeelWorker" target="DataAccessLayer.DBConnector">
-              <point x="35.9375" y="15.0" />
-              <point x="414.4375" y="280.0" />
-              <point x="787.4166666666666" y="280.0" />
-              <point x="787.4166666666666" y="360.0" />
-              <point x="810.4166666666666" y="360.0" />
-              <point x="0.0" y="-15.0" />
-            </edge>
-            <edge source="PresentationLayer.AuthorizationForm" target="ServiceLayer.WeatherForecastUpdateService">
-              <point x="25.125" y="-15.0" />
-              <point x="994.2958169291333" y="1010.0" />
-              <point x="1195.0625" y="1010.0" />
-              <point x="-24.625" y="15.0" />
-            </edge>
-            <edge source="ServiceLayer.AdminService" target="DataAccessLayer.DBConnector">
-              <point x="44.583333333333485" y="-15.0" />
-              <point x="1423.4375" y="800.0" />
-              <point x="1464.6875" y="800.0" />
-              <point x="1464.6875" y="530.0" />
-              <point x="848.3333333333333" y="530.0" />
-              <point x="37.91666666666663" y="15.0" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.8" x="233.0" y="720.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/MainForm.java">
+    <entry file="file://$PROJECT_DIR$/src/Parsers/CountryCityParserYa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2584" max-vertical-offset="5491">
-          <caret line="192" column="19" selection-start-line="192" selection-start-column="19" selection-end-line="192" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2040">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ServiceLayer/CityService.java">
+    <entry file="file://$PROJECT_DIR$/src/Parsers/CountryCityParserWUA.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1140">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/znak.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ServiceLayer/WeatherCurrentTableService.java">
+    <entry file="file://$PROJECT_DIR$/src/Parsers/CityIdParserWUA.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="12" max-vertical-offset="918">
-          <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ServiceLayer/WeatherForecastTableService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="767" max-vertical-offset="1700">
-          <caret line="81" column="100" selection-start-line="81" selection-start-column="16" selection-end-line="81" selection-end-column="100" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ServiceLayer/WeatherForecastUpdateService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1870">
-          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1280" max-vertical-offset="2200">
+          <caret line="75" column="14" selection-start-line="75" selection-start-column="14" selection-end-line="75" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ServiceLayer/WeatherForecastTableService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="201" max-vertical-offset="1940">
+          <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
+          <folding>
+            <element signature="e#1351#1352#0" expanded="false" />
+            <element signature="e#1403#1404#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RemoteServiceLayer/RealFeelServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="147" max-vertical-offset="1060">
+          <caret line="33" column="3" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/UsersEditForm.jfd">
+      <provider selected="true" editor-type-id="JFormDesigner">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/UsersEditForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1110" max-vertical-offset="3020">
+          <caret line="74" column="10" selection-start-line="74" selection-start-column="10" selection-end-line="74" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/NewUserDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1220" max-vertical-offset="1940">
+          <caret line="99" column="8" selection-start-line="99" selection-start-column="8" selection-end-line="99" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/NewUserDialog.jfd">
+      <provider selected="true" editor-type-id="JFormDesigner">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/AdminPwdForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2400" max-vertical-offset="3120">
+          <caret line="49" column="12" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -1895,132 +1325,493 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="JFormDesigner">
-        <state />
-      </provider>
       <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
         <state />
       </provider>
+      <provider selected="true" editor-type-id="JFormDesigner">
+        <state />
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/AdminPwdForm.java">
+    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/RealFeelForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="157" max-vertical-offset="884">
-          <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="3800">
+          <caret line="61" column="47" selection-start-line="61" selection-start-column="47" selection-end-line="61" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataAccessLayer/DBConnector.java">
+    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/RealFeelForm.jfd">
+      <provider selected="true" editor-type-id="JFormDesigner">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/SetCountryDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5933" max-vertical-offset="9129">
-          <caret line="388" column="113" selection-start-line="388" selection-start-column="113" selection-end-line="388" selection-end-column="113" />
-          <folding>
-            <element signature="e#13056#13057#0" expanded="true" />
-            <element signature="e#13125#13126#0" expanded="true" />
-            <element signature="e#13337#13338#0" expanded="true" />
-            <element signature="e#13409#13410#0" expanded="true" />
-            <marker date="1420918894584" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1420918894584" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1420918894584" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..users..." />
-            <marker date="1420918894584" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..users..." />
-            <marker date="1420918894584" expanded="true" signature="-1:-1" placeholder="SELECT name,..users..." />
-            <marker date="1420918894584" expanded="true" signature="-1:-1" placeholder="SELECT count..users..." />
-            <marker date="1420918894584" expanded="true" signature="-1:-1" placeholder="SELECT city_..users..." />
-            <marker date="1420918894584" expanded="true" signature="-1:-1" placeholder="UPDATE users..." />
-            <marker date="1420918894584" expanded="true" signature="-1:-1" placeholder="UPDATE users..." />
-            <marker date="1420918894584" expanded="true" signature="-1:-1" placeholder="SELECT setva..." />
-            <marker date="1420918894584" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1420918894584" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5640">
+          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_25/src.zip!/java/lang/Thread.java">
+    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/SetCountryDialog.jfd">
+      <provider selected="true" editor-type-id="JFormDesigner">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/MainForm.jfd">
+      <provider selected="true" editor-type-id="JFormDesigner">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/MainForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="11438" max-vertical-offset="33388">
-          <caret line="744" column="0" selection-start-line="744" selection-start-column="0" selection-end-line="744" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1380" max-vertical-offset="11260">
+          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_25/src.zip!/java/lang/String.java">
+    <entry file="file://$PROJECT_DIR$/src/RemoteServiceLayer/UsersServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="31757" max-vertical-offset="51952">
-          <caret line="1953" column="0" selection-start-line="1953" selection-start-column="0" selection-end-line="1953" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1740">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ServiceLayer/ObjectClonerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="840">
+          <caret line="29" column="57" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ServiceLayer/JSONBuilderService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
-          <caret line="18" column="59" selection-start-line="18" selection-start-column="59" selection-end-line="18" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="260" max-vertical-offset="1080">
+          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BusinessLogic/City.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="560">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BusinessLogic/Admin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="440">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataAccessLayer/DBConnector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4080" max-vertical-offset="10700">
+          <caret line="39" column="15" selection-start-line="39" selection-start-column="15" selection-end-line="39" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ServiceLayer/WeatherCurrentTableService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="172" max-vertical-offset="1340">
+          <caret line="49" column="12" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ServiceLayer/UsersTableService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="1640">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/AdminForm.jfd">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2533">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="JFormDesigner">
+        <state paletteWidth="0" propertiesWidth="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/AdminForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2250" max-vertical-offset="2960">
+          <caret line="134" column="41" selection-start-line="134" selection-start-column="41" selection-end-line="134" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="560">
+          <caret line="29" column="5" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PresentationLayer/AuthorizationForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="2240">
+          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Utils/ConsoleWorker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="158" max-vertical-offset="765">
-          <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="337" max-vertical-offset="1420">
+          <caret line="46" column="56" selection-start-line="46" selection-start-column="56" selection-end-line="46" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/123.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="0.0" y="0.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RemoteServiceLayer/AdminServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1734">
-          <caret line="24" column="2" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2780">
+          <caret line="48" column="10" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/remote.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="0.0" y="0.0">RemoteServiceLayer.AdminServiceImpl</node>
+            <node x="1003.8849999999999" y="89.0">RemoteServiceLayer.AdminService</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="RemoteServiceLayer.AdminServiceImpl" target="RemoteServiceLayer.AdminService">
+              <point x="0.0" y="0.0" />
+              <point x="0.0" y="0.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-332.0" y="125.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Inner Classes</Category>
+            <Category>Constructors</Category>
+            <Category>Properties</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/RemoteServiceLayer.AdminServiceImpl">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>RemoteServiceLayer.AdminServiceImpl</OriginalElement>
+          <nodes>
+            <node x="" y="">java.rmi.Remote</node>
+            <node x="" y="">RemoteServiceLayer.AdminServiceImpl</node>
+            <node x="" y="">java.rmi.server.RemoteServer</node>
+            <node x="" y="">java.rmi.server.UnicastRemoteObject</node>
+            <node x="" y="">java.rmi.server.RemoteObject</node>
+            <node x="" y="">RemoteServiceLayer.AdminService</node>
+            <node x="" y="">java.io.Serializable</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="129.0" y="175.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/new1.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="" y="">ServiceLayer.JSONBuilderService</node>
+            <node x="" y="">RemoteServiceLayer.WeatherServiceImpl</node>
+            <node x="" y="">Server</node>
+            <node x="" y="">PresentationLayer.AdminForm</node>
+            <node x="" y="">PresentationLayer.AuthorizationForm</node>
+            <node x="" y="">BusinessLogic.Admin</node>
+            <node x="" y="">PresentationLayer.AdminPwdForm</node>
+            <node x="" y="">Parsers.ForecastParserWUA</node>
+            <node x="" y="">PresentationLayer.SetCountryDialog</node>
+            <node x="" y="">RemoteServiceLayer.RealFeelServiceImpl</node>
+            <node x="" y="">RemoteServiceLayer.WeatherService</node>
+            <node x="" y="">RemoteServiceLayer.AdminService</node>
+            <node x="" y="">Utils.ConsoleWorker</node>
+            <node x="" y="">RemoteServiceLayer.UsersService</node>
+            <node x="" y="">APILayer.ClientSession</node>
+            <node x="" y="">Parsers.CountryIdParserWUA</node>
+            <node x="" y="">Parsers.ForecastParserYa</node>
+            <node x="" y="">BusinessLogic.RealFeelWorker</node>
+            <node x="" y="">PresentationLayer.MainForm</node>
+            <node x="" y="">ServiceLayer.ObjectClonerService</node>
+            <node x="" y="">RemoteServiceLayer.AdminServiceImpl</node>
+            <node x="" y="">RemoteServiceLayer.UsersServiceImpl</node>
+            <node x="" y="">BusinessLogic.User</node>
+            <node x="" y="">APILayer.ProviderCityIdContainer</node>
+            <node x="" y="">Client</node>
+            <node x="" y="">PresentationLayer.UsersEditForm</node>
+            <node x="" y="">DataAccessLayer.DBConnector</node>
+            <node x="" y="">BusinessLogic.WeatherWorker</node>
+            <node x="" y="">ServiceLayer.WeatherForecastUpdateService</node>
+            <node x="" y="">BusinessLogic.Weather</node>
+            <node x="" y="">BusinessLogic.RealFeel</node>
+            <node x="" y="">ServiceLayer.WeatherCurrentTableService</node>
+            <node x="" y="">Parsers.ForecastContainerYa</node>
+            <node x="" y="">APILayer.HttpServer</node>
+            <node x="" y="">Parsers.CityIdParserWUA</node>
+            <node x="" y="">Parsers.CountryCityParserYa</node>
+            <node x="" y="">BusinessLogic.UserWorker</node>
+            <node x="" y="">RemoteServiceLayer.RealFeelService</node>
+            <node x="" y="">Parsers.CountryCityParserWUA</node>
+            <node x="" y="">Parsers.ForecastContainerWUA</node>
+            <node x="" y="">PresentationLayer.RealFeelForm</node>
+            <node x="" y="">PresentationLayer.NewUserDialog</node>
+            <node x="" y="">ServiceLayer.WeatherForecastTableService</node>
+            <node x="" y="">BusinessLogic.City</node>
+            <node x="" y="">ServiceLayer.UsersTableService</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.5000000000000001" x="1438.0" y="300.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1040">
+          <caret line="29" column="69" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/RemoteServiceLayer.RealFeelServiceImpl">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>RemoteServiceLayer.RealFeelServiceImpl</OriginalElement>
+          <nodes>
+            <node x="150.25" y="0.0">java.rmi.Remote</node>
+            <node x="149.5" y="80.0">RemoteServiceLayer.RealFeelService</node>
+            <node x="21.0" y="160.0">java.rmi.server.RemoteServer</node>
+            <node x="0.0" y="240.0">java.rmi.server.UnicastRemoteObject</node>
+            <node x="19.5" y="80.0">java.rmi.server.RemoteObject</node>
+            <node x="71.5" y="320.0">RemoteServiceLayer.RealFeelServiceImpl</node>
+            <node x="1.0" y="0.0">java.io.Serializable</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="java.rmi.server.UnicastRemoteObject" target="java.rmi.server.RemoteServer">
+              <point x="0.0" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="RemoteServiceLayer.RealFeelServiceImpl" target="RemoteServiceLayer.RealFeelService">
+              <point x="34.5" y="-15.0" />
+              <point x="175.0" y="295.0" />
+              <point x="206.5" y="295.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="java.rmi.server.RemoteObject" target="java.rmi.Remote">
+              <point x="27.5" y="-15.0" />
+              <point x="102.0" y="55.0" />
+              <point x="169.0" y="55.0" />
+              <point x="-18.75" y="15.0" />
+            </edge>
+            <edge source="java.rmi.server.RemoteServer" target="java.rmi.server.RemoteObject">
+              <point x="0.0" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="RemoteServiceLayer.RealFeelService" target="java.rmi.Remote">
+              <point x="0.0" y="-15.0" />
+              <point x="18.75" y="15.0" />
+            </edge>
+            <edge source="java.rmi.server.RemoteObject" target="java.io.Serializable">
+              <point x="-27.5" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="RemoteServiceLayer.RealFeelServiceImpl" target="java.rmi.server.UnicastRemoteObject">
+              <point x="-34.5" y="-15.0" />
+              <point x="106.0" y="295.0" />
+              <point x="74.5" y="295.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-377.0" y="117.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/RemoteServiceLayer.UsersServiceImpl">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>RemoteServiceLayer.UsersServiceImpl</OriginalElement>
+          <nodes>
+            <node x="149.5" y="80.0">RemoteServiceLayer.UsersService</node>
+            <node x="142.75" y="0.0">java.rmi.Remote</node>
+            <node x="75.25" y="320.0">RemoteServiceLayer.UsersServiceImpl</node>
+            <node x="21.0" y="160.0">java.rmi.server.RemoteServer</node>
+            <node x="0.0" y="240.0">java.rmi.server.UnicastRemoteObject</node>
+            <node x="19.5" y="80.0">java.rmi.server.RemoteObject</node>
+            <node x="1.0" y="0.0">java.io.Serializable</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="java.rmi.server.UnicastRemoteObject" target="java.rmi.server.RemoteServer">
+              <point x="0.0" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="RemoteServiceLayer.UsersServiceImpl" target="java.rmi.server.UnicastRemoteObject">
+              <point x="-30.75" y="-15.0" />
+              <point x="106.0" y="295.0" />
+              <point x="74.5" y="295.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="java.rmi.server.RemoteObject" target="java.rmi.Remote">
+              <point x="27.5" y="-15.0" />
+              <point x="102.0" y="55.0" />
+              <point x="161.5" y="55.0" />
+              <point x="-18.75" y="15.0" />
+            </edge>
+            <edge source="java.rmi.server.RemoteServer" target="java.rmi.server.RemoteObject">
+              <point x="0.0" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="RemoteServiceLayer.UsersServiceImpl" target="RemoteServiceLayer.UsersService">
+              <point x="30.75" y="-15.0" />
+              <point x="167.5" y="295.0" />
+              <point x="199.0" y="295.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="java.rmi.server.RemoteObject" target="java.io.Serializable">
+              <point x="-27.5" y="-15.0" />
+              <point x="0.0" y="15.0" />
+            </edge>
+            <edge source="RemoteServiceLayer.UsersService" target="java.rmi.Remote">
+              <point x="0.0" y="-15.0" />
+              <point x="18.75" y="15.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-384.0" y="117.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/RemoteServiceLayer.WeatherServiceImpl">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>RemoteServiceLayer.WeatherServiceImpl</OriginalElement>
+          <nodes>
+            <node x="" y="">RemoteServiceLayer.WeatherServiceImpl</node>
+            <node x="" y="">java.rmi.Remote</node>
+            <node x="" y="">java.rmi.server.RemoteServer</node>
+            <node x="" y="">java.rmi.server.UnicastRemoteObject</node>
+            <node x="" y="">java.rmi.server.RemoteObject</node>
+            <node x="" y="">RemoteServiceLayer.WeatherService</node>
+            <node x="" y="">java.io.Serializable</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="133.0" y="175.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RemoteServiceLayer/WeatherServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="52" max-vertical-offset="800">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RemoteServiceLayer/AdminService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="640">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="29" selection-end-column="121" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RemoteServiceLayer/RealFeelService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="400">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="17" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RemoteServiceLayer/UsersService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="580">
+          <caret line="25" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RemoteServiceLayer/WeatherService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+          <caret line="16" column="77" selection-start-line="16" selection-start-column="77" selection-end-line="16" selection-end-column="77" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#375#610#0" expanded="true" />
-            <element signature="e#609#610#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/APILayer/HttpServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="35" max-vertical-offset="748">
+        <state vertical-scroll-proportion="0.0" vertical-offset="117" max-vertical-offset="840">
           <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BusinessLogic/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="273" max-vertical-offset="1071">
-          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BusinessLogic/RealFeel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="609">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BusinessLogic/RealFeelWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="1880">
-          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/APILayer/ClientSession.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7450425" vertical-offset="2154" max-vertical-offset="2860">
-          <caret line="134" column="6" selection-start-line="134" selection-start-column="6" selection-end-line="134" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-1.352657" vertical-offset="920" max-vertical-offset="2740">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2091,7 +1882,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>json-simple-1.1.1</last-edited>
+          <last-edited>forms_rt</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

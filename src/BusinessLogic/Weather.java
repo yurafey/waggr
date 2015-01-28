@@ -1,5 +1,6 @@
 package BusinessLogic;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -7,7 +8,7 @@ import java.util.Date;
  * Created by yuraf_000 on 05.06.2014.
  */
 
-public class Weather{
+public class Weather implements Serializable{
     private Date date = new Date();
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
     private int temperature;

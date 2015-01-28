@@ -1,8 +1,10 @@
 package ServiceLayer;
 
 import BusinessLogic.User;
-import DataAccessLayer.DBConnector;
+import RemoteServiceLayer.UsersService;
+import RemoteServiceLayer.UsersServiceImpl;
 
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -14,12 +16,10 @@ public class UsersTableService {
     private final String[] colNames = {"Логин","Пароль", "Имя", "Фамилия", "Город","Страна"};
     private List<List<String>> rows = new ArrayList<>();
     private List<List<String>> oldRows = new ArrayList<>();
-    //private UserWorker userWorker= new UserWorker();
-    DBConnector db = new DBConnector();
-
-    public UsersTableService() {
-
-        List<User> usersList =  db.getUsersList();
+    private UsersService userService = null;
+    public UsersTableService(UsersService usersService) throws RemoteException {
+        this.userService = usersService;
+        List<User> usersList =  userService.getUsersList();
         for (User user:usersList){
             if (!user.getUserLogin().equals("admin"))
             rows.add(Arrays.asList(user.getUserLogin(), user.getUserPassword(), user.getUserName(), user.getUserSurname(), user.getUserCity(), user.getUserCountry()));
@@ -50,7 +50,7 @@ public class UsersTableService {
         }
         return false;
     }
-    public Boolean updateDB() {
+    public Boolean updateDB() throws RemoteException {
         Boolean diff = false;
         for (int i = 0; i < oldRows.size(); i++) {
             List<String> oldRow = (List) oldRows.get(i);
@@ -63,7 +63,7 @@ public class UsersTableService {
                 u.setUserSurname(newRow.get(3));
                 u.setUserCity(newRow.get(4));
                 u.setUserCountry(newRow.get(5));
-                diff = db.updateUser(oldRow.get(0),u);
+                diff = userService.updateUser(oldRow.get(0),u);
             }
         }
         if (diff) {
@@ -82,9 +82,8 @@ public class UsersTableService {
     public List<List<String>> getRows() {
         return rows;
     }
-    public void onClose(){
-        db.connectionClose();
-    }
-
+//    public void onClose() throws RemoteException {
+//        userService.close();
+//    }
 }
 

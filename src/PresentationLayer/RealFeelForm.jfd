@@ -1,0 +1,112 @@
+JFDML JFormDesigner: "5.2.1.0.138" Java: "1.8.0_25" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "panel1"
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label1"
+					"text": "Введите свои ощущения о погоде в городе "
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 5
+					"y": 10
+					"width": 380
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label2"
+					"text": "Температура"
+					auxiliary() {
+						"JavaCodeGenerator.variableLocal": true
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 15
+					"y": 55
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textField1"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 155
+					"y": 50
+					"width": 191
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textField3"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 155
+					"y": 80
+					"width": 191
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label3"
+					"text": "Влажность"
+					auxiliary() {
+						"JavaCodeGenerator.variableLocal": true
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 15
+					"y": 85
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textField4"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 155
+					"y": 140
+					"width": 191
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label4"
+					"text": "Скорость ветра"
+					auxiliary() {
+						"JavaCodeGenerator.variableLocal": true
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 15
+					"y": 145
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "ОКButton"
+					"text": "ОК"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 295
+					"y": 175
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "cancelButton"
+					"text": "Отмена"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 340
+					"y": 175
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label5"
+					"text": "Атмосферное давление"
+					auxiliary() {
+						"JavaCodeGenerator.variableLocal": true
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 15
+					"y": 115
+					"height": 18
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textField2"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 155
+					"y": 110
+					"width": 191
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 420
+				"height": 210
+				"x": 5
+				"y": 5
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 25, 95 )
+			"size": new java.awt.Dimension( 445, 250 )
+		} )
+	}
+}

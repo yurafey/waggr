@@ -4,22 +4,25 @@
 
 package PresentationLayer;
 
-import ServiceLayer.UsersService;
+import RemoteServiceLayer.UsersService;
+import RemoteServiceLayer.UsersServiceImpl;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.rmi.RemoteException;
 
 /**
  * @author ÑÑÐ²ÑÑÐ² ÑÑÐ²ÑÑÐ²
  */
 public class AdminPwdForm extends JFrame {
-    public AdminPwdForm() {
+    private UsersService usersService = null;
+    public AdminPwdForm(UsersService usersService) {
+        this.usersService = usersService;
         initComponents();
     }
-    UsersService usersService = new UsersService();
 
     private void okButtonActionPerformed(ActionEvent e) {
         String oldPassword = String.valueOf(passwordField1.getPassword());
@@ -36,11 +39,15 @@ public class AdminPwdForm extends JFrame {
             return;
         }
 
-        if (usersService.updatePassword("admin", oldPassword, newPassword1)) {
-            dispose();
-        }
-        else {
-            JOptionPane.showMessageDialog(okButton, "Неверный пароль", "Ошибка", JOptionPane.ERROR_MESSAGE);
+        try {
+            if (usersService.updatePassword("admin", oldPassword, newPassword1)) {
+                dispose();
+            }
+            else {
+                JOptionPane.showMessageDialog(okButton, "Неверный пароль", "Ошибка", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (RemoteException e1) {
+            e1.printStackTrace();
         }
     }
 

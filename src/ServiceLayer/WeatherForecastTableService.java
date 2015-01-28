@@ -1,9 +1,12 @@
 package ServiceLayer;
 
-import BusinessLogic.RealFeelWorker;
 import BusinessLogic.Weather;
-import DataAccessLayer.DBConnector;
+import BusinessLogic.WeatherWorker;
+import RemoteServiceLayer.RealFeelService;
+import RemoteServiceLayer.WeatherService;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.text.DateFormatSymbols;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -15,15 +18,13 @@ import java.util.List;
  * Created by yuraf_000 on 24.09.2014.
  */
 public class WeatherForecastTableService {
-    private DBConnector db = new DBConnector();
-    //private List<Weather> weatherForecast = new ArrayList<>();
     private List<List<Weather>> forecastsList = new ArrayList<>();
-    private RealFeelWorker realFeelWorker = null;
-    private String cityName = null;
-    private String countryName = null;
     private final String[] colNames = {"Дата","Температура","Влажность","Давление воздуха","Скорость ветра","Направление ветра"};
     private List<Object> rowsYandex = new ArrayList<>();
     private List<Object> rowsWeatherUA = new ArrayList<>();
+    private WeatherService weatherService;
+    private String currentCityName;
+    private String currentCountryName;
 
     private static DateFormatSymbols myDateFormatSymbols = new DateFormatSymbols(){
 
@@ -34,25 +35,30 @@ public class WeatherForecastTableService {
         }
 
     };
-    public WeatherForecastTableService(String cityName, String countryName){
-        this.cityName = cityName;
-        this.countryName = countryName;
+
+    public WeatherForecastTableService(WeatherService weatherService) {
+        this.weatherService = weatherService;
+    }
+
+    public void initializeWeatherForecastTableService(String cityName, String countryName) throws RemoteException {
+        this.currentCityName = cityName;
+        this.currentCountryName = countryName;
         TableProcessor();
     }
-   // public
-    private void TableProcessor (){
-        forecastsList = db.getForecastsByCityAndCountyName(cityName,countryName);
-        rowsYandex.clear();
-        rowsWeatherUA.clear();
-        for (int listCounter = 0; listCounter < forecastsList.size();listCounter++){
-            List <Weather> forecastList = forecastsList.get(listCounter);
-            switch (listCounter) {
-                case 0:
-                    rowsYandex.addAll(getRows(forecastList));
-                    break;
-                case 1:
-                    rowsWeatherUA.addAll(getRows(forecastList));
-                    break;
+
+    private void TableProcessor () throws RemoteException {
+        forecastsList = weatherService.getForecastList(currentCityName, currentCountryName);
+                rowsYandex.clear();
+                rowsWeatherUA.clear();
+                for (int listCounter = 0; listCounter < forecastsList.size();listCounter++){
+                    List <Weather> forecastList = forecastsList.get(listCounter);
+                    switch (listCounter) {
+                        case 0:
+                            rowsYandex.addAll(getRows(forecastList));
+                            break;
+                        case 1:
+                            rowsWeatherUA.addAll(getRows(forecastList));
+                            break;
                 default:
             }
         }
@@ -90,19 +96,12 @@ public class WeatherForecastTableService {
 
 
 
-    public Object getValueAtYandex(int row, int col){
+    public Object getValueAtYandex(int row, int col) {
         return ((List<Object>) rowsYandex.get(row)).get(col);
     }
 
-    public Object getValueAtWeatherUA (int row, int col){
+    public Object getValueAtWeatherUA (int row, int col) {
         return ((List<Object>) rowsWeatherUA.get(row)).get(col);
-    }
-
-    public void setCityName(String cityName) {
-        this.cityName = cityName;
-    }
-    public void setCountryName(String countryName) {
-        this.countryName = countryName;
     }
     public String[] getColNames() {
         return colNames;
@@ -110,10 +109,10 @@ public class WeatherForecastTableService {
     public List<Object> getRowsYandex() {
         return rowsYandex;
     }
-    public List<Object> getRowsWeatherUA(){
+    public List<Object> getRowsWeatherUA() {
         return rowsWeatherUA;
     }
-    public void onClose(){
-        db.connectionClose();
-    }
+//    public void onClose() throws RemoteException {
+//        weatherWorker.onClose();
+//    }
 }

@@ -1,24 +1,20 @@
 package PresentationLayer;
 
+import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.List;
+import com.intellij.uiDesigner.core.*;
 
-public class SetCountryDialog extends JDialog {
-    private JPanel contentPane;
-    private JButton buttonOK;
-    private JButton buttonCancel;
-    private JRadioButton radioButton1;
-    private JRadioButton radioButton2;
-    private JRadioButton radioButton3;
-    private JRadioButton radioButton4;
-    private JRadioButton radioButton5;
+public class SetCountryDialog extends JFrame {
+    //private JPanel contentPane;
 
     public SetCountryDialog(List<String> countryNames) {
 //        super((java.awt.Frame) null, true);
 //        setModalityType(java.awt.Dialog.ModalityType.APPLICATION_MODAL);
+        initComponents();
         setTitle("Найдены совпадения");
-        setSize(300,200);
+        //setSize(300,200);
         setLocationRelativeTo(null);
         radioButton1.setVisible(false);
         radioButton2.setVisible(false);
@@ -44,8 +40,6 @@ public class SetCountryDialog extends JDialog {
             radioButton5.setText(countryNames.get(4));
         }
 
-        setContentPane(contentPane);
-        setModal(true);
         getRootPane().setDefaultButton(buttonOK);
 
         buttonOK.addActionListener(new ActionListener() {
@@ -68,12 +62,6 @@ public class SetCountryDialog extends JDialog {
             }
         });
 
-// call onCancel() on ESCAPE
-        contentPane.registerKeyboardAction(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                onCancel();
-            }
-        }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
         radioButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -137,4 +125,195 @@ public class SetCountryDialog extends JDialog {
     private void onCancel() {
         dispose();
     }
+
+    private void initComponents() {
+        // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
+        // Generated using JFormDesigner Evaluation license - 123 123
+        mainPanel = new JPanel();
+        JPanel panel1 = new JPanel();
+        JPanel panel2 = new JPanel();
+        buttonOK = new JButton();
+        buttonCancel = new JButton();
+        JPanel panel3 = new JPanel();
+        radioButton1 = new JRadioButton();
+        radioButton4 = new JRadioButton();
+        radioButton3 = new JRadioButton();
+        radioButton2 = new JRadioButton();
+        radioButton5 = new JRadioButton();
+        JLabel label1 = new JLabel();
+        JLabel label2 = new JLabel();
+
+        //======== this ========
+        Container contentPane = getContentPane();
+        contentPane.setLayout(null);
+
+        //======== mainPanel ========
+        {
+            mainPanel.setPreferredSize(new Dimension(300, 200));
+
+            // JFormDesigner evaluation mark
+            mainPanel.setBorder(new javax.swing.border.CompoundBorder(
+                new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
+                    "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
+                    javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
+                    java.awt.Color.red), mainPanel.getBorder())); mainPanel.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
+
+            mainPanel.setLayout(null);
+
+            //======== panel1 ========
+            {
+                panel1.setLayout(null);
+
+                //======== panel2 ========
+                {
+                    panel2.setLayout(null);
+
+                    //---- buttonOK ----
+                    buttonOK.setText("OK");
+                    panel2.add(buttonOK);
+                    buttonOK.setBounds(0, 0, 66, buttonOK.getPreferredSize().height);
+
+                    //---- buttonCancel ----
+                    buttonCancel.setText("Cancel");
+                    panel2.add(buttonCancel);
+                    buttonCancel.setBounds(new Rectangle(new Point(76, 0), buttonCancel.getPreferredSize()));
+
+                    { // compute preferred size
+                        Dimension preferredSize = new Dimension();
+                        for(int i = 0; i < panel2.getComponentCount(); i++) {
+                            Rectangle bounds = panel2.getComponent(i).getBounds();
+                            preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
+                            preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
+                        }
+                        Insets insets = panel2.getInsets();
+                        preferredSize.width += insets.right;
+                        preferredSize.height += insets.bottom;
+                        panel2.setMinimumSize(preferredSize);
+                        panel2.setPreferredSize(preferredSize);
+                    }
+                }
+                panel1.add(panel2);
+                panel2.setBounds(new Rectangle(new Point(289, 0), panel2.getPreferredSize()));
+
+                { // compute preferred size
+                    Dimension preferredSize = new Dimension();
+                    for(int i = 0; i < panel1.getComponentCount(); i++) {
+                        Rectangle bounds = panel1.getComponent(i).getBounds();
+                        preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
+                        preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
+                    }
+                    Insets insets = panel1.getInsets();
+                    preferredSize.width += insets.right;
+                    preferredSize.height += insets.bottom;
+                    panel1.setMinimumSize(preferredSize);
+                    panel1.setPreferredSize(preferredSize);
+                }
+            }
+            mainPanel.add(panel1);
+            panel1.setBounds(10, 225, 431, panel1.getPreferredSize().height);
+
+            //======== panel3 ========
+            {
+                panel3.setLayout(null);
+
+                //---- radioButton1 ----
+                radioButton1.setSelected(false);
+                radioButton1.setText("RadioButton");
+                panel3.add(radioButton1);
+                radioButton1.setBounds(new Rectangle(new Point(0, 0), radioButton1.getPreferredSize()));
+
+                //---- radioButton4 ----
+                radioButton4.setText("RadioButton");
+                panel3.add(radioButton4);
+                radioButton4.setBounds(new Rectangle(new Point(0, 99), radioButton4.getPreferredSize()));
+
+                //---- radioButton3 ----
+                radioButton3.setText("RadioButton");
+                panel3.add(radioButton3);
+                radioButton3.setBounds(new Rectangle(new Point(0, 66), radioButton3.getPreferredSize()));
+
+                //---- radioButton2 ----
+                radioButton2.setText("RadioButton");
+                panel3.add(radioButton2);
+                radioButton2.setBounds(new Rectangle(new Point(0, 33), radioButton2.getPreferredSize()));
+
+                //---- radioButton5 ----
+                radioButton5.setEnabled(true);
+                radioButton5.setText("RadioButton");
+                panel3.add(radioButton5);
+                radioButton5.setBounds(new Rectangle(new Point(0, 132), radioButton5.getPreferredSize()));
+
+                { // compute preferred size
+                    Dimension preferredSize = new Dimension();
+                    for(int i = 0; i < panel3.getComponentCount(); i++) {
+                        Rectangle bounds = panel3.getComponent(i).getBounds();
+                        preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
+                        preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
+                    }
+                    Insets insets = panel3.getInsets();
+                    preferredSize.width += insets.right;
+                    preferredSize.height += insets.bottom;
+                    panel3.setMinimumSize(preferredSize);
+                    panel3.setPreferredSize(preferredSize);
+                }
+            }
+            mainPanel.add(panel3);
+            panel3.setBounds(10, 60, 431, panel3.getPreferredSize().height);
+
+            //---- label1 ----
+            label1.setText("\u0414\u0430\u043d\u043d\u044b\u0439 \u0433\u043e\u0440\u043e\u0434 \u043d\u0430\u0439\u0434\u0435\u043d \u0432 \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u0438\u0445 \u0441\u0442\u0440\u0430\u043d\u0430\u0445.");
+            mainPanel.add(label1);
+            label1.setBounds(new Rectangle(new Point(10, 12), label1.getPreferredSize()));
+
+            //---- label2 ----
+            label2.setText("\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0441\u0442\u0440\u0430\u043d\u0443 \u0438\u0437 \u0441\u043f\u0438\u0441\u043a\u0430:");
+            mainPanel.add(label2);
+            label2.setBounds(new Rectangle(new Point(10, 37), label2.getPreferredSize()));
+
+            { // compute preferred size
+                Dimension preferredSize = new Dimension();
+                for(int i = 0; i < mainPanel.getComponentCount(); i++) {
+                    Rectangle bounds = mainPanel.getComponent(i).getBounds();
+                    preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
+                    preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
+                }
+                Insets insets = mainPanel.getInsets();
+                preferredSize.width += insets.right;
+                preferredSize.height += insets.bottom;
+                mainPanel.setMinimumSize(preferredSize);
+                mainPanel.setPreferredSize(preferredSize);
+            }
+        }
+        contentPane.add(mainPanel);
+        mainPanel.setBounds(5, 5, 451, 266);
+
+        { // compute preferred size
+            Dimension preferredSize = new Dimension();
+            for(int i = 0; i < contentPane.getComponentCount(); i++) {
+                Rectangle bounds = contentPane.getComponent(i).getBounds();
+                preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
+                preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
+            }
+            Insets insets = contentPane.getInsets();
+            preferredSize.width += insets.right;
+            preferredSize.height += insets.bottom;
+            contentPane.setMinimumSize(preferredSize);
+            contentPane.setPreferredSize(preferredSize);
+        }
+        pack();
+        setLocationRelativeTo(getOwner());
+        // JFormDesigner - End of component initialization  //GEN-END:initComponents
+    }
+
+    // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
+    // Generated using JFormDesigner Evaluation license - 123 123
+    private JPanel mainPanel;
+    private JButton buttonOK;
+    private JButton buttonCancel;
+    private JRadioButton radioButton1;
+    private JRadioButton radioButton4;
+    private JRadioButton radioButton3;
+    private JRadioButton radioButton2;
+    private JRadioButton radioButton5;
+    // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

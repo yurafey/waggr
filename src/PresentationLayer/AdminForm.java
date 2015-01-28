@@ -4,38 +4,77 @@
 
 package PresentationLayer;
 
-import ServiceLayer.AdminService;
-import ServiceLayer.WeatherForecastUpdateService;
+import RemoteServiceLayer.*;
+import ServiceLayer.WeatherCurrentTableService;
+import ServiceLayer.WeatherForecastTableService;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.MalformedURLException;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+
 /**
- * @author Ð®ÑÐ¸Ð¹ Ð¤ÐµÐ¹Ð³ÐµÐ½Ð·Ð¾Ð½
+ * @author ?�N????? ?�?�?????�???�????
  */
 public class AdminForm extends JFrame {
     private AdminService adminService = null;
+    private RealFeelService realFeelService = null;
+    private UsersService usersService = null;
+    private WeatherCurrentTableService weatherCurrentTableService = null;
+    private WeatherForecastTableService weatherForecastTableService = null;
+    private SwingWorker<Void, String> logsLabelWorker;
+    private SwingWorker<Void, String> refreshLabelWorker;
 
-    public AdminForm(WeatherForecastUpdateService weatherForecastUpdateService)  {
-        adminService = new AdminService(weatherForecastUpdateService);
+    public AdminForm(final AdminService adminService, RealFeelService realFeelService, UsersService usersService, WeatherForecastTableService weatherForecastTableService, WeatherCurrentTableService weatherCurrentTableService) throws RemoteException {
+        this.adminService = adminService;
+        this.realFeelService = realFeelService;
+        this.usersService = usersService;
+        this.weatherCurrentTableService = weatherCurrentTableService;
+        this.weatherForecastTableService = weatherForecastTableService;
+
         initComponents();
-        if (adminService.getCurrentWeatherForecastService().isCanceled()) {
+        if (adminService.checkUpdateServiceIsCanceled()) {
             label6.setText("Сервис отключен.");
             button8.setText("Включить");
         }
+        logsLabelWorker = new SwingWorker<Void, String>() {
+            protected Void doInBackground() throws Exception {
+                while (true) {
+                    Thread.sleep(1000);
+                    textArea1.setText(adminService.getConsoleLogs());
+                }
+            }
+        };
+        logsLabelWorker.execute();
+        refreshWorkerRestart();
+
         textField1.setText(adminService.getCurrentCountries());
         textField2.setText(adminService.getCurrentPeriod());
-        adminService.executeConsoleWorker(label6,textArea1);
+        //adminService.executeConsoleWorker(label6,textArea1);
     }
 
-    private void button1ActionPerformed(ActionEvent e) {
+    private void refreshWorkerRestart() {
+        refreshLabelWorker = new SwingWorker<Void, String>() {
+            protected Void doInBackground() throws Exception {
+                while (true) {
+                    Thread.sleep(1000);
+                    label6.setText(adminService.getRefreshLogs());
+                }
+            }
+        };
+        refreshLabelWorker.execute();
+    }
+
+    private void button1ActionPerformed(ActionEvent e) throws RemoteException {
         if (adminService.setCurrentCountries(textField1.getText())) {
             JOptionPane.showMessageDialog(button1, "Страны сохранены", "Успешно", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
-    private void button3ActionPerformed(ActionEvent e) {
+    private void button3ActionPerformed(ActionEvent e) throws RemoteException {
         if (adminService.setCurrentPeriod(textField2.getText())) {
             JOptionPane.showMessageDialog(button3, "Период обновления сохранен", "Успешно", JOptionPane.INFORMATION_MESSAGE);
         }
@@ -45,7 +84,16 @@ public class AdminForm extends JFrame {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                AuthorizationForm authorizationForm = new AuthorizationForm(adminService.getCurrentWeatherForecastService());
+                AuthorizationForm authorizationForm = null;
+                try {
+                    authorizationForm = new AuthorizationForm(adminService,realFeelService,usersService,weatherForecastTableService,weatherCurrentTableService);
+                } catch (RemoteException e1) {
+                    e1.printStackTrace();
+                } catch (MalformedURLException e1) {
+                    e1.printStackTrace();
+                } catch (NotBoundException e1) {
+                    e1.printStackTrace();
+                }
                 authorizationForm.setVisible(true);
             }
         });
@@ -56,7 +104,12 @@ public class AdminForm extends JFrame {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                UsersEditForm ue  = new UsersEditForm();
+                UsersEditForm ue  = null;
+                try {
+                    ue = new UsersEditForm(usersService);
+                } catch (RemoteException e1) {
+                    e1.printStackTrace();
+                }
                 ue.setVisible(true);
             }
         });
@@ -66,31 +119,35 @@ public class AdminForm extends JFrame {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                AdminPwdForm ap = new AdminPwdForm();
+                AdminPwdForm ap = new AdminPwdForm(usersService);
                 ap.setVisible(true);
             }
         });
     }
 
-    private void button8ActionPerformed(ActionEvent e) {
+    private void button8ActionPerformed(ActionEvent e) throws RemoteException {
         if (adminService.restartWeatherServiceIfCanceled()) {
+            refreshWorkerRestart();
             button8.setText("Отключить");
             label6.setText("Идет обновление...");
         } else if (adminService.startWeatherServiceIfNew()) {
+            refreshWorkerRestart();
             button8.setText("Отключить");
             label6.setText("Идет обновление...");
         } else if (adminService.stopWeatherServiceIfWaiting()) {
+            refreshLabelWorker.cancel(true);
             button8.setText("Включить");
             label6.setText("Сервис отключен.");
-        } else if (adminService.stopWeatherServiceIfUpdating(button8,label6)){
-            button8.setEnabled(false);
-            button8.setText("Отключаем...");
+        } else if (adminService.stopWeatherServiceIfUpdating()){
+            refreshLabelWorker.cancel(true);
+            button8.setText("Включить");
+            label6.setText("Сервис отключен.");
         }
     }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - ÑÑÐ²ÑÑÐ² ÑÑÐ²ÑÑÐ²
+        // Generated using JFormDesigner Evaluation license - 123 123
         textField1 = new JTextField();
         button1 = new JButton();
         label1 = new JLabel();
@@ -121,7 +178,11 @@ public class AdminForm extends JFrame {
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                button1ActionPerformed(e);
+                try {
+                    button1ActionPerformed(e);
+                } catch (RemoteException e1) {
+                    e1.printStackTrace();
+                }
             }
         });
         contentPane.add(button1);
@@ -149,7 +210,11 @@ public class AdminForm extends JFrame {
         button3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                button3ActionPerformed(e);
+                try {
+                    button3ActionPerformed(e);
+                } catch (RemoteException e1) {
+                    e1.printStackTrace();
+                }
             }
         });
         contentPane.add(button3);
@@ -215,7 +280,11 @@ public class AdminForm extends JFrame {
         button8.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                button8ActionPerformed(e);
+                try {
+                    button8ActionPerformed(e);
+                } catch (RemoteException e1) {
+                    e1.printStackTrace();
+                }
             }
         });
         contentPane.add(button8);
@@ -240,7 +309,7 @@ public class AdminForm extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - ÑÑÐ²ÑÑÐ² ÑÑÐ²ÑÑÐ²
+    // Generated using JFormDesigner Evaluation license - 123 123
     private JTextField textField1;
     private JButton button1;
     private JLabel label1;

@@ -4,7 +4,12 @@ import BusinessLogic.RealFeel;
 import BusinessLogic.Weather;
 import BusinessLogic.WeatherWorker;
 import DataAccessLayer.DBConnector;
+import RemoteServiceLayer.RealFeelService;
+import RemoteServiceLayer.RealFeelServiceImpl;
+import RemoteServiceLayer.WeatherService;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.text.DateFormatSymbols;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -15,12 +20,14 @@ import java.util.List;
  * Created by yuraf_000 on 19.09.2014.
  */
 public class WeatherCurrentTableService {
-    private DBConnector db = new DBConnector();
-    private WeatherWorker weatherWorker = null;
     private List<RealFeel> realFeelList = null;
-    private String[] colNames = null;
+    private String[] colNames = new String[]{"", "Yandex", "WeatherUA", "RealFeel(ощущается)"};
     private List<Object> rows = new ArrayList<>();
     private int numOfRealFeels = 1;
+    private WeatherService weatherService;
+    private RealFeelService realFeelService;
+    private String currentCityName;
+    private String currentCountryName;
 
     private static DateFormatSymbols myDateFormatSymbols = new DateFormatSymbols(){
 
@@ -33,17 +40,26 @@ public class WeatherCurrentTableService {
     };
 
 
-    public WeatherCurrentTableService(String login, String cityName, String countryName) {
-        RealFeelService realFeelService = new RealFeelService(login, cityName, countryName);
-        realFeelList = realFeelService.getRealFeels(numOfRealFeels);
-        colNames = new String[]{"", "Yandex", "WeatherUA", "RealFeel(ощущается)"};
-        weatherWorker = new WeatherWorker(cityName, countryName);
+    public WeatherCurrentTableService(WeatherService weatherService, RealFeelService realFeelService) {
+        this.weatherService = weatherService;
+        this.realFeelService = realFeelService;
+    }
+
+    public void initializeWeatherCurrentTableService(String login, String cityName, String countryName) throws RemoteException {
+        try {
+            realFeelService.initializeRealFeel(login, cityName, countryName);
+            realFeelList = realFeelService.getRealFeels(numOfRealFeels);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        this.currentCityName = cityName;
+        this.currentCountryName = countryName;
         TableProcessor();
     }
 
-    public void TableProcessor (){
-        Weather currentWeatherYandex = weatherWorker.getCurrentWeatherYandex();
-        Weather currentWeatherWUA = weatherWorker.getCurrentWeatherWUA();
+    private void TableProcessor () throws RemoteException {
+        Weather currentWeatherYandex = weatherService.getCurrentWeatherYandex(currentCityName, currentCountryName);
+        Weather currentWeatherWUA = weatherService.getCurrentWeatherWUA(currentCityName,currentCountryName);
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM HH:mm", myDateFormatSymbols );
         rows.clear();
         rows.add(Arrays.asList("Дата",(currentWeatherYandex!=null)?dateFormat.format(currentWeatherYandex.getDate()):"N/A", ((currentWeatherWUA!=null)?dateFormat.format(currentWeatherWUA.getDate()):"N/A"), (realFeelList!=null? (dateFormat.format(realFeelList.get(0).getDate())+" от "+realFeelList.get(0).getUserLogin()):"N/A")));
@@ -59,7 +75,7 @@ public class WeatherCurrentTableService {
     public int getNumOfRealFeels() {
         return numOfRealFeels;
     }
-    public Object GetValueAt(int row,int col){
+    public Object GetValueAt(int row,int col) {
         return ((List<Object>)rows.get(row)).get(col);
     }
     public String[] getColNames() {
@@ -68,7 +84,7 @@ public class WeatherCurrentTableService {
     public List<Object> getRows() {
         return rows;
     }
-    public void onClose(){
-        db.connectionClose();
-    }
+//    public void onClose() throws RemoteException {
+//        db.connectionClose();
+//    }
 }

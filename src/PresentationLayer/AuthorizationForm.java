@@ -1,7 +1,8 @@
 package PresentationLayer;
 
-import ServiceLayer.UsersService;
-import ServiceLayer.WeatherForecastUpdateService;
+import RemoteServiceLayer.*;
+import ServiceLayer.WeatherCurrentTableService;
+import ServiceLayer.WeatherForecastTableService;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,6 +10,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 
 /**
  * Created by yuraf_000 on 18.06.2014.
@@ -19,13 +24,29 @@ public class AuthorizationForm extends JFrame {
     private JLabel Label1 = new JLabel("Авторизация в системе");
     private JTextField Field1 = new JTextField("Введите логин");
     private JPasswordField Field2 = new JPasswordField("Введите пароль");
-    UsersService usersService = new UsersService();
-    private WeatherForecastUpdateService weatherForecastUpdateService = null;
+    private AdminService adminService = null;
+    private RealFeelService realFeelService = null;
+    private UsersService usersService = null;
+    private WeatherCurrentTableService weatherCurrentTableService = null;
+    private WeatherForecastTableService weatherForecastTableService = null;
+    private WeatherService weatherService = null;
+    private String serverIp = "127.0.0.1";
 
-    public AuthorizationForm(WeatherForecastUpdateService weatherForecastUpdateService) {
-        this.weatherForecastUpdateService = weatherForecastUpdateService;
-        if (this.weatherForecastUpdateService.isNew()) {
-            this.weatherForecastUpdateService.execute();
+    public AuthorizationForm(AdminService adminService, RealFeelService realFeelService, UsersService usersService, WeatherForecastTableService weatherForecastTableService, WeatherCurrentTableService weatherCurrentTableService) throws RemoteException, MalformedURLException, NotBoundException {
+        if (adminService==null&&realFeelService==null&&usersService==null&&weatherCurrentTableService==null&&weatherForecastTableService==null){
+            this.adminService = (AdminService) Naming.lookup("//" + serverIp + "/AdminService");
+            this.realFeelService = (RealFeelService) Naming.lookup("//" + serverIp + "/RealFeelService");
+            this.usersService = (UsersService) Naming.lookup("//" + serverIp + "/UsersService");
+            this.weatherService = (WeatherService) Naming.lookup("//" + serverIp + "/WeatherService");
+            this.weatherCurrentTableService = new WeatherCurrentTableService(this.weatherService,this.realFeelService);
+            this.weatherForecastTableService = new WeatherForecastTableService(this.weatherService);
+            this.adminService.startWeatherServiceIfNew();
+        } else {
+            this.adminService = adminService;
+            this.realFeelService = realFeelService;
+            this.usersService = usersService;
+            this.weatherCurrentTableService = weatherCurrentTableService;
+            this.weatherForecastTableService = weatherForecastTableService;
         }
         initComponent();
         setVisible(true);
@@ -47,13 +68,17 @@ public class AuthorizationForm extends JFrame {
         OkButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                OkClicked();
+                try {
+                    OkClicked();
+                } catch (RemoteException e) {
+                    e.printStackTrace();
+                }
             }
         });
         RegButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                NewUserDialog dialog = new NewUserDialog();
+                NewUserDialog dialog = new NewUserDialog(adminService,usersService);
                 dialog.pack();
                 dialog.setVisible(true);
             }
@@ -78,7 +103,7 @@ public class AuthorizationForm extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
-    private void OkClicked(){
+    private void OkClicked() throws RemoteException {
         String login = Field1.getText();
         String password = String.valueOf(Field2.getPassword());
         final Object current = usersService.login(login,password);
@@ -89,7 +114,12 @@ public class AuthorizationForm extends JFrame {
             SwingUtilities.invokeLater(new Runnable() {
                 @Override
                 public void run() {
-                    AdminForm adminForm = new AdminForm(weatherForecastUpdateService);
+                    AdminForm adminForm = null;
+                    try {
+                        adminForm = new AdminForm(adminService,realFeelService,usersService,weatherForecastTableService,weatherCurrentTableService);
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
                     adminForm.setVisible(true);
                 }
             });
@@ -97,11 +127,14 @@ public class AuthorizationForm extends JFrame {
             SwingUtilities.invokeLater(new Runnable() {
                 @Override
                 public void run() {
-                    MainForm mainForm = new MainForm(current,weatherForecastUpdateService);
+                    try {
+                        MainForm mainForm = new MainForm(current,adminService,realFeelService,usersService,weatherForecastTableService,weatherCurrentTableService);
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
                 }
             });
         }
-        usersService.close();
         dispose();
 
     }

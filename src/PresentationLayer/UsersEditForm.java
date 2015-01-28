@@ -4,6 +4,7 @@
 
 package PresentationLayer;
 
+import RemoteServiceLayer.UsersService;
 import ServiceLayer.UsersTableService;
 
 import javax.swing.*;
@@ -12,13 +13,18 @@ import javax.swing.table.TableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.rmi.RemoteException;
 
 /**
  * @author ÑÑÐ²ÑÑÐ² ÑÑÐ²ÑÑÐ²
  */
 public class UsersEditForm extends JFrame {
-    private UsersTableService usersTableService = new UsersTableService();
-    public UsersEditForm() {
+    private UsersService usersService = null;
+    private UsersTableService usersTableService = null;
+    public UsersEditForm(UsersService usersService) throws RemoteException {
+        this.usersService = usersService;
+        this.usersTableService = new UsersTableService(usersService);
+
         initComponents();
         TableModel usersTable = new AbstractTableModel() {
             @Override
@@ -55,17 +61,17 @@ public class UsersEditForm extends JFrame {
         table1.setModel(usersTable);
     }
 
-    private void button1ActionPerformed(ActionEvent e) {
+    private void button1ActionPerformed(ActionEvent e) throws RemoteException {
         if (!usersTableService.updateDB())
             JOptionPane.showMessageDialog(button1, "Изменений нет", "Ошибка", JOptionPane.INFORMATION_MESSAGE);
         else {
-            usersTableService.onClose();
+            //usersTableService.onClose();
             dispose();
         }
     }
 
-    private void button2ActionPerformed(ActionEvent e) {
-        usersTableService.onClose();
+    private void button2ActionPerformed(ActionEvent e) throws RemoteException {
+        //usersTableService.onClose();
         dispose();
     }
 
@@ -102,7 +108,11 @@ public class UsersEditForm extends JFrame {
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                button1ActionPerformed(e);
+                try {
+                    button1ActionPerformed(e);
+                } catch (RemoteException e1) {
+                    e1.printStackTrace();
+                }
             }
         });
         contentPane.add(button1);
@@ -113,7 +123,11 @@ public class UsersEditForm extends JFrame {
         button2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                button2ActionPerformed(e);
+                try {
+                    button2ActionPerformed(e);
+                } catch (RemoteException e1) {
+                    e1.printStackTrace();
+                }
             }
         });
         contentPane.add(button2);

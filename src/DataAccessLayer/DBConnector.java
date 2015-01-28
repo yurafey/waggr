@@ -10,12 +10,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+//import org.postgresql.Driver;
 
 /**
  * Created by yuraf_000 on 15.06.2014.
  */
 public class DBConnector {
-    private Connection waggrConnection = null;
+    private Connection waggrConnection;
     private String weatherTableNameYandex = "weatheryan";
     private String weatherTableNameWUA = "weatherwua";
 
@@ -35,13 +36,13 @@ public class DBConnector {
         }
     }
 
-    public void connectionClose() {
-        try {
-            waggrConnection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+//    public void connectionClose() {
+//        try {
+//            waggrConnection.close();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     public void writeWeatherDataYandex(HashMap<Integer, List<Weather>> CityWeatherListYandex, HashMap<Integer, String> CityIdMapYandex, HashMap<Integer, String> CountryIdMapYandex, ListMultimap<Integer, Integer> CountryCityMapYandex) {
         clearTable(weatherTableNameYandex);
@@ -522,6 +523,7 @@ public class DBConnector {
 
     public String getPassword(String login) {
         try {
+
             Statement getPassword = waggrConnection.createStatement();
             String stm = String.format("SELECT password FROM users WHERE login = '%s';",login);
             ResultSet result = getPassword.executeQuery(stm);

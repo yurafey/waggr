@@ -1,0 +1,174 @@
+JFDML JFormDesigner: "5.2.1.0.138" Java: "1.8.0_25" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+			name: "this"
+			"title": "Waggr - Weather Aggregator"
+			add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
+				name: "tabbedPane1"
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+					name: "JPanel1"
+					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+						name: "JscrollPane1"
+						add( new FormComponent( "javax.swing.JTable" ) {
+							name: "tableCurrentWeather"
+							"rowSelectionAllowed": true
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"width": 975
+						"height": 326
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": "Сейчас"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+					name: "panel1"
+					auxiliary() {
+						"JavaCodeGenerator.variableLocal": true
+					}
+					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+						name: "scrollPane1"
+						auxiliary() {
+							"JavaCodeGenerator.variableLocal": true
+						}
+						add( new FormComponent( "javax.swing.JTable" ) {
+							name: "table5dayWeatherUA"
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 493
+						"y": 25
+						"width": 482
+						"height": 301
+					} )
+					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+						name: "scrollPane2"
+						auxiliary() {
+							"JavaCodeGenerator.variableLocal": true
+						}
+						add( new FormComponent( "javax.swing.JTable" ) {
+							name: "table5dayWeatherYandex"
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"y": 25
+						"width": 483
+						"height": 301
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label2"
+						"text": "Yandex"
+						auxiliary() {
+							"JavaCodeGenerator.variableLocal": true
+						}
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 222
+						"y": 2
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label3"
+						"text": "WeatherUA"
+						auxiliary() {
+							"JavaCodeGenerator.variableLocal": true
+						}
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 704
+						"y": 2
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": "Прогноз"
+				} )
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 977
+				"height": 350
+				"x": 5
+				"y": 80
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "realFeelButton"
+				"text": "Добавить ощущение"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 211
+				"x": 760
+				"y": 40
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label5"
+				"text": "Погода в городе "
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 10
+				"y": 50
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "searchCityField"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 160
+				"x": 130
+				"y": 45
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "forecastButton"
+				"text": "Найти"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 102
+				"x": 290
+				"y": 40
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Пользователь:"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 10
+				"y": 15
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "exitProfileButton"
+				"text": "Выйти"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 290
+				"y": 5
+				"width": 100
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "UserLabel"
+				"text": ""
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 100
+				"height": 14
+				"x": 120
+				"y": 20
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "Избранный город:"
+				auxiliary() {
+					"JavaCodeGenerator.variableLocal": true
+				}
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"x": 400
+				"y": 15
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "defaultCityField"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 220
+				"x": 535
+				"y": 10
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "saveCity"
+				"text": "Сохранить / Найти прогноз"
+			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+				"width": 212
+				"x": 760
+				"y": 5
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 10, 0 )
+			"size": new java.awt.Dimension( 1000, 480 )
+		} )
+	}
+}

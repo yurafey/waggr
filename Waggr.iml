@@ -11,5 +11,6 @@
     <orderEntry type="library" name="postgresql-9.3-1101.jdbc41" level="project" />
     <orderEntry type="library" name="JGoodies Forms" level="project" />
     <orderEntry type="library" name="json-simple-1.1.1" level="project" />
+    <orderEntry type="library" name="forms_rt" level="project" />
   </component>
 </module>

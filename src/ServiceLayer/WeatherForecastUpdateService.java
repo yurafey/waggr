@@ -50,7 +50,7 @@ public class WeatherForecastUpdateService extends SwingWorker {
             }
             db.writeWeatherDataYandex(FCY.GetCityWeatherList(), FCY.GetCityIdMap(), FCY.GetCountryIdMap(), FCY.GetCountryCityMap());
             db.writeWeatherDataWUA(FCWUA.GetCityWeatherList(), FCWUA.GetCityIdMap(), FCWUA.GetCountryIdMap(), FCWUA.GetCountyCitiesMap());
-            db.connectionClose();
+            //db.connectionClose();
             if (isCancelled()) {
                 currentState = stateOfService.CANCELED;
                 return null;
@@ -73,7 +73,7 @@ public class WeatherForecastUpdateService extends SwingWorker {
                     }
                 }
             } else break;
-            db.connectionClose();
+            //db.connectionClose();
         } return null;
     }
 

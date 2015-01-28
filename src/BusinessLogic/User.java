@@ -1,9 +1,11 @@
 package BusinessLogic;
 
+import java.io.Serializable;
+
 /**
  * Created by yuraf_000 on 19.06.2014.
  */
-public class User {
+public class User implements Serializable {
     private String userName = null;
     private String userSurname = null;
     private String userCity = null;
