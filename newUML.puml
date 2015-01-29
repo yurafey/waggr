@@ -1,0 +1,160 @@
+@startuml
+annotation java.lang.Override
+annotation javax.ejb.EJB
+annotation javax.ejb.Local
+annotation javax.ejb.LocalBean
+annotation javax.ejb.Remote
+annotation javax.ejb.Stateless
+annotation javax.persistence.Basic
+annotation javax.persistence.Column
+annotation javax.persistence.Entity
+annotation javax.persistence.GeneratedValue
+annotation javax.persistence.Id
+annotation javax.persistence.NamedQueries
+annotation javax.persistence.NamedQuery
+annotation javax.persistence.PersistenceContext
+annotation javax.persistence.Table
+annotation javax.persistence.Temporal
+annotation javax.validation.constraints.NotNull
+annotation javax.validation.constraints.Size
+annotation javax.xml.bind.annotation.XmlRootElement
+class java.math.BigDecimal
+class java.math.RoundingMode
+class java.sql.Timestamp
+class java.text.DateFormatSymbols
+class java.text.SimpleDateFormat
+class java.util.ArrayList
+class java.util.Arrays
+class java.util.Calendar
+class java.util.Date
+class java.util.List
+class java.util.logging.Level
+class java.util.logging.Logger
+class javax.inject.Inject
+class javax.naming.InitialContext
+class javax.naming.NamingException
+class javax.persistence.EntityManager
+class javax.persistence.GenerationType
+class javax.persistence.Query
+class javax.persistence.TemporalType
+class waggr.RealFeelBean
+class waggr.Realfeel
+class waggr.Users
+class waggr.WaggrSession
+class waggr.WeatherBean
+class waggr.Weatherwua
+class waggr.Weatheryan
+interface java.io.Serializable
+interface waggr.RealFeelBeanRemote
+interface waggr.WaggrSessionLocal
+interface waggr.WaggrSessionRemote
+interface waggr.WeatherBeanLocal
+interface waggr.WeatherBeanRemote
+waggr.RealFeelBean ..> javax.ejb.EJB
+waggr.RealFeelBean ..> javax.ejb.LocalBean
+waggr.RealFeelBean ..> javax.ejb.Stateless
+waggr.RealFeelBean ..> javax.persistence.PersistenceContext
+waggr.RealFeelBean ..> java.sql.Timestamp
+waggr.RealFeelBean ..> java.util.List
+waggr.RealFeelBean ..> java.util.logging.Level
+waggr.RealFeelBean ..> java.util.logging.Logger
+waggr.RealFeelBean ..> javax.inject.Inject
+waggr.RealFeelBean ..> javax.naming.InitialContext
+waggr.RealFeelBean ..> javax.naming.NamingException
+waggr.RealFeelBean ..> javax.persistence.EntityManager
+waggr.RealFeelBean ..> javax.persistence.Query
+waggr.RealFeelBean --|> waggr.RealFeelBeanRemote
+waggr.Realfeel ..> java.lang.Override
+waggr.Realfeel ..> javax.persistence.Basic
+waggr.Realfeel ..> javax.persistence.Column
+waggr.Realfeel ..> javax.persistence.Entity
+waggr.Realfeel ..> javax.persistence.GeneratedValue
+waggr.Realfeel ..> javax.persistence.Id
+waggr.Realfeel ..> javax.persistence.NamedQueries
+waggr.Realfeel ..> javax.persistence.NamedQuery
+waggr.Realfeel ..> javax.persistence.Table
+waggr.Realfeel ..> javax.persistence.Temporal
+waggr.Realfeel ..> javax.validation.constraints.Size
+waggr.Realfeel ..> javax.xml.bind.annotation.XmlRootElement
+waggr.Realfeel ..> java.util.Date
+waggr.Realfeel ..> javax.persistence.GenerationType
+waggr.Realfeel ..> javax.persistence.TemporalType
+waggr.Realfeel --|> java.io.Serializable
+waggr.Users ..> java.lang.Override
+waggr.Users ..> javax.persistence.Basic
+waggr.Users ..> javax.persistence.Column
+waggr.Users ..> javax.persistence.Entity
+waggr.Users ..> javax.persistence.Id
+waggr.Users ..> javax.persistence.NamedQueries
+waggr.Users ..> javax.persistence.NamedQuery
+waggr.Users ..> javax.persistence.Table
+waggr.Users ..> javax.validation.constraints.NotNull
+waggr.Users ..> javax.validation.constraints.Size
+waggr.Users ..> javax.xml.bind.annotation.XmlRootElement
+waggr.Users --|> java.io.Serializable
+waggr.WaggrSession ..> java.lang.Override
+waggr.WaggrSession ..> javax.ejb.EJB
+waggr.WaggrSession ..> javax.ejb.LocalBean
+waggr.WaggrSession ..> javax.ejb.Stateless
+waggr.WaggrSession ..> javax.persistence.PersistenceContext
+waggr.WaggrSession ..> java.util.List
+waggr.WaggrSession ..> javax.persistence.EntityManager
+waggr.WaggrSession ..> javax.persistence.Query
+waggr.WaggrSession --|> waggr.WaggrSessionLocal
+waggr.WaggrSession --|> waggr.WaggrSessionRemote
+waggr.WeatherBean ..> java.lang.Override
+waggr.WeatherBean ..> javax.ejb.LocalBean
+waggr.WeatherBean ..> javax.ejb.Stateless
+waggr.WeatherBean ..> javax.persistence.PersistenceContext
+waggr.WeatherBean ..> java.math.BigDecimal
+waggr.WeatherBean ..> java.math.RoundingMode
+waggr.WeatherBean ..> java.text.DateFormatSymbols
+waggr.WeatherBean ..> java.text.SimpleDateFormat
+waggr.WeatherBean ..> java.util.ArrayList
+waggr.WeatherBean ..> java.util.Arrays
+waggr.WeatherBean ..> java.util.Calendar
+waggr.WeatherBean ..> java.util.List
+waggr.WeatherBean ..> javax.persistence.EntityManager
+waggr.WeatherBean ..> javax.persistence.Query
+waggr.WeatherBean --|> waggr.WeatherBeanLocal
+waggr.WeatherBean --|> waggr.WeatherBeanRemote
+waggr.Weatherwua ..> java.lang.Override
+waggr.Weatherwua ..> javax.persistence.Basic
+waggr.Weatherwua ..> javax.persistence.Column
+waggr.Weatherwua ..> javax.persistence.Entity
+waggr.Weatherwua ..> javax.persistence.GeneratedValue
+waggr.Weatherwua ..> javax.persistence.Id
+waggr.Weatherwua ..> javax.persistence.NamedQueries
+waggr.Weatherwua ..> javax.persistence.NamedQuery
+waggr.Weatherwua ..> javax.persistence.Table
+waggr.Weatherwua ..> javax.persistence.Temporal
+waggr.Weatherwua ..> javax.validation.constraints.Size
+waggr.Weatherwua ..> javax.xml.bind.annotation.XmlRootElement
+waggr.Weatherwua ..> java.util.Date
+waggr.Weatherwua ..> javax.persistence.GenerationType
+waggr.Weatherwua ..> javax.persistence.TemporalType
+waggr.Weatherwua --|> java.io.Serializable
+waggr.Weatheryan ..> java.lang.Override
+waggr.Weatheryan ..> javax.persistence.Basic
+waggr.Weatheryan ..> javax.persistence.Column
+waggr.Weatheryan ..> javax.persistence.Entity
+waggr.Weatheryan ..> javax.persistence.GeneratedValue
+waggr.Weatheryan ..> javax.persistence.Id
+waggr.Weatheryan ..> javax.persistence.NamedQueries
+waggr.Weatheryan ..> javax.persistence.NamedQuery
+waggr.Weatheryan ..> javax.persistence.Table
+waggr.Weatheryan ..> javax.persistence.Temporal
+waggr.Weatheryan ..> javax.validation.constraints.Size
+waggr.Weatheryan ..> javax.xml.bind.annotation.XmlRootElement
+waggr.Weatheryan ..> java.util.Date
+waggr.Weatheryan ..> javax.persistence.GenerationType
+waggr.Weatheryan ..> javax.persistence.TemporalType
+waggr.Weatheryan --|> java.io.Serializable
+waggr.RealFeelBeanRemote ..> javax.ejb.Remote
+waggr.WaggrSessionLocal ..> javax.ejb.Local
+waggr.WaggrSessionRemote ..> javax.ejb.Remote
+waggr.WaggrSessionRemote ..> java.util.List
+waggr.WeatherBeanLocal ..> javax.ejb.Local
+waggr.WeatherBeanRemote ..> javax.ejb.Remote
+waggr.WeatherBeanRemote ..> java.util.List
+@enduml
